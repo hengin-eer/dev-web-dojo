@@ -1,0 +1,150 @@
+@import 'vars';
+
+header {
+    user-select: none;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    padding: 0 20px;
+    background: linear-gradient(to right, $primary-red, $primary-green);
+
+    .header__wrapper {
+        height: 70px;
+        max-width: 1024px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include mq(sp) {
+            justify-content: center;
+        };
+
+        >.header__ttl>a {
+            color: white;
+            font-size: 2rem;
+            font-family: $for-logo;
+        }
+
+        >.hum {
+            cursor: pointer;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            z-index: 20;
+            -webkit-tap-highlight-color: #0000;
+            transition: .3s;
+
+            @include mq(sp) {
+                position: fixed !important;
+                left: 50vw;
+                bottom: 10px;
+                transform: translate(-50%, 0);
+                background: black;
+            };
+
+            >span {
+                height: 2px;
+                width: 30px;
+                background: white;
+                border-radius: 2px;
+                transition: .3s;
+            }
+
+            >span:nth-of-type(1) {
+                top: 10px;
+            }
+
+            >span:nth-of-type(2) {
+                top: 19px;
+            }
+
+            >span:nth-of-type(3) {
+                top: 28px;
+            }
+
+            &.active {
+                @include mq(sp) {
+                    background: #0000;
+                };
+
+                >span {
+                    background: black;
+                }
+
+                >span:nth-of-type(1) {
+                    width: 30px;
+                }
+
+                >span:nth-of-type(2) {
+                    width: 20px;
+                }
+
+                >span:nth-of-type(3) {
+                    width: 10px;
+                }
+            }
+        }
+
+        .header__menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            background: white;
+            visibility: hidden;
+            opacity: 0;
+            transition: .3s;
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+                z-index: 10;
+            }
+
+            >.menu__ttl>a {
+                font-size: 3.5rem;
+                color: $primary-red;
+                font-family: $for-logo;
+            }
+
+            >ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                list-style: none;
+
+                >li>a {
+                    font-size: 2rem;
+                    color: black;
+                    font-family: $for-logo;
+                }
+            }
+
+            >.sns {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                >a {
+                    >svg {
+                        color: black;
+                        font-size: 40px;
+                        vertical-align: bottom;
+                    }
+                }
+            }
+        }
+    }
+}

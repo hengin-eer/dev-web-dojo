@@ -1,0 +1,188 @@
+@import 'vars';
+
+header {
+    user-select: none;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    padding: 0 20px;
+    background: linear-gradient(to right, $primary-red, $primary-green);
+
+    .header__wrapper {
+        height: 70px;
+        max-width: 1024px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mq(sp) {
+            justify-content: center;
+        }
+
+        >.header__ttl>a {
+            @include font(2rem, $for-logo, white);
+        }
+
+        >.hum {
+            cursor: pointer;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            z-index: 20;
+            -webkit-tap-highlight-color: #0000;
+            transition: .3s;
+
+            @include mq(sp) {
+                display: flex;
+                position: fixed !important;
+                left: 50vw;
+                bottom: 10px;
+                transform: translate(-50%, 0);
+                background: black;
+                background: linear-gradient(to right, $primary-red, $primary-green);
+            }
+
+            >span {
+                height: 2px;
+                width: 30px;
+                background: white;
+                border-radius: 2px;
+                transition: .5s;
+            }
+
+            >span:nth-of-type(1) {
+                top: 10px;
+            }
+
+            >span:nth-of-type(2) {
+                top: 19px;
+            }
+
+            >span:nth-of-type(3) {
+                top: 28px;
+            }
+
+            &.active {
+                @include mq(sp) {
+                    background: #0000;
+                }
+
+                ;
+
+                >span {
+                    background: black;
+                }
+
+                >span:nth-of-type(1) {
+                    width: 30px;
+                }
+
+                >span:nth-of-type(2) {
+                    width: 20px;
+                }
+
+                >span:nth-of-type(3) {
+                    width: 10px;
+                }
+            }
+        }
+
+        .header__menu {
+            display: flex;
+            align-items: center;
+
+            @include mq(sp) {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 50px;
+                background: white;
+                visibility: hidden;
+                opacity: 0;
+                transition: .3s;
+            }
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+                z-index: 10;
+            }
+
+            >.menu__ttl>a {
+                display: none;
+
+                @include mq(sp) {
+                    display: block;
+                    @include font(3.5rem, $for-logo, transparent);
+                    background: linear-gradient(to right, $primary-red, $primary-green);
+                    background-clip: text;
+                }
+            }
+
+            >ul {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+                list-style: none;
+                margin-right: 100px;
+
+                @include mq(sp) {
+                    flex-direction: column;
+                    gap: 30px;
+                }
+
+                >li>a {
+                    @include font(1.5rem, $for-logo, white);
+
+                    @include mq(sp) {
+                        @include font(2rem, $for-logo, black);
+                    }
+                }
+            }
+
+            >.sns {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                @include mq(sp) {
+                    gap: 40px;
+                }
+
+                >a {
+                    >svg {
+                        font-size: 25px;
+                        color: black;
+                        vertical-align: bottom;
+                        
+                        @include mq(sp) {
+                            font-size: 40px;
+                        }
+                    }
+
+                    >img {
+                        height: 25px;
+                        width: 25px;
+
+                        @include mq(sp) {
+                            height: 40px;
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import 'vars';
+
+.postlist {
+    height: max-content;
+    min-height: 100vh;
+    width: 100vw;
+    background: white;
+
+    .postlist__ttl {
+        @include font(3rem, $for-logo, $primary-red);
+        text-align: center;
+    }
+
+    .postlist__cats {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: max-content;
+        padding: 20px;
+        margin: 0 auto;
+
+        @include mq(sp) {
+            width: 100vw;
+            overflow-x: auto;
+        }
+
+        .postlist__cat {
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: #0000;
+            padding: 10px 20px;
+            border-radius: 100px;
+            @include font(1rem, $nofont, white);
+            background: $primary-red;
+        }
+    }
+}

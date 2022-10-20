@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap");
+header {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  padding: 0 20px;
+  background: linear-gradient(to right, #9b003f, #009B6C);
+}
+header .header__wrapper {
+  height: 70px;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 480px) {
+  header .header__wrapper {
+    justify-content: center;
+  }
+}
+header .header__wrapper > .header__ttl > a {
+  font-size: 2rem;
+  font-family: "Yuji Syuku";
+  color: white;
+}
+header .header__wrapper > .hum {
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  z-index: 20;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: 0.3s;
+}
+@media screen and (max-width: 480px) {
+  header .header__wrapper > .hum {
+    display: flex;
+    position: fixed !important;
+    left: 50vw;
+    bottom: 10px;
+    transform: translate(-50%, 0);
+    background: black;
+    background: linear-gradient(to right, #9b003f, #009B6C);
+  }
+}
+header .header__wrapper > .hum > span {
+  height: 2px;
+  width: 30px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+header .header__wrapper > .hum > span:nth-of-type(1) {
+  top: 10px;
+}
+header .header__wrapper > .hum > span:nth-of-type(2) {
+  top: 19px;
+}
+header .header__wrapper > .hum > span:nth-of-type(3) {
+  top: 28px;
+}
+@media screen and (max-width: 480px) {
+  header .header__wrapper > .hum.active {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+header .header__wrapper > .hum.active > span {
+  background: black;
+}
+header .header__wrapper > .hum.active > span:nth-of-type(1) {
+  width: 30px;
+}
+header .header__wrapper > .hum.active > span:nth-of-type(2) {
+  width: 20px;
+}
+header .header__wrapper > .hum.active > span:nth-of-type(3) {
+  width: 10px;
+}
+header .header__wrapper .header__menu {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 480px) {
+  header .header__wrapper .header__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+  }
+}
+header .header__wrapper .header__menu.active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 10;
+}
+header .header__wrapper .header__menu > .menu__ttl > a {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  header .header__wrapper .header__menu > .menu__ttl > a {
+    display: block;
+    font-size: 3.5rem;
+    font-family: "Yuji Syuku";
+    color: transparent;
+    background: linear-gradient(to right, #9b003f, #009B6C);
+    -webkit-background-clip: text;
+            background-clip: text;
+  }
+}
+header .header__wrapper .header__menu > ul {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  list-style: none;
+  margin-right: 100px;
+}
+@media screen and (max-width: 480px) {
+  header .header__wrapper .header__menu > ul {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+header .header__wrapper .header__menu > ul > li > a {
+  font-size: 1.5rem;
+  font-family: "Yuji Syuku";
+  color: white;
+}
+@media screen and (max-width: 480px) {
+  header .header__wrapper .header__menu > ul > li > a {
+    font-size: 2rem;
+    font-family: "Yuji Syuku";
+    color: black;
+  }
+}
+header .header__wrapper .header__menu > .sns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (max-width: 480px) {
+  header .header__wrapper .header__menu > .sns {
+    gap: 40px;
+  }
+}
+header .header__wrapper .header__menu > .sns > a > svg {
+  font-size: 25px;
+  color: black;
+  vertical-align: bottom;
+}
+@media screen and (max-width: 480px) {
+  header .header__wrapper .header__menu > .sns > a > svg {
+    font-size: 40px;
+  }
+}
+header .header__wrapper .header__menu > .sns > a > img {
+  height: 25px;
+  width: 25px;
+}
+@media screen and (max-width: 480px) {
+  header .header__wrapper .header__menu > .sns > a > img {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.postlist {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: 100vh;
+  width: 100vw;
+  background: white;
+}
+.postlist .postlist__ttl {
+  font-size: 3rem;
+  font-family: "Yuji Syuku";
+  color: #9b003f;
+  text-align: center;
+}
+.postlist .postlist__cats {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 20px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 480px) {
+  .postlist .postlist__cats {
+    width: 100vw;
+    overflow-x: auto;
+  }
+}
+.postlist .postlist__cats .postlist__cat {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-family: "Noto Serif JP";
+  color: white;
+  background: #9b003f;
+}
+
+.post__date {
+  padding: 0.5rem;
+}
+fon .post__date > .date__ico {
+  margin-right: 5px;
+}
+
+.post__ttl {
+  font-size: 2rem;
+  font-family: "Yuji Syuku";
+  color: black;
+  font-weight: bold;
+}
+.post__ttl > a {
+  font-size: 2rem;
+  font-family: "Yuji Syuku";
+  color: black;
+  font-weight: bold;
+}
+
+.post__cat {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 2px 5px;
+  border: solid 1px #C9D6DF;
+  background: white;
+}
+
+.post__author {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 20px auto;
+}
+.post__author .author__ico {
+  height: 60px;
+  width: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+}
+.post__author .author__name {
+  font-size: 20px;
+  font-family: "Noto Serif JP";
+  color: black;
+}
+
+.post {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: 100vh;
+  width: 100vw;
+}
+.post .post__contents h1,
+.post .post__contents h2,
+.post .post__contents h3 {
+  margin: 50px 0 25px 0;
+  border-bottom: solid 1px gray;
+}
+.post .post__contents h1 {
+  font-size: 28px;
+}
+.post .post__contents h2 {
+  font-size: 24px;
+}
+.post .post__contents h3 {
+  font-size: 20px;
+}
+.post .post__contents .toc {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 20px;
+  margin: 0 auto;
+  border: solid 1px black;
+}
+.post .post__contents .toc ul {
+  margin-left: 20px;
+}
+
+.App {
+  min-height: 100vh;
+  background: #F0F5F9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif JP";
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+  vertical-align: bottom;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,87 @@
+@import 'vars';
+
+
+.post__date {
+    padding: .5rem;
+    fon
+
+    &>.date__ico {
+        margin-right: 5px;
+    }
+}
+
+.post__ttl {
+    @include font(2rem, $for-logo, black);
+    font-weight: bold;
+
+    &>a {
+        @include font(2rem, $for-logo, black);
+        font-weight: bold;
+    }
+}
+
+.post__cat {
+    width: max-content;
+    padding: 2px 5px;
+    border: solid 1px $bg-200;
+    background: white;
+}
+
+.post__author {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 20px auto;
+
+    .author__ico {
+        height: 60px;
+        width: 60px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+    }
+
+    .author__name {
+        @include font(20px, $nofont, black)
+    }
+}
+
+.post {
+    height: max-content;
+    min-height: 100vh;
+    width: 100vw;
+
+    .post__contents {
+
+        h1,
+        h2,
+        h3 {
+            margin: 50px 0 25px 0;
+            border-bottom: solid 1px gray;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        .toc {
+            width: max-content;
+            padding: 20px;
+            margin: 0 auto;
+            border: solid 1px black;
+
+            ul {
+                margin-left: 20px;
+            }
+        }
+    }
+}

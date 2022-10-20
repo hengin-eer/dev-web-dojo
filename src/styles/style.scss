@@ -1,0 +1,38 @@
+// @use 'header';
+@use 'header2';
+@use 'postlist';
+@use 'post';
+
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
+// for logo
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
+// serif
+
+@import 'vars';
+
+
+.App {
+    min-height: 100vh;
+    background: $bg-100;
+}
+
+// settings
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Serif JP';
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: #0000;
+}
+
+img {
+    vertical-align: bottom;
+}
