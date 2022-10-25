@@ -60,7 +60,9 @@ const Post = () => {
                 <div className="author__name">{fetchedPost.author}</div>
             </div>
             <div className="post__contents">
-                <ReactMarkdown components={{ h1: Toclist, h2: Toclist }} allowedElements={["h1", "h2"]} >{fetchedPost.content}</ReactMarkdown>
+                <div className="toc">
+                    <ReactMarkdown components={{ h1: Toclist, h2: Toclist }} allowedElements={["h1", "h2"]} >{fetchedPost.content}</ReactMarkdown>
+                </div>
                 <ReactMarkdown components={{ h1: H1, h2: H2 }} rehypePlugins={[rehypeRaw]} >{fetchedPost.content}</ReactMarkdown>
             </div>
             <hr />

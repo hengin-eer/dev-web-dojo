@@ -12,6 +12,11 @@ import Post from './conponents/Post';
 
 function App() {
   const [active, setActive] = useState(false);
+  if (active) {
+    document.body.classList.add('active');
+  } else {
+    document.body.classList.remove('active');
+  }
 
   return (
     <Router>
