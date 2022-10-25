@@ -2,11 +2,12 @@
 
 header {
     user-select: none;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100vw;
     padding: 0 20px;
-    background: linear-gradient(to right, $primary-red, $primary-green);
+    // background: $liner-100;
+    z-index: 10;
 
     .header__wrapper {
         height: 70px;

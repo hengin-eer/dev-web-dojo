@@ -1,5 +1,6 @@
 // @use 'header';
 @use 'header2';
+@use 'homepage';
 @use 'postlist';
 @use 'post';
 
@@ -10,6 +11,9 @@
 
 @import 'vars';
 
+body.active {
+    overflow: hidden;
+}
 
 .App {
     min-height: 100vh;

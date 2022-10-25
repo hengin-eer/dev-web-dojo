@@ -5,12 +5,11 @@ header {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100vw;
   padding: 0 20px;
-  background: linear-gradient(to right, #9b003f, #009B6C);
+  z-index: 10;
 }
 header .header__wrapper {
   height: 70px;
@@ -185,6 +184,61 @@ header .header__wrapper .header__menu > .sns > a > img {
   }
 }
 
+.home > .home__topview {
+  height: 100vh;
+  width: 100vw;
+  background: url("../conponents/media/topview2.jpg") center;
+  background-size: cover;
+}
+@media screen and (max-width: 480px) {
+  .home > .home__topview {
+    background-position: 20% center;
+  }
+}
+.home > .home__topview > .topview__inner {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+.home > .home__topview > .topview__inner > .inner__ttl {
+  word-break: keep-all;
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Yuji Syuku";
+  color: white;
+}
+@media screen and (max-width: 480px) {
+  .home > .home__topview > .topview__inner > .inner__ttl {
+    font-size: 3.5rem;
+    font-family: "Yuji Syuku";
+    color: white;
+  }
+}
+.home > .home__topview > .topview__inner > .inner__buttons {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+@media screen and (max-width: 480px) {
+  .home > .home__topview > .topview__inner > .inner__buttons {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn {
+  text-align: center;
+  padding: 10px;
+  width: 200px;
+  background: white;
+  font-size: 20px;
+  font-family: "Yuji Syuku";
+  color: black;
+}
+
 .postlist {
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -316,6 +370,10 @@ fon .post__date > .date__ico {
 }
 .post .post__contents .toc ul {
   margin-left: 20px;
+}
+
+body.active {
+  overflow: hidden;
 }
 
 .App {
