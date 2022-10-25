@@ -1,0 +1,54 @@
+@import 'vars';
+
+.home {
+    >.home__topview {
+        height: 100vh;
+        width: 100vw;
+        background: url('../conponents/media/topview2.jpg') center;
+        background-size: cover;
+
+        @include mq(sp) {
+            background-position: 20% center;
+        }
+
+        >.topview__inner {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+
+            >.inner__ttl {
+                word-break: keep-all;
+                text-align: center;
+                @include font(5rem, $for-logo, white);
+
+                @include mq(sp) {
+                    @include font(3.5rem, $for-logo, white);
+                }
+            }
+
+            >.inner__buttons {
+                display: flex;
+                align-items: center;
+                gap: 100px;
+
+                @include mq(sp) {
+                    flex-direction: column;
+                    gap: 30px;
+                }
+
+                >.inner__btn {
+                    text-align: center;
+                    padding: 10px;
+                    width: 200px;
+                    background: white;
+                    // border-radius: 50px 0 50px 0;
+                    @include font(20px, $for-logo, black);
+                }
+            }
+        }
+    }
+}
