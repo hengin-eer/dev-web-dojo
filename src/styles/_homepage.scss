@@ -4,7 +4,7 @@
     >.home__topview {
         height: 100vh;
         width: 100vw;
-        background: url('../conponents/media/topview2.jpg') center;
+        background: url('../conponents/media/topview.jpg') center;
         background-size: cover;
 
         @include mq(sp) {
@@ -23,10 +23,10 @@
             >.inner__ttl {
                 word-break: keep-all;
                 text-align: center;
-                @include font(5rem, $for-logo, white);
+                @include font(5rem, $for-logo, $te-100);
 
                 @include mq(sp) {
-                    @include font(3.5rem, $for-logo, white);
+                    @include font(3.5rem, $for-logo, $te-100);
                 }
             }
 
@@ -44,9 +44,27 @@
                     text-align: center;
                     padding: 10px;
                     width: 200px;
-                    background: white;
+                    background: $bg-100;
                     // border-radius: 50px 0 50px 0;
                     @include font(20px, $for-logo, black);
+                }
+            }
+        }
+    }
+    >.home__about {
+        width: 100vw;
+        
+        >.about__inner {
+
+            >.about__ttl {
+                margin: 0 auto;
+                width: max-content;
+
+                >.ttl__main {
+                    text-align: center;
+                    @include font(2rem, $for-logo, transparent);
+                    background: $liner-100;
+                    background-clip: text;
                 }
             }
         }

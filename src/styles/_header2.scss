@@ -6,7 +6,7 @@ header {
     top: 0;
     width: 100vw;
     padding: 0 20px;
-    // background: $liner-100;
+    background: $blur;
     z-index: 10;
 
     .header__wrapper {
@@ -22,7 +22,7 @@ header {
         }
 
         >.header__ttl>a {
-            @include font(2rem, $for-logo, white);
+            @include font(2rem, $for-logo, $te-100);
         }
 
         >.hum {
@@ -52,7 +52,7 @@ header {
             >span {
                 height: 2px;
                 width: 30px;
-                background: white;
+                background: $te-100;
                 border-radius: 2px;
                 transition: .5s;
             }
@@ -109,7 +109,7 @@ header {
                 align-items: center;
                 justify-content: center;
                 gap: 50px;
-                background: white;
+                background: $bg-100;
                 visibility: hidden;
                 opacity: 0;
                 transition: .3s;
@@ -145,10 +145,10 @@ header {
                 }
 
                 >li>a {
-                    @include font(1.5rem, $for-logo, white);
+                    @include font(1.5rem, $for-logo, $te-200);
 
                     @include mq(sp) {
-                        @include font(2rem, $for-logo, black);
+                        @include font(2rem, $for-logo, $te-200);
                     }
                 }
             }

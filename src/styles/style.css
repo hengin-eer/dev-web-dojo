@@ -9,6 +9,7 @@ header {
   top: 0;
   width: 100vw;
   padding: 0 20px;
+  background: rgba(255, 255, 255, 0.6);
   z-index: 10;
 }
 header .header__wrapper {
@@ -27,7 +28,7 @@ header .header__wrapper {
 header .header__wrapper > .header__ttl > a {
   font-size: 2rem;
   font-family: "Yuji Syuku";
-  color: white;
+  color: #1E2022;
 }
 header .header__wrapper > .hum {
   cursor: pointer;
@@ -57,7 +58,7 @@ header .header__wrapper > .hum {
 header .header__wrapper > .hum > span {
   height: 2px;
   width: 30px;
-  background: white;
+  background: #1E2022;
   border-radius: 2px;
   transition: 0.5s;
 }
@@ -103,7 +104,7 @@ header .header__wrapper .header__menu {
     align-items: center;
     justify-content: center;
     gap: 50px;
-    background: white;
+    background: #F0F5F9;
     visibility: hidden;
     opacity: 0;
     transition: 0.3s;
@@ -144,13 +145,13 @@ header .header__wrapper .header__menu > ul {
 header .header__wrapper .header__menu > ul > li > a {
   font-size: 1.5rem;
   font-family: "Yuji Syuku";
-  color: white;
+  color: #52616B;
 }
 @media screen and (max-width: 480px) {
   header .header__wrapper .header__menu > ul > li > a {
     font-size: 2rem;
     font-family: "Yuji Syuku";
-    color: black;
+    color: #52616B;
   }
 }
 header .header__wrapper .header__menu > .sns {
@@ -187,7 +188,7 @@ header .header__wrapper .header__menu > .sns > a > img {
 .home > .home__topview {
   height: 100vh;
   width: 100vw;
-  background: url("../conponents/media/topview2.jpg") center;
+  background: url("../conponents/media/topview.jpg") center;
   background-size: cover;
 }
 @media screen and (max-width: 480px) {
@@ -209,13 +210,13 @@ header .header__wrapper .header__menu > .sns > a > img {
   text-align: center;
   font-size: 5rem;
   font-family: "Yuji Syuku";
-  color: white;
+  color: #1E2022;
 }
 @media screen and (max-width: 480px) {
   .home > .home__topview > .topview__inner > .inner__ttl {
     font-size: 3.5rem;
     font-family: "Yuji Syuku";
-    color: white;
+    color: #1E2022;
   }
 }
 .home > .home__topview > .topview__inner > .inner__buttons {
@@ -233,10 +234,28 @@ header .header__wrapper .header__menu > .sns > a > img {
   text-align: center;
   padding: 10px;
   width: 200px;
-  background: white;
+  background: #F0F5F9;
   font-size: 20px;
   font-family: "Yuji Syuku";
   color: black;
+}
+.home > .home__about {
+  width: 100vw;
+}
+.home > .home__about > .about__inner > .about__ttl {
+  margin: 0 auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.home > .home__about > .about__inner > .about__ttl > .ttl__main {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Yuji Syuku";
+  color: transparent;
+  background: linear-gradient(to right, #9b003f, #009B6C);
+  -webkit-background-clip: text;
+          background-clip: text;
 }
 
 .postlist {

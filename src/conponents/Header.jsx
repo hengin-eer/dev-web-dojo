@@ -18,10 +18,10 @@ const Header = ({ active, setActive }) => {
                 <nav className={`${active ? 'header__menu active' : 'header__menu'}`}>
                     <div className="menu__ttl"><Link to="/" onClick={() => setActive(!active)}>Web道場</Link></div>
                     <ul>
-                        <li><Link to="/cource/" onClick={() => setActive(!active)}>Cource</Link></li>
-                        <li><Link to="/posts/" onClick={() => setActive(!active)}>Posts</Link></li>
-                        <li><Link to="/about/" onClick={() => setActive(!active)}>About</Link></li>
-                        <li><Link to="/contact/" onClick={() => setActive(!active)}>Contact</Link></li>
+                        <li><Link to="/cource/" onClick={() => setActive(false)}>Cource</Link></li>
+                        <li><Link to="/posts/" onClick={() => setActive(false)}>Posts</Link></li>
+                        <li><Link to="/about/" onClick={() => setActive(false)}>About</Link></li>
+                        <li><Link to="/contact/" onClick={() => setActive(false)}>Contact</Link></li>
                     </ul>
                     <div className="sns">
                         <a href="https://twitter.com" className='twitter' target="_blank" rel="noreferrer" ><FontAwesomeIcon icon={faTwitter} /></a>

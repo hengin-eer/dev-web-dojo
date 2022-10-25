@@ -5,8 +5,7 @@ const CourcePage = () => {
 
   return (
     <div className='cource'>
-      <h3>Cource</h3>
-      <p>Select cource you like!</p>
+      <h2>🚧building now...</h2>
     </div>
   )
 }
