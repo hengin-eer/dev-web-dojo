@@ -4,7 +4,11 @@
 @use 'postlist';
 @use 'post';
 
-@import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
+@font-face {
+    font-family: 'Yuji Syuku';
+    src: url(./fonts/YujiSyuku-Regular.ttf) format(trutype);
+}
 // for logo
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
 // serif
@@ -39,4 +43,12 @@ a {
 
 img {
     vertical-align: bottom;
+}
+
+.colorLinear {
+    word-break: keep-all;
+    font-family: $for-logo;
+    color: transparent;
+    background: $liner-100;
+    background-clip: text;
 }
