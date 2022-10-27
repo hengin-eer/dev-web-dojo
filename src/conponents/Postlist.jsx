@@ -17,7 +17,7 @@ function Postlist() {
     console.log(data)
 
     return (
-        <div className='postlist'>
+        <div className='postlist header__support'>
             <nav className="postlist__nav">
                 <ul className='postlist__cats'>
                     <FontAwesomeIcon className='cats__tags' icon={faTags} />
