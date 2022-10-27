@@ -1,5 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap");
+.header__support {
+  padding-top: 60px;
+}
+
 header {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -12,8 +15,8 @@ header {
   background: rgba(255, 255, 255, 0.6);
   z-index: 10;
 }
-header .header__wrapper {
-  height: 70px;
+header > .header__inner {
+  height: 60px;
   max-width: 1024px;
   margin: 0 auto;
   display: flex;
@@ -21,16 +24,16 @@ header .header__wrapper {
   justify-content: space-between;
 }
 @media screen and (max-width: 480px) {
-  header .header__wrapper {
+  header > .header__inner {
     justify-content: center;
   }
 }
-header .header__wrapper > .header__ttl > a {
+header > .header__inner > .header__ttl > a {
   font-size: 2rem;
   font-family: "Yuji Syuku";
-  color: #1E2022;
+  color: transparent;
 }
-header .header__wrapper > .hum {
+header > .header__inner > .hum {
   cursor: pointer;
   height: 60px;
   width: 60px;
@@ -45,55 +48,55 @@ header .header__wrapper > .hum {
   transition: 0.3s;
 }
 @media screen and (max-width: 480px) {
-  header .header__wrapper > .hum {
+  header > .header__inner > .hum {
     display: flex;
     position: fixed !important;
     left: 50vw;
     bottom: 10px;
     transform: translate(-50%, 0);
     background: black;
-    background: linear-gradient(to right, #9b003f, #009B6C);
+    background: #C9D6DF;
   }
 }
-header .header__wrapper > .hum > span {
+header > .header__inner > .hum > span {
   height: 2px;
   width: 30px;
   background: #1E2022;
   border-radius: 2px;
   transition: 0.5s;
 }
-header .header__wrapper > .hum > span:nth-of-type(1) {
+header > .header__inner > .hum > span:nth-of-type(1) {
   top: 10px;
 }
-header .header__wrapper > .hum > span:nth-of-type(2) {
+header > .header__inner > .hum > span:nth-of-type(2) {
   top: 19px;
 }
-header .header__wrapper > .hum > span:nth-of-type(3) {
+header > .header__inner > .hum > span:nth-of-type(3) {
   top: 28px;
 }
 @media screen and (max-width: 480px) {
-  header .header__wrapper > .hum.active {
+  header > .header__inner > .hum.active {
     background: rgba(0, 0, 0, 0);
   }
 }
-header .header__wrapper > .hum.active > span {
+header > .header__inner > .hum.active > span {
   background: black;
 }
-header .header__wrapper > .hum.active > span:nth-of-type(1) {
+header > .header__inner > .hum.active > span:nth-of-type(1) {
   width: 30px;
 }
-header .header__wrapper > .hum.active > span:nth-of-type(2) {
+header > .header__inner > .hum.active > span:nth-of-type(2) {
   width: 20px;
 }
-header .header__wrapper > .hum.active > span:nth-of-type(3) {
+header > .header__inner > .hum.active > span:nth-of-type(3) {
   width: 10px;
 }
-header .header__wrapper .header__menu {
+header > .header__inner .header__menu {
   display: flex;
   align-items: center;
 }
 @media screen and (max-width: 480px) {
-  header .header__wrapper .header__menu {
+  header > .header__inner .header__menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -110,76 +113,80 @@ header .header__wrapper .header__menu {
     transition: 0.3s;
   }
 }
-header .header__wrapper .header__menu.active {
+header > .header__inner .header__menu.active {
   visibility: visible;
   opacity: 1;
   z-index: 10;
 }
-header .header__wrapper .header__menu > .menu__ttl > a {
+header > .header__inner .header__menu > .menu__ttl > a {
   display: none;
 }
 @media screen and (max-width: 480px) {
-  header .header__wrapper .header__menu > .menu__ttl > a {
+  header > .header__inner .header__menu > .menu__ttl > a {
     display: block;
     font-size: 3.5rem;
     font-family: "Yuji Syuku";
     color: transparent;
-    background: linear-gradient(to right, #9b003f, #009B6C);
-    -webkit-background-clip: text;
-            background-clip: text;
   }
 }
-header .header__wrapper .header__menu > ul {
+header > .header__inner .header__menu > ul {
   display: flex;
   align-items: center;
   gap: 50px;
   list-style: none;
-  margin-right: 100px;
+  margin-right: 80px;
 }
-@media screen and (max-width: 480px) {
-  header .header__wrapper .header__menu > ul {
-    flex-direction: column;
+@media screen and (max-width: 768px) {
+  header > .header__inner .header__menu > ul {
     gap: 30px;
+    margin-right: 30px;
   }
 }
-header .header__wrapper .header__menu > ul > li > a {
-  font-size: 1.5rem;
+@media screen and (max-width: 480px) {
+  header > .header__inner .header__menu > ul {
+    flex-direction: column;
+    gap: 30px;
+    margin-right: 0;
+  }
+}
+header > .header__inner .header__menu > ul > li > a {
+  font-size: calc(0.7rem + 1vw);
   font-family: "Yuji Syuku";
   color: #52616B;
 }
 @media screen and (max-width: 480px) {
-  header .header__wrapper .header__menu > ul > li > a {
+  header > .header__inner .header__menu > ul > li > a {
     font-size: 2rem;
     font-family: "Yuji Syuku";
     color: #52616B;
   }
 }
-header .header__wrapper .header__menu > .sns {
+header > .header__inner .header__menu > .sns {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 @media screen and (max-width: 480px) {
-  header .header__wrapper .header__menu > .sns {
+  header > .header__inner .header__menu > .sns {
     gap: 40px;
   }
 }
-header .header__wrapper .header__menu > .sns > a > svg {
+header > .header__inner .header__menu > .sns > a > svg {
   font-size: 25px;
   color: black;
   vertical-align: bottom;
 }
 @media screen and (max-width: 480px) {
-  header .header__wrapper .header__menu > .sns > a > svg {
+  header > .header__inner .header__menu > .sns > a > svg {
     font-size: 40px;
   }
 }
-header .header__wrapper .header__menu > .sns > a > img {
+header > .header__inner .header__menu > .sns > a > img {
   height: 25px;
   width: 25px;
 }
 @media screen and (max-width: 480px) {
-  header .header__wrapper .header__menu > .sns > a > img {
+  header > .header__inner .header__menu > .sns > a > img {
     height: 40px;
     width: 40px;
   }
@@ -227,7 +234,7 @@ header .header__wrapper .header__menu > .sns > a > img {
 @media screen and (max-width: 480px) {
   .home > .home__topview > .topview__inner > .inner__buttons {
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
   }
 }
 .home > .home__topview > .topview__inner > .inner__buttons > .inner__btn {
@@ -235,27 +242,64 @@ header .header__wrapper .header__menu > .sns > a > img {
   padding: 10px;
   width: 200px;
   background: #F0F5F9;
+  border-radius: 50px 0 50px 0;
+  box-shadow: 2px 2px 5px #009B6C;
   font-size: 20px;
   font-family: "Yuji Syuku";
   color: black;
 }
 .home > .home__about {
   width: 100vw;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #171717;
 }
-.home > .home__about > .about__inner > .about__ttl {
-  margin: 0 auto;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+.home > .home__about > .about__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
 }
 .home > .home__about > .about__inner > .about__ttl > .ttl__main {
+  word-break: keep-all;
   text-align: center;
-  font-size: 2rem;
+  line-height: 1;
+  font-size: calc(2rem + 3vw);
   font-family: "Yuji Syuku";
-  color: transparent;
-  background: linear-gradient(to right, #9b003f, #009B6C);
-  -webkit-background-clip: text;
-          background-clip: text;
+  color: #B4A5A5;
+}
+.home > .home__about > .about__inner > .about__ttl > .ttl__sub {
+  padding-top: 20px;
+  text-align: center;
+  font-size: calc(1rem + 1vw);
+  font-family: "Yuji Syuku";
+  color: #52616B;
+}
+.home > .home__about > .about__inner .about__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.home > .home__about > .about__inner .about__desc > p {
+  font-size: calc(0.5rem + 1vw);
+  font-family: "Yuji Syuku";
+  color: #B4A5A5;
+}
+.home > .home__about > .about__inner .about__btn {
+  text-align: center;
+  padding: 10px;
+  width: 200px;
+  background: #171717;
+  border-radius: 50px 0 50px 0;
+  box-shadow: 5px 5px 20px #9b003f;
+  font-size: 20px;
+  font-family: "Yuji Syuku";
+  color: #B4A5A5;
 }
 
 .postlist {
@@ -391,6 +435,10 @@ fon .post__date > .date__ico {
   margin-left: 20px;
 }
 
+@font-face {
+  font-family: "Yuji Syuku";
+  src: url(./fonts/YujiSyuku-Regular.ttf) format(trutype);
+}
 body.active {
   overflow: hidden;
 }
@@ -418,4 +466,13 @@ a {
 
 img {
   vertical-align: bottom;
+}
+
+.colorLinear {
+  word-break: keep-all;
+  font-family: "Yuji Syuku";
+  color: transparent;
+  background: linear-gradient(to right, #9b003f, #009B6C);
+  -webkit-background-clip: text;
+          background-clip: text;
 }/*# sourceMappingURL=style.css.map */
