@@ -37,7 +37,7 @@
 
                 @include mq(sp) {
                     flex-direction: column;
-                    gap: 30px;
+                    gap: 50px;
                 }
 
                 >.inner__btn {
@@ -45,27 +45,66 @@
                     padding: 10px;
                     width: 200px;
                     background: $bg-100;
-                    // border-radius: 50px 0 50px 0;
+                    border-radius: 50px 0 50px 0;
+                    box-shadow: 2px 2px 5px $primary-green;
                     @include font(20px, $for-logo, black);
                 }
             }
         }
     }
+
     >.home__about {
         width: 100vw;
-        
+        padding: 60px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $bg-300;
+
+
         >.about__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
 
             >.about__ttl {
-                margin: 0 auto;
-                width: max-content;
 
                 >.ttl__main {
+                    word-break: keep-all;
                     text-align: center;
-                    @include font(2rem, $for-logo, transparent);
-                    background: $liner-100;
-                    background-clip: text;
+                    line-height: 1;
+                    @include font(calc(2rem + 3vw), $for-logo, $te-300);
                 }
+
+                >.ttl__sub {
+                    padding-top: 20px;
+                    text-align: center;
+                    @include font(calc(1rem + 1vw), $for-logo, $te-200);
+                }
+            }
+
+            .about__desc {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+                >p {
+                    @include font(calc(.5rem + 1vw), $for-logo, $te-300);
+                }
+            }
+
+            .about__btn {
+                text-align: center;
+                padding: 10px;
+                width: 200px;
+                background: $bg-300;
+                border-radius: 50px 0 50px 0;
+                box-shadow: 5px 5px 20px $primary-red;
+                @include font(20px, $for-logo, $te-300);
             }
         }
     }
