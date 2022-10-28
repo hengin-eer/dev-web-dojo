@@ -1,38 +1,49 @@
 @import 'vars';
 
+.postlist~.header__wrapper {
+    background: black;
+}
+
 .postlist {
     height: max-content;
-    min-height: 100vh;
+    min-height: 200vh;
     width: 100vw;
-    background: white;
+    background: $bg-100;
 
-    .postlist__ttl {
-        @include font(3rem, $for-logo, $primary-red);
-        text-align: center;
-    }
-
-    .postlist__cats {
-        list-style: none;
+    >.postlist__nav {
+        position: sticky;
+        top: 60px;
+        background: $bg-300;
+        border-bottom: 1px solid $te-100;
+        height: 40px;
+        min-width: 100vw;
         display: flex;
         align-items: center;
-        gap: 1rem;
-        width: max-content;
-        padding: 20px;
-        margin: 0 auto;
+        justify-content: center;
+        gap: 50px;
+        overflow-x: scroll;
+
 
         @include mq(sp) {
-            width: 100vw;
-            overflow-x: auto;
+            justify-content: flex-start;
+            padding-left: 20px;
         }
 
-        .postlist__cat {
-            cursor: pointer;
-            user-select: none;
-            -webkit-tap-highlight-color: #0000;
-            padding: 10px 20px;
-            border-radius: 100px;
-            @include font(1rem, $nofont, white);
-            background: $primary-red;
+        >.cats__tags {
+            @include font(1.5rem, $nofont, $te-300);
+        }
+
+        >.postlist__cats {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            >.postlist__cat {
+                cursor: pointer;
+                user-select: none;
+                @include font(1.2rem, $for-logo, $te-300);
+            }
         }
     }
 }
