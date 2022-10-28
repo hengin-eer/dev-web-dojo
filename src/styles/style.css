@@ -13,6 +13,8 @@ header {
   width: 100vw;
   padding: 0 20px;
   background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: saturate(200%) blur(20px);
+          backdrop-filter: saturate(200%) blur(20px);
   z-index: 10;
 }
 header > .header__inner {
@@ -32,64 +34,6 @@ header > .header__inner > .header__ttl > a {
   font-size: 2rem;
   font-family: "Yuji Syuku";
   color: transparent;
-}
-header > .header__inner > .hum {
-  cursor: pointer;
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  z-index: 20;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  transition: 0.3s;
-}
-@media screen and (max-width: 480px) {
-  header > .header__inner > .hum {
-    display: flex;
-    position: fixed !important;
-    left: 50vw;
-    bottom: 10px;
-    transform: translate(-50%, 0);
-    background: black;
-    background: #C9D6DF;
-  }
-}
-header > .header__inner > .hum > span {
-  height: 2px;
-  width: 30px;
-  background: #1E2022;
-  border-radius: 2px;
-  transition: 0.5s;
-}
-header > .header__inner > .hum > span:nth-of-type(1) {
-  top: 10px;
-}
-header > .header__inner > .hum > span:nth-of-type(2) {
-  top: 19px;
-}
-header > .header__inner > .hum > span:nth-of-type(3) {
-  top: 28px;
-}
-@media screen and (max-width: 480px) {
-  header > .header__inner > .hum.active {
-    background: rgba(0, 0, 0, 0);
-  }
-}
-header > .header__inner > .hum.active > span {
-  background: black;
-}
-header > .header__inner > .hum.active > span:nth-of-type(1) {
-  width: 30px;
-}
-header > .header__inner > .hum.active > span:nth-of-type(2) {
-  width: 20px;
-}
-header > .header__inner > .hum.active > span:nth-of-type(3) {
-  width: 10px;
 }
 header > .header__inner .header__menu {
   display: flex;
@@ -190,6 +134,62 @@ header > .header__inner .header__menu > .sns > a > img {
     height: 40px;
     width: 40px;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .hum {
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    z-index: 20;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition: 0.3s;
+    position: fixed !important;
+    left: 50vw;
+    bottom: 10px;
+    transform: translate(-50%, 0);
+    background: black;
+    background: #C9D6DF;
+  }
+}
+.hum > span {
+  height: 2px;
+  width: 30px;
+  background: #1E2022;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+.hum > span:nth-of-type(1) {
+  top: 10px;
+}
+.hum > span:nth-of-type(2) {
+  top: 19px;
+}
+.hum > span:nth-of-type(3) {
+  top: 28px;
+}
+@media screen and (max-width: 480px) {
+  .hum.active {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+.hum.active > span {
+  background: black;
+}
+.hum.active > span:nth-of-type(1) {
+  width: 30px;
+}
+.hum.active > span:nth-of-type(2) {
+  width: 20px;
+}
+.hum.active > span:nth-of-type(3) {
+  width: 10px;
 }
 
 .home > .home__topview {
@@ -302,50 +302,58 @@ header > .header__inner .header__menu > .sns > a > img {
   color: #B4A5A5;
 }
 
+.postlist ~ .header__wrapper {
+  background: black;
+}
+
 .postlist {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  min-height: 100vh;
+  min-height: 200vh;
   width: 100vw;
-  background: white;
+  background: #F0F5F9;
 }
-.postlist .postlist__ttl {
-  font-size: 3rem;
-  font-family: "Yuji Syuku";
-  color: #9b003f;
-  text-align: center;
+.postlist > .postlist__nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+  background: #171717;
+  border-bottom: 1px solid #1E2022;
+  height: 40px;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  overflow-x: scroll;
 }
-.postlist .postlist__cats {
+@media screen and (max-width: 480px) {
+  .postlist > .postlist__nav {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+}
+.postlist > .postlist__nav > .cats__tags {
+  font-size: 1.5rem;
+  font-family: "Noto Serif JP";
+  color: #B4A5A5;
+}
+.postlist > .postlist__nav > .postlist__cats {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  padding: 20px;
-  margin: 0 auto;
+  gap: 30px;
 }
-@media screen and (max-width: 480px) {
-  .postlist .postlist__cats {
-    width: 100vw;
-    overflow-x: auto;
-  }
-}
-.postlist .postlist__cats .postlist__cat {
+.postlist > .postlist__nav > .postlist__cats > .postlist__cat {
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  padding: 10px 20px;
-  border-radius: 100px;
-  font-size: 1rem;
-  font-family: "Noto Serif JP";
-  color: white;
-  background: #9b003f;
+  font-size: 1.2rem;
+  font-family: "Yuji Syuku";
+  color: #B4A5A5;
 }
 
 .post__date {

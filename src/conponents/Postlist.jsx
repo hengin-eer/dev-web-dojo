@@ -19,8 +19,8 @@ function Postlist() {
     return (
         <div className='postlist header__support'>
             <nav className="postlist__nav">
+                <FontAwesomeIcon className='cats__tags' icon={faTags} />
                 <ul className='postlist__cats'>
-                    <FontAwesomeIcon className='cats__tags' icon={faTags} />
                     <li className='postlist__cat' onClick={() => setData(postlist)}>All</li>
                     <li className='postlist__cat' onClick={() => filterCat('HTML')}>HTML</li>
                     <li className='postlist__cat' onClick={() => filterCat('CSS')}>CSS</li>

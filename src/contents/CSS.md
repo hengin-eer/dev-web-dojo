@@ -1,10 +1,8 @@
 ---
 id: 2
-title: CSS
 author: turpan
 date: 9/28, 2022
 category: CSS
-slug: about-css
 ---
 
 

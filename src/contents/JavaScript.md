@@ -1,10 +1,8 @@
 ---
 id: 3
-title: JavaScript
 author: tkRyo
 date: 10/1, 2022
 category: JavaScript
-slug: about-js
 ---
 
 
