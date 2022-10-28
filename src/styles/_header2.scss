@@ -11,6 +11,7 @@ header {
     width: 100vw;
     padding: 0 20px;
     background: $blur;
+    backdrop-filter: saturate(200%) blur(20px);
     z-index: 10;
 
     >.header__inner {
@@ -27,75 +28,6 @@ header {
 
         >.header__ttl>a {
             @include font(2rem, $for-logo, $nocl);
-        }
-
-        >.hum {
-            cursor: pointer;
-            height: 60px;
-            width: 60px;
-            border-radius: 50%;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            z-index: 20;
-            -webkit-tap-highlight-color: #0000;
-            transition: .3s;
-
-            @include mq(sp) {
-                display: flex;
-                position: fixed !important;
-                left: 50vw;
-                bottom: 10px;
-                transform: translate(-50%, 0);
-                background: black;
-                background: $bg-200;
-            }
-
-            >span {
-                height: 2px;
-                width: 30px;
-                background: $te-100;
-                border-radius: 2px;
-                transition: .5s;
-            }
-
-            >span:nth-of-type(1) {
-                top: 10px;
-            }
-
-            >span:nth-of-type(2) {
-                top: 19px;
-            }
-
-            >span:nth-of-type(3) {
-                top: 28px;
-            }
-
-            &.active {
-                @include mq(sp) {
-                    background: #0000;
-                }
-
-                ;
-
-                >span {
-                    background: black;
-                }
-
-                >span:nth-of-type(1) {
-                    width: 30px;
-                }
-
-                >span:nth-of-type(2) {
-                    width: 20px;
-                }
-
-                >span:nth-of-type(3) {
-                    width: 10px;
-                }
-            }
         }
 
         .header__menu {
@@ -175,7 +107,7 @@ header {
                         font-size: 25px;
                         color: black;
                         vertical-align: bottom;
-                        
+
                         @include mq(sp) {
                             font-size: 40px;
                         }
@@ -192,6 +124,72 @@ header {
                     }
                 }
             }
+        }
+    }
+}
+
+.hum {
+
+    @include mq(sp) {
+        cursor: pointer;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        z-index: 20;
+        -webkit-tap-highlight-color: #0000;
+        transition: .3s;
+        position: fixed !important;
+        left: 50vw;
+        bottom: 10px;
+        transform: translate(-50%, 0);
+        background: black;
+        background: $bg-200;
+    }
+
+    >span {
+        height: 2px;
+        width: 30px;
+        background: $te-100;
+        border-radius: 2px;
+        transition: .5s;
+    }
+
+    >span:nth-of-type(1) {
+        top: 10px;
+    }
+
+    >span:nth-of-type(2) {
+        top: 19px;
+    }
+
+    >span:nth-of-type(3) {
+        top: 28px;
+    }
+
+    &.active {
+        @include mq(sp) {
+            background: #0000;
+        }
+
+        >span {
+            background: black;
+        }
+
+        >span:nth-of-type(1) {
+            width: 30px;
+        }
+
+        >span:nth-of-type(2) {
+            width: 20px;
+        }
+
+        >span:nth-of-type(3) {
+            width: 10px;
         }
     }
 }
