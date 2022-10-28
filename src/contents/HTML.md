@@ -1,10 +1,8 @@
 ---
 id: 1
-title: HTML入門 其之1
 author: hengineer
 date: 9/27, 2022
 category: HTML
-slug: about-html
 ---
 
 
