@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Web dojo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+nitacwplのWeb道場について
 
-## Available Scripts
+- [Web dojo](#web-dojo)
+  - [記事の生成及び更新方法](#記事の生成及び更新方法)
+    - [記事の生成・更新](#記事の生成更新)
+    - [`posts.json`の記事データを更新する](#postsjsonの記事データを更新する)
+    - [静的コンテンツの生成](#静的コンテンツの生成)
 
-In the project directory, you can run:
 
-### `npm start`
+## 記事の生成及び更新方法
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+記事の更新方法をここに記す
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### 記事の生成・更新
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+もともと存在するmarkdownファイルを変更するのでなく、新しい記事を追加したい場合、`src/contents`にmarkdownで書かれた記事を追加する
 
-### `npm run build`
+もともと存在するmarkdownファイルを編集する場合、markdownファイルの編集が終わったら保存する
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `posts.json`の記事データを更新する
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`public/main.js`を実行する
 
-### `npm run eject`
+正確には同ファイルの関数 `getPost`を実行する
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+（本当は非同期なりなんなりで自動で実行したいが、経験が浅いためやり方が分からない）
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+実行するためのコマンドは**`npm run server`**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+コンソールで`posts.json`の結果が表示される
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### 静的コンテンツの生成
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+記事の生成及び更新を終えたらビルドして静的コンテンツを生成する
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ビルドは`npm run build`で実行できる
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+あとはビルドしてできた`build`ディレクトリをデプロイするだけ
