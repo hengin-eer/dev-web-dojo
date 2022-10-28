@@ -43,11 +43,11 @@ const getPost = () => {
                 const content = parseContent({ lines, metadataIndices })
                 post = {
                     id: metadata.id,
-                    title: metadata.title ? metadata.title : "No title",
+                    title: file.replace(".md", ""),
                     author: metadata.author ? metadata.author : "No author",
                     date: metadata.date ? metadata.date : "No date",
                     category: metadata.category ? metadata.category : "No category",
-                    slug: metadata.slug ? metadata.slug : metadata.id,
+                    slug: file.replace(".md", ""),
                     content: content ? content : "No content",
                 }
                 postlist.push(post)
