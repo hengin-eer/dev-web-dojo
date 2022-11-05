@@ -19,7 +19,7 @@ header {
 }
 header > .header__inner {
   height: 60px;
-  max-width: 1024px;
+  max-width: 1080px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -215,13 +215,14 @@ header > .header__inner .header__menu > .sns > a > img {
 .home > .home__topview > .topview__inner > .inner__ttl {
   word-break: keep-all;
   text-align: center;
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: "Yuji Syuku";
   color: #1E2022;
+  max-width: 17ch;
 }
 @media screen and (max-width: 480px) {
   .home > .home__topview > .topview__inner > .inner__ttl {
-    font-size: 3.5rem;
+    font-size: 2.3rem;
     font-family: "Yuji Syuku";
     color: #1E2022;
   }
@@ -241,12 +242,12 @@ header > .header__inner .header__menu > .sns > a > img {
   text-align: center;
   padding: 10px;
   width: 200px;
-  background: #F0F5F9;
-  border-radius: 50px 0 50px 0;
-  box-shadow: 2px 2px 5px #009B6C;
+  background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
+  border-radius: 50px;
   font-size: 20px;
   font-family: "Yuji Syuku";
-  color: black;
+  color: white;
+  position: relative;
 }
 .home > .home__about {
   width: 100vw;
@@ -296,7 +297,7 @@ header > .header__inner .header__menu > .sns > a > img {
   width: 200px;
   background: #171717;
   border-radius: 50px 0 50px 0;
-  box-shadow: 5px 5px 20px #9b003f;
+  box-shadow: 5px 5px 20px #2869ff;
   font-size: 20px;
   font-family: "Yuji Syuku";
   color: #B4A5A5;
@@ -445,7 +446,7 @@ fon .post__date > .date__ico {
 
 @font-face {
   font-family: "Yuji Syuku";
-  src: url(./fonts/YujiSyuku-Regular.ttf) format(trutype);
+  src: url(./fonts/YujiSyuku-Regular.ttf) format(truetype);
 }
 body.active {
   overflow: hidden;
@@ -480,7 +481,7 @@ img {
   word-break: keep-all;
   font-family: "Yuji Syuku";
   color: transparent;
-  background: linear-gradient(to right, #9b003f, #009B6C);
+  background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
   -webkit-background-clip: text;
           background-clip: text;
 }/*# sourceMappingURL=style.css.map */

@@ -6,7 +6,7 @@ header {
     top: 0;
     width: 100vw;
     padding: 0 20px;
-    background: linear-gradient(to right, $primary-red, $primary-green);
+    background: linear-gradient(to right, $primary-100, $primary-200);
 
     .header__wrapper {
         height: 70px;
@@ -114,7 +114,7 @@ header {
 
             >.menu__ttl>a {
                 font-size: 3.5rem;
-                color: $primary-red;
+                color: $primary-100;
                 font-family: $for-logo;
             }
 

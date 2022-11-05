@@ -1,7 +1,7 @@
 // colors
-$primary-red: #9b003f;
-$primary-green: #009B6C;
-$liner-100: linear-gradient(to right, $primary-red, $primary-green);
+$primary-100: #2869ff;
+$primary-200: #28ffbe;
+$liner-100: linear-gradient(45deg, $primary-100, $primary-200 100%);
 $te-100: #1E2022;
 $te-200: #52616B;
 $te-300: #B4A5A5;
