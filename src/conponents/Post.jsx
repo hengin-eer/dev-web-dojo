@@ -11,7 +11,7 @@ const Post = () => {
     let fetchedPost = {
         title: ""
     }
-    console.log(postlist)
+    console.log(id)
     postlist.forEach(post => {
         if (id === post.slug) {
             fetchedPost.title = post.title ? post.title : "No title"
@@ -19,20 +19,23 @@ const Post = () => {
             fetchedPost.date = post.date ? post.date : "No date"
             fetchedPost.category = post.category ? post.category : "No category"
             fetchedPost.content = post.content ? post.content : "No content"
+            console.log("success!")
         }
     })
     if (fetchedPost.title === "") {
         return (
-            <>
+            <div className='post'>
                 <h2>404 not found</h2>
                 <p>お探しのページは見つかりませんでした🤷‍♂️</p>
-            </>
+            </div>
         )
     }
 
     const Toclist = ({ ...props }) => {
         return (
-            <a href={'#' + props.children.toString()}>{props.children}</a>
+            <li>
+                <a href={'#' + props.children.toString()}>{props.children}</a>
+            </li>
         )
     }
 
