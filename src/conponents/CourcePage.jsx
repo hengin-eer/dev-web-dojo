@@ -4,7 +4,7 @@ const CourcePage = () => {
 
 
   return (
-    <div className='cource header__support'>
+    <div className='cource'>
       <h2>🚧building now...</h2>
     </div>
   )
