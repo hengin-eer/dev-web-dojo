@@ -17,7 +17,7 @@ function Postlist() {
     console.log(data)
 
     return (
-        <div className='postlist header__support'>
+        <div className='postlist'>
             <nav className="postlist__nav">
                 <FontAwesomeIcon className='cats__tags' icon={faTags} />
                 <ul className='postlist__cats'>
@@ -33,9 +33,14 @@ function Postlist() {
                         console.log(post.category)
                         return (
                             <div className="postCard" key={post.id}>
-                                <div className="post__date"><FontAwesomeIcon className='date__ico' icon={faClockRotateLeft} />{post.date}</div>
-                                <h2 className="post__ttl"><Link to={`/posts/${post.slug}`}>{post.title}</Link></h2>
-                                <div className="post__cat"><FontAwesomeIcon className='cat__ico' icon={faHashtag} />{post.category}</div>
+                                <div className="card__desc">
+                                    <div className="post__date"><FontAwesomeIcon className='date__ico' icon={faClockRotateLeft} />{post.date}</div>
+                                    <h2 className="post__ttl"><Link to={`/posts/${post.slug}`}>{post.title}</Link></h2>
+                                    <div className="post__cat"><FontAwesomeIcon className='cat__ico' icon={faHashtag} />{post.category}</div>
+                                </div>
+                                <div className="card__thumbnail">
+                                    <img src={`${process.env.PUBLIC_URL}/media/${post.category}.svg`} alt="" />
+                                </div>
                                 <Link className='post__more' to={`/posts/${post.slug}`}>詳しく見る</Link>
                                 <hr />
                             </div>

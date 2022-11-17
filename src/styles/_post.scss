@@ -11,11 +11,11 @@
 }
 
 .post__ttl {
-    @include font(2rem, $for-logo, black);
+    @include font(2rem, black);
     font-weight: bold;
 
     &>a {
-        @include font(2rem, $for-logo, black);
+        @include font(2rem, black);
         font-weight: bold;
     }
 }
@@ -43,7 +43,7 @@
     }
 
     .author__name {
-        @include font(20px, $nofont, black)
+        @include font(20px, black)
     }
 }
 

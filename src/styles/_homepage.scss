@@ -1,54 +1,160 @@
 @import 'vars';
 
 .home {
+    >section {
+
+        .backwave {
+            width: 100%;
+            transform: translateY(1px);
+            z-index: 2;
+        }
+
+        .rev__wave {
+            transform: rotate(180deg) translateY(1px);
+        }
+
+        .section__ttl {
+            display: flex;
+            flex-direction: column;
+
+            >.ttl__main {
+                width: max-content;
+                line-height: 1;
+                @include font(calc(2rem + 3vw), $nocl);
+                word-break: keep-all;
+                font-family: $for-logo;
+                background: $liner-100;
+                background-clip: text;
+            }
+
+            >.ttl__sub {
+                padding-top: 20px;
+                @include font(calc(1rem + 1vw), $te-200);
+            }
+        }
+    }
+
     >.home__topview {
-        height: 100vh;
+        height: max-content;
         width: 100vw;
-        background: url('../conponents/media/topview.jpg') center;
-        background-size: cover;
+        // background: url('../conponents/media/topview.jpg') center;
+        // background-size: cover;
 
         @include mq(sp) {
             background-position: 20% center;
         }
 
         >.topview__inner {
-            height: 100vh;
+            position: relative;
             width: 100vw;
+            padding: 0 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 100px;
+            gap: 0px;
 
-            >.inner__ttl {
-                word-break: keep-all;
-                text-align: center;
-                @include font(4rem, $for-logo, $te-100);
-                max-width: 17ch;
+            @include mq(tab) {
+                margin: 50px 0;
+                gap: 30px;
+            }
 
-                @include mq(sp) {
-                    @include font(2.3rem, $for-logo, $te-100);
+            >.inner__desc {
+                display: flex;
+                align-items: center;
+
+                >.desc__ttls {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 30px;
+
+                    .ttl__main {
+                        word-break: keep-all;
+                        text-align: start;
+                        @include font(calc(2rem + 2vw), $te-100);
+                        max-width: 17ch;
+                    }
+
+                    .ttl__sub {
+                        @include font(calc(1rem + 1vw), $te-200);
+                    }
+                }
+
+                >.desc__pic {
+                    width: 35vw;
                 }
             }
 
             >.inner__buttons {
                 display: flex;
                 align-items: center;
-                gap: 100px;
+                gap: 70px;
 
                 @include mq(sp) {
                     flex-direction: column;
-                    gap: 50px;
+                    gap: 30px;
                 }
 
                 >.inner__btn {
-                    text-align: center;
-                    padding: 10px;
-                    width: 200px;
-                    background: $liner-100;
-                    border-radius: 50px;
-                    @include font(20px, $for-logo, white);
+                    @include linearBtn();
+                }
+            }
+
+            >.inner__scroll {
+                position: absolute;
+                bottom: -120px;
+                height: 100px;
+                width: 100px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                // border: solid 2px $primary-100;
+                border-radius: 50%;
+                z-index: 1;
+
+                >.scroll__txt {
+                    @include font(1.2rem, $te-200);
+                    font-family: $for-code;
+                    font-weight: bold;
+                }
+
+                >.scroll__arrow {
                     position: relative;
+                    height: 20px;
+                    width: 40px;
+                    animation: upDown none 1s infinite ease alternate;
+
+                    >span {
+                        position: absolute;
+                        top: 50%;
+                        height: 2px;
+                        width: 20px;
+                        background: $te-200;
+                        border-radius: 50px;
+                        transform: translateY(-50%);
+
+                        &:nth-child(1) {
+                            left: 3.2px;
+                            transform: rotate(45deg);
+                        }
+
+                        &:nth-child(2) {
+                            right: 3.2px;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+
+                @keyframes upDown {
+                    0% {
+                        transform: translateY(0px);
+                    }
+
+                    100% {
+                        transform: translateY(15px);
+                    }
                 }
             }
         }
@@ -57,55 +163,69 @@
     >.home__about {
         width: 100vw;
         padding: 60px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         background: $bg-300;
 
 
         >.about__inner {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 80px;
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-rows: max-content max-content max-content;
+            grid-template-columns: 60% 40%;
+            grid-template-areas:
+                "about__ttl     about__pic"
+                "about__desc    about__pic"
+                "about__desc    about__btn";
 
             >.about__ttl {
-
-                >.ttl__main {
-                    word-break: keep-all;
-                    text-align: center;
-                    line-height: 1;
-                    @include font(calc(2rem + 3vw), $for-logo, $te-300);
-                }
+                grid-area: about__ttl;
+                align-items: flex-start;
 
                 >.ttl__sub {
-                    padding-top: 20px;
-                    text-align: center;
-                    @include font(calc(1rem + 1vw), $for-logo, $te-200);
+                    padding-left: 10px;
                 }
             }
 
             .about__desc {
+                grid-area: about__desc;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 10px;
+                align-items: flex-start;
+                gap: 20px;
+                margin-top: 60px;
 
                 >p {
-                    @include font(calc(.5rem + 1vw), $for-logo, $te-300);
+                    @include font(calc(.5rem + 1vw), $te-300);
                 }
             }
 
+            .about__pic {
+                grid-area: about__pic;
+                background: black;
+                object-fit: cover;
+                height: 300px;
+                width: 100%;
+                margin-top: 30px;
+                border-radius: 50px;
+            }
+
             .about__btn {
-                text-align: center;
-                padding: 10px;
-                width: 200px;
-                background: $bg-300;
-                border-radius: 50px 0 50px 0;
-                box-shadow: 5px 5px 20px $primary-100;
-                @include font(20px, $for-logo, $te-300);
+                grid-area: about__btn;
+                @include linearBtn();
+                margin-top: 50px;
+                margin-left: auto;
+            }
+        }
+    }
+
+    .home__cource {
+        .cource__inner {
+            .cource__ttl {
+                align-items: flex-end;
+
+                .ttl__sub {
+                    padding-right: 10px;
+                }
             }
         }
     }

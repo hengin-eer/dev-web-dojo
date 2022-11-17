@@ -15,7 +15,8 @@ $nocl: transparent;
 
 // fonts
 $for-logo: 'Yuji Syuku';
-$nofont: 'Noto Serif JP';
+$nofont: 'Noto Sans JP';
+$for-code: 'Source Code Pro';
 
 $breakpoint: (
     sp: 'screen and (max-width: 480px)',
@@ -26,10 +27,45 @@ $breakpoint: (
     @media #{map-get($breakpoint, $bp)} {
         @content
     }
-};
+}
 
-@mixin font($size, $family, $color) {
+;
+
+@mixin font($size, $color) {
     font-size: $size;
-    font-family: $family;
-    color: $color;    
-};
+    color: $color;
+}
+
+;
+
+@mixin linearBtn() {
+    padding: 10px 40px 10px 20px;
+    height: max-content;
+    width: 180px;
+    width: max-content;
+    background: $liner-100;
+    border-radius: 50px;
+    @include font(20px, white);
+    font-family: $for-logo;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 22.5px;
+        right: 25px;
+        height: 5px;
+        width: 5px;
+        border-right: solid 1.5px white;
+        border-bottom: solid 1.5px white;
+        transform: rotate(-45deg);
+        transition: all .3s ease;
+    }
+
+    &:hover {
+
+        &::after {
+            transform: translateX(5px) rotate(-45deg);
+        }
+    }
+}

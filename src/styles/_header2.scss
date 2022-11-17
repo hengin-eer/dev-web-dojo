@@ -6,12 +6,13 @@
 
 header {
     user-select: none;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100vw;
     padding: 0 20px;
     background: $blur;
     backdrop-filter: saturate(200%) blur(20px);
+    font-family: $for-logo !important;
     z-index: 10;
 
     >.header__inner {
@@ -27,7 +28,7 @@ header {
         }
 
         >.header__ttl>a {
-            @include font(2rem, $for-logo, $nocl);
+            @include font(2rem, $nocl);
         }
 
         .header__menu {
@@ -62,7 +63,7 @@ header {
 
                 @include mq(sp) {
                     display: block;
-                    @include font(3.5rem, $for-logo, $nocl);
+                    @include font(3.5rem, $nocl);
                 }
             }
 
@@ -85,10 +86,10 @@ header {
                 }
 
                 >li>a {
-                    @include font(calc(.7rem + 1vw), $for-logo, $te-200);
+                    @include font(calc(.7rem + 1vw), $te-200);
 
                     @include mq(sp) {
-                        @include font(2rem, $for-logo, $te-200);
+                        @include font(2rem, $te-200);
                     }
                 }
             }
