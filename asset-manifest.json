@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dev-web-dojo/static/css/main.3decd6a3.css",
-    "main.js": "/dev-web-dojo/static/js/main.aeca062a.js",
+    "main.css": "/dev-web-dojo/static/css/main.dccc2121.css",
+    "main.js": "/dev-web-dojo/static/js/main.ed026bc4.js",
     "static/media/YujiSyuku-Regular.ttf": "/dev-web-dojo/static/media/YujiSyuku-Regular.597f191659eefd846b89.ttf",
     "static/media/about.png": "/dev-web-dojo/static/media/about.cf29de8b108c37da0921.png",
     "static/media/a.png": "/dev-web-dojo/static/media/a.6eef09a68c1e2c766802.png",
@@ -9,11 +9,11 @@
     "static/media/topview.svg": "/dev-web-dojo/static/media/topview.f1ab0abec7e23d2cf138d87a9802d5ee.svg",
     "index.html": "/dev-web-dojo/index.html",
     "static/media/section__backWave.svg": "/dev-web-dojo/static/media/section__backWave.bd622768053c04cdc86201b260d9a657.svg",
-    "main.3decd6a3.css.map": "/dev-web-dojo/static/css/main.3decd6a3.css.map",
-    "main.aeca062a.js.map": "/dev-web-dojo/static/js/main.aeca062a.js.map"
+    "main.dccc2121.css.map": "/dev-web-dojo/static/css/main.dccc2121.css.map",
+    "main.ed026bc4.js.map": "/dev-web-dojo/static/js/main.ed026bc4.js.map"
   },
   "entrypoints": [
-    "static/css/main.3decd6a3.css",
-    "static/js/main.aeca062a.js"
+    "static/css/main.dccc2121.css",
+    "static/js/main.ed026bc4.js"
   ]
 }
