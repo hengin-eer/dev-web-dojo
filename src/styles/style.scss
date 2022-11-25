@@ -1,6 +1,7 @@
 // @use 'header';
 @use 'header2';
 @use 'homepage';
+@use 'cource';
 @use 'postlist';
 @use 'post';
 
@@ -58,4 +59,17 @@ img {
     color: transparent;
     background: $liner-100;
     background-clip: text;
+}
+
+.hidden__anime {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-20px, 20px);
+    transition: .3s;
+}
+
+.active__anime {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 0px);
 }

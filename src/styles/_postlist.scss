@@ -3,8 +3,10 @@
 .postlist {
     height: max-content;
     min-height: 200vh;
-    width: 100vw;
+    max-width: 1080px;
+    padding: 20px 10px;
+    margin: 0 auto;
     background: $bg-100;
-
+    
     
 }

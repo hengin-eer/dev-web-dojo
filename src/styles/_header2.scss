@@ -8,10 +8,11 @@ header {
     user-select: none;
     position: sticky;
     top: 0;
+    height: max-content;
     width: 100vw;
     padding: 0 20px;
     background: $blur;
-    backdrop-filter: saturate(200%) blur(20px);
+    // backdrop-filter: saturate(200%) blur(20px);
     font-family: $for-logo !important;
     z-index: 10;
 
@@ -143,54 +144,48 @@ header {
         gap: 5px;
         z-index: 20;
         -webkit-tap-highlight-color: #0000;
-        transition: .3s;
+        transition: all .3s;
         position: fixed !important;
         left: 50vw;
         bottom: 10px;
         transform: translate(-50%, 0);
-        background: black;
-        background: $bg-200;
-    }
-
-    >span {
-        height: 2px;
-        width: 30px;
-        background: $te-100;
-        border-radius: 2px;
-        transition: .5s;
-    }
-
-    >span:nth-of-type(1) {
-        top: 10px;
-    }
-
-    >span:nth-of-type(2) {
-        top: 19px;
-    }
-
-    >span:nth-of-type(3) {
-        top: 28px;
-    }
-
-    &.active {
-        @include mq(sp) {
-            background: #0000;
-        }
+        background: $liner-100;
 
         >span {
-            background: black;
+            height: 2px;
+            width: 30px;
+            background: $bg-100;
+            border-radius: 2px;
+            transition: .5s;
         }
 
         >span:nth-of-type(1) {
-            width: 30px;
+            top: 10px;
         }
 
         >span:nth-of-type(2) {
-            width: 20px;
+            top: 19px;
         }
 
         >span:nth-of-type(3) {
-            width: 10px;
+            top: 28px;
+        }
+
+        &.active {
+            @include mq(sp) {
+
+                >span:nth-of-type(1) {
+                    width: 30px;
+                }
+
+                >span:nth-of-type(2) {
+                    width: 20px;
+                }
+
+                >span:nth-of-type(3) {
+                    width: 10px;
+                }
+            }
         }
     }
 }
