@@ -13,11 +13,12 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   width: 100vw;
   padding: 0 20px;
   background: rgba(255, 255, 255, 0.6);
-  -webkit-backdrop-filter: saturate(200%) blur(20px);
-          backdrop-filter: saturate(200%) blur(20px);
   font-family: "Yuji Syuku" !important;
   z-index: 10;
 }
@@ -149,47 +150,40 @@ header > .header__inner .header__menu > .sns > a > img {
     gap: 5px;
     z-index: 20;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    transition: 0.3s;
+    transition: all 0.3s;
     position: fixed !important;
     left: 50vw;
     bottom: 10px;
     transform: translate(-50%, 0);
-    background: black;
-    background: #C9D6DF;
+    background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
+  }
+  .hum > span {
+    height: 2px;
+    width: 30px;
+    background: #F0F5F9;
+    border-radius: 2px;
+    transition: 0.5s;
+  }
+  .hum > span:nth-of-type(1) {
+    top: 10px;
+  }
+  .hum > span:nth-of-type(2) {
+    top: 19px;
+  }
+  .hum > span:nth-of-type(3) {
+    top: 28px;
   }
 }
-.hum > span {
-  height: 2px;
-  width: 30px;
-  background: #1E2022;
-  border-radius: 2px;
-  transition: 0.5s;
-}
-.hum > span:nth-of-type(1) {
-  top: 10px;
-}
-.hum > span:nth-of-type(2) {
-  top: 19px;
-}
-.hum > span:nth-of-type(3) {
-  top: 28px;
-}
-@media screen and (max-width: 480px) {
-  .hum.active {
-    background: rgba(0, 0, 0, 0);
+@media screen and (max-width: 480px) and (max-width: 480px) {
+  .hum.active > span:nth-of-type(1) {
+    width: 30px;
   }
-}
-.hum.active > span {
-  background: black;
-}
-.hum.active > span:nth-of-type(1) {
-  width: 30px;
-}
-.hum.active > span:nth-of-type(2) {
-  width: 20px;
-}
-.hum.active > span:nth-of-type(3) {
-  width: 10px;
+  .hum.active > span:nth-of-type(2) {
+    width: 20px;
+  }
+  .hum.active > span:nth-of-type(3) {
+    width: 10px;
+  }
 }
 
 .home > section .backwave {
@@ -450,11 +444,87 @@ header > .header__inner .header__menu > .sns > a > img {
 .home > .home__about > .about__inner .about__btn:hover::after {
   transform: translateX(5px) rotate(-45deg);
 }
-.home .home__cource .cource__inner .cource__ttl {
+.home .home__course .course__inner .course__ttl {
   align-items: flex-end;
 }
-.home .home__cource .cource__inner .cource__ttl .ttl__sub {
+.home .home__course .course__inner .course__ttl .ttl__sub {
   padding-right: 10px;
+}
+
+.course .course__topview {
+  height: 300px;
+  width: 100vw;
+  background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
+}
+.course .course__topview .topview__ttl {
+  max-width: 1080px;
+  height: 300px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.course .course__topview .topview__ttl > .ttl__main {
+  font-size: 3.5rem;
+  color: white;
+  font-family: "Yuji Syuku";
+}
+.course .course__topview .topview__ttl > .ttl__sub {
+  font-size: 1.5rem;
+  color: #1E2022;
+  padding-left: 10px;
+  margin-top: 20px;
+}
+.course .course__cats {
+  max-width: 1080px;
+  padding: 50px 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px 5%;
+}
+@media screen and (max-width: 768px) {
+  .course .course__cats {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+.course .course__cats .course__cat {
+  height: 320px;
+  min-width: 250px;
+  width: 30%;
+  padding: 25px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 8px #2869ff;
+}
+@media screen and (max-width: 768px) {
+  .course .course__cats .course__cat {
+    height: 300px;
+    width: 90%;
+  }
+}
+.course .course__cats .course__cat > img {
+  height: 100px;
+  margin-bottom: 10px;
+}
+.course .course__cats .course__cat > .cat__ttl {
+  font-size: 2rem;
+  color: #1E2022;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.course .course__cats .course__cat > .cat__desc {
+  font-size: 0.95rem;
+  color: #1E2022;
 }
 
 .postlist {
@@ -462,25 +532,25 @@ header > .header__inner .header__menu > .sns > a > img {
   height: -moz-max-content;
   height: max-content;
   min-height: 200vh;
-  width: 100vw;
+  max-width: 1080px;
+  padding: 20px 10px;
+  margin: 0 auto;
   background: #F0F5F9;
 }
 
 .post__date {
-  padding: 0.5rem;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  color: #1E2022;
 }
-fon .post__date > .date__ico {
-  margin-right: 5px;
+.post__date > .date__ico {
+  margin-right: 10px;
 }
 
 .post__ttl {
+  padding: 10px 0;
   font-size: 2rem;
-  color: black;
-  font-weight: bold;
-}
-.post__ttl > a {
-  font-size: 2rem;
-  color: black;
+  color: #1E2022;
   font-weight: bold;
 }
 
@@ -489,31 +559,11 @@ fon .post__date > .date__ico {
   width: -moz-max-content;
   width: max-content;
   padding: 2px 5px;
-  border: solid 1px #C9D6DF;
+  border: solid 2px #C9D6DF;
   background: white;
 }
-
-.post__author {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin: 20px auto;
-}
-.post__author .author__ico {
-  height: 60px;
-  width: 60px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  border-radius: 50%;
-}
-.post__author .author__name {
-  font-size: 20px;
-  color: black;
+.post__cat > .cat__ico {
+  margin-right: 10px;
 }
 
 .post {
@@ -521,33 +571,108 @@ fon .post__date > .date__ico {
   height: -moz-max-content;
   height: max-content;
   min-height: 100vh;
-  width: 100vw;
+  max-width: 1080px;
+  padding: 20px 30px;
+  margin: 0 auto;
 }
-.post .post__contents h1,
-.post .post__contents h2,
-.post .post__contents h3 {
-  margin: 50px 0 25px 0;
-  border-bottom: solid 1px gray;
-}
-.post .post__contents h1 {
-  font-size: 28px;
-}
-.post .post__contents h2 {
-  font-size: 24px;
-}
-.post .post__contents h3 {
-  font-size: 20px;
-}
-.post .post__contents .toc {
+.post .post__back {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  background: white;
+  border: solid 2px #2869ff;
+  border-radius: 100px;
+  transition: 0.3s;
+}
+.post .post__back > a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #2869ff;
+  transition: 0.3s;
+}
+.post .post__back:hover {
+  background: #2869ff;
+}
+.post .post__back:hover > a {
+  color: white;
+}
+.post .post__author {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+.post .post__author .author__ico {
+  height: 40px;
+  width: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+}
+.post .post__author .author__name {
+  font-size: 20px;
+  color: #1E2022;
+}
+.post .post__contents .toc__ttl {
+  font-size: 1.5rem;
+  color: #52616B;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px;
+  margin: 0 auto;
+}
+.post .post__contents .toc {
+  width: 80vw;
   padding: 20px;
   margin: 0 auto;
   border: solid 1px black;
 }
 .post .post__contents .toc ul {
   margin-left: 20px;
+}
+.post .post__contents > h1,
+.post .post__contents > h2,
+.post .post__contents > h3 {
+  color: #1E2022;
+  padding: 5px 10px;
+  margin: 50px 0 25px 0;
+  border-bottom: solid 1px #C9D6DF;
+}
+.post .post__contents > h1 {
+  font-size: 28px;
+}
+.post .post__contents > h2 {
+  font-size: 24px;
+}
+.post .post__contents > h3 {
+  font-size: 20px;
+}
+.post .post__contents p {
+  color: #1E2022;
+  line-height: 2;
+}
+.post .post__contents p > strong {
+  background: linear-gradient(to bottom, transparent 60%, #28ffbe 60% 90%, transparent 90%);
+}
+.post .post__contents p > code {
+  background: #C9D6DF;
+  color: black;
+  padding: 1.5px 6px;
+  border-radius: 20px;
+}
+.post .post__contents > blockquote {
+  border-left: 4px solid #C9D6DF;
+  padding: 15px 0 15px 20px;
+  margin: 1.5em 0;
+  opacity: 0.8;
 }
 
 @font-face {
@@ -591,4 +716,17 @@ img {
   background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
   -webkit-background-clip: text;
           background-clip: text;
+}
+
+.hidden__anime {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-20px, 20px);
+  transition: 0.3s;
+}
+
+.active__anime {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
 }/*# sourceMappingURL=style.css.map */

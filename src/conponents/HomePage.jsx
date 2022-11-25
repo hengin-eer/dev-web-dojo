@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import backWave from './media/section__backWave.svg'
-import topview from './media/topview.svg'
-import about from './media/about.png'
-import a from './media/a.png'
+import backWave from '../media/section__backWave.svg'
+import topview from '../media/topview.svg'
+import about from '../media/about.png'
+import a from '../media/a.png'
 // import logo from './media/logo.png'
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
 						<img className='desc__pic' src={topview} alt="" />
 					</div>
 					<div className="inner__buttons">
-						<Link className='inner__btn' to="/cource">コース一覧</Link>
+						<Link className='inner__btn' to="/courses">コース一覧</Link>
 						<Link className='inner__btn' to="/contact">お問い合わせ</Link>
 					</div>
 					<a href='#about' className="inner__scroll">
@@ -50,14 +50,14 @@ const Home = () => {
 					<Link className='about__btn' to="/about">Web道場を覗く</Link>
 				</div>
 			</section>
-			<section className="home__cource">
+			<section className="home__course">
 				<img className='backwave rev__wave' src={backWave} alt="" />
-				<div className="cource__inner">
-					<div className="cource__ttl section__ttl">
+				<div className="course__inner">
+					<div className="course__ttl section__ttl">
 						<div className="ttl__main">稽古の流れ</div>
 						<div className="ttl__sub">Training</div>
 					</div>
-					<div className="cource__desc">
+					<div className="course__desc">
 						<img src={a} alt="" />
 					</div>
 				</div>

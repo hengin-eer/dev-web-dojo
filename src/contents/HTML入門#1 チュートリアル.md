@@ -2,15 +2,15 @@
 id: 1
 author: hengineer
 date: 9/27, 2022
-category: HTML
+category: html
 ---
 
 
 # HTMLの世界へようこそ！
 
-こんにちは。 今回執筆を主に担当させていただきます、[へんじにあ](https://twitter.com/tim_daik)です
+こんにちは。 今回執筆を主に担当させていただきます、[へんじにあ@tim_daik](https://twitter.com/tim_daik)です
 
-Webサイトを作成する中で最も基本的かつ必要なスキルが`HTML`です
+**Webサイトを作成する中で最も基本的かつ必要なスキルが`HTML`です**
 
 つまりこのコースで皆さんにはHTMLを習得してもらいます
 
@@ -22,7 +22,7 @@ Webサイトを作成する中で最も基本的かつ必要なスキルが`HTML
 
 `HTML`とは「HyperText Markup Language」の略称で、マークアップ言語のひとつです
 
-HTMLでは文章を`<>`のような「タグ」と「タグ」で囲い記述していきます
+HTMLでは文章を`<p>`のような「タグ」と「タグ」で囲い記述していきます
 
 >マークアップ言語とは、視覚表現や文章構造を記述するための形式言語です
 >
@@ -45,15 +45,31 @@ HTMLは「ティム・バーナーズ＝リー」という人物が1989年にコ
 
 その後公式な仕様が発表されるようになりIETF、W3Cを経て、Apple・Mozilla・Operaの開発者たちによって結成された組織「WHATWG」「HTML Living Standard」を提唱し、これが2022年11月現在のHTMLの標準規格となっています
 
-## HTMLの記法
+# HTMLの記法
 
-### タグとは？
+## タグとは？
 
-HTMLの記法を理解する上で「タグ」というものがあります
+HTMLの記法を理解する上で「**タグ**」というものがあります
 
-タグとは文章などを
+タグとは`<p>`のような山括弧に囲われた特殊な文字列で、文章をタグで囲むことによって要素として扱うことが出来ます
 
 ### 記述例
+
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="dojo-html-1-1" src="https://codepen.io/hengineer/embed/PoaeXZo?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/hengineer/pen/PoaeXZo">
+  dojo-html-1-1</a> by hengineer (<a href="https://codepen.io/hengineer">@hengineer</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+## ひな型
+
+先ほどのようにHTMLを記述していくためには雛形の中に書き込んでいく必要があります
+
+雛形を下に記します
+
+### 記述例
+
 
 ```html
 <!DOCTYPE html>
@@ -65,7 +81,7 @@ HTMLの記法を理解する上で「タグ」というものがあります
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- ここに記述していく -->
 </body>
 </html>
 ```

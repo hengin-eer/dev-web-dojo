@@ -2,7 +2,7 @@
 id: 3
 author: tkRyo
 date: 10/1, 2022
-category: JavaScript
+category: javascript
 ---
 
 

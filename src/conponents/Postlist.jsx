@@ -1,47 +1,54 @@
-import React from 'react'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
 import postlist from '../posts.json'
+import catlist from '../cats.json'
+import { Link, useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHashtag, faClockRotateLeft, faTags } from '@fortawesome/free-solid-svg-icons'
+import { faHashtag, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons'
+import { useEffect } from 'react'
 
 function Postlist() {
+    const category = useParams()
     const [data, setData] = useState(postlist)
+    const [cat, setCat] = useState(catlist)
 
-    const filterCat = (catItem) => {
+    useEffect(() => {
         const result = postlist.filter((curData) => {
-            return curData.category === catItem
+            return curData.category === category.cat
         })
         setData(result)
-    }
-    console.log(data)
+        if (category.cat === 'master') {
+            setData(postlist)
+        }
+
+        const filteredCat = catlist.filter((curData) => {
+            return curData.slug === category.cat
+        })
+        setCat(filteredCat[0])
+    }, [category])
+
 
     return (
         <div className='postlist'>
-            <nav className="postlist__nav">
-                <FontAwesomeIcon className='cats__tags' icon={faTags} />
-                <ul className='postlist__cats'>
-                    <li className='postlist__cat' onClick={() => setData(postlist)}>All</li>
-                    <li className='postlist__cat' onClick={() => filterCat('HTML')}>HTML</li>
-                    <li className='postlist__cat' onClick={() => filterCat('CSS')}>CSS</li>
-                    <li className='postlist__cat' onClick={() => filterCat('JavaScript')}>JavaScript</li>
-                </ul>
-            </nav>
+            <div className="postlist__topview">
+                <div className="topview__ttl">
+                    <div className="ttl__main">{cat.title}コース</div>
+                    <div className="ttl__sub">{cat.desc}</div>
+                </div>
+            </div>
             <div className="postCards">
                 {data.length &&
                     data.map((post) => {
-                        console.log(post.category)
                         return (
                             <div className="postCard" key={post.id}>
                                 <div className="card__desc">
                                     <div className="post__date"><FontAwesomeIcon className='date__ico' icon={faClockRotateLeft} />{post.date}</div>
-                                    <h2 className="post__ttl"><Link to={`/posts/${post.slug}`}>{post.title}</Link></h2>
+                                    <h2 className="post__ttl"><Link to={`/posts/${post.category}/${post.slug}`}>{post.title}</Link></h2>
                                     <div className="post__cat"><FontAwesomeIcon className='cat__ico' icon={faHashtag} />{post.category}</div>
                                 </div>
                                 <div className="card__thumbnail">
                                     <img src={`${process.env.PUBLIC_URL}/media/${post.category}.svg`} alt="" />
                                 </div>
-                                <Link className='post__more' to={`/posts/${post.slug}`}>詳しく見る</Link>
+                                <Link className='post__more' to={`/posts/${post.category}/${post.slug}`}>詳しく見る</Link>
                                 <hr />
                             </div>
                         )

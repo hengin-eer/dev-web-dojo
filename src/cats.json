@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Master",
+        "desc": "HTML/CSS/JavaScript などのWeb道場の稽古全てを学ぶマスターコースです",
+        "slug": "master"
+    },
+    {
+        "id": 2,
+        "title": "HTML",
+        "desc": "Webページ作成の骨組みであるHTMLの使い方を学習しよう",
+        "slug": "html"
+    },
+    {
+        "id": 3,
+        "title": "CSS",
+        "desc": "Webページのデザインを創るCSSの使い方を学習しよう",
+        "slug": "css"
+    },
+    {
+        "id": 4,
+        "title": "JavaScript",
+        "desc": "Webページで様々の機能を実現できるJavaScriptに触れてみよう",
+        "slug": "javascript"
+    }
+]

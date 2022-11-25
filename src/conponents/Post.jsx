@@ -34,7 +34,7 @@ const Post = () => {
     const Toclist = ({ ...props }) => {
         return (
             <li>
-                <a href={'#' + props.children.toString()}>{props.children}</a>
+                <a href={'#' + props.children.toString()}>{props.children.toString()}</a>
             </li>
         )
     }
@@ -53,7 +53,7 @@ const Post = () => {
     return (
         <div className='post'>
             <div className="post__back">
-                <Link to='/posts/'>記事一覧に戻る</Link>
+                <Link to={`/posts/${fetchedPost.category}`}>記事一覧に戻る</Link>
             </div>
             <div className="post__date"><FontAwesomeIcon className='date__ico' icon={faClockRotateLeft} />{fetchedPost.date}</div>
             <div className="post__ttl">{fetchedPost.title}</div>
@@ -63,8 +63,9 @@ const Post = () => {
                 <div className="author__name">{fetchedPost.author}</div>
             </div>
             <div className="post__contents">
+                <div className="toc__ttl">INDEX</div>
                 <div className="toc">
-                    <ReactMarkdown components={{ h1: Toclist, h2: Toclist }} allowedElements={["h1", "h2"]} >{fetchedPost.content}</ReactMarkdown>
+                    <ReactMarkdown components={{ h1: Toclist, h2: Toclist }} allowedElements={["h1", "h2"]} rehypePlugins={[rehypeRaw]} >{fetchedPost.content}</ReactMarkdown>
                 </div>
                 <ReactMarkdown components={{ h1: H1, h2: H2 }} rehypePlugins={[rehypeRaw]} >{fetchedPost.content}</ReactMarkdown>
             </div>

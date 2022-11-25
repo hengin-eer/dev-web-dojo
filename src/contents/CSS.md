@@ -2,7 +2,7 @@
 id: 2
 author: turpan
 date: 9/28, 2022
-category: CSS
+category: css
 ---
 
 
