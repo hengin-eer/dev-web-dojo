@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHashtag, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons'
+import { NotFound } from './NotFound'
 
 const Post = () => {
     const { id } = useParams()
@@ -24,10 +25,7 @@ const Post = () => {
     })
     if (fetchedPost.title === "") {
         return (
-            <div className='post'>
-                <h2>404 not found</h2>
-                <p>お探しのページは見つかりませんでした🤷‍♂️</p>
-            </div>
+            <NotFound />
         )
     }
 

@@ -14,9 +14,22 @@ const Header = ({ active, setActive }) => {
                     <nav className={`${active ? 'header__menu active' : 'header__menu'}`}>
                         <div className="menu__ttl colorLinear"><Link to="/" onClick={() => setActive(!active)}>Web道場</Link></div>
                         <ul>
-                            <li><Link to="/courses/" onClick={() => setActive(false)}>Courses</Link></li>
-                            <li><Link to="/about/" onClick={() => setActive(false)}>About</Link></li>
-                            <li><Link to="/contact/" onClick={() => setActive(false)}>Contact</Link></li>
+                            <li><Link to="/courses/" onClick={() => setActive(false)}>
+                                <span className='is__bigger'>Courses</span>
+                                <span>コース</span></Link>
+                            </li>
+                            <li>
+                                <Link to="/about/" onClick={() => setActive(false)}>
+                                    <span className='is__bigger'>About</span>
+                                    <span>詳しく</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/contact/" onClick={() => setActive(false)}>
+                                    <span className='is__bigger'>Contact</span>
+                                    <span>お問い合わせ</span>
+                                </Link>
+                            </li>
                         </ul>
                         <div className="sns">
                             <a href="https://twitter.com" className='twitter' target="_blank" rel="noreferrer" ><FontAwesomeIcon icon={faTwitter} /></a>

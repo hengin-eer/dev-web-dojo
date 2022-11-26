@@ -97,7 +97,13 @@
                 }
 
                 >.inner__btn {
-                    @include linearBtn();
+                    &.is__default {
+                        @include linearBtn();
+                    }
+
+                    &.is__border {
+                        @include linearBorderBtn();
+                    }
                 }
             }
 

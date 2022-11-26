@@ -26,6 +26,8 @@ function Postlist() {
         setCat(filteredCat[0])
     }, [category])
 
+    const datas = (data.length === 0)
+
 
     return (
         <div className='postlist'>
@@ -35,26 +37,32 @@ function Postlist() {
                     <div className="ttl__sub">{cat.desc}</div>
                 </div>
             </div>
-            <div className="postCards">
-                {data.length &&
-                    data.map((post) => {
-                        return (
-                            <div className="postCard" key={post.id}>
-                                <div className="card__desc">
-                                    <div className="post__date"><FontAwesomeIcon className='date__ico' icon={faClockRotateLeft} />{post.date}</div>
-                                    <h2 className="post__ttl"><Link to={`/posts/${post.category}/${post.slug}`}>{post.title}</Link></h2>
-                                    <div className="post__cat"><FontAwesomeIcon className='cat__ico' icon={faHashtag} />{post.category}</div>
+            {datas ? (
+                <div>
+                    <h1>coming soon...</h1>
+                </div>
+            ) : (
+                <div className="postCards">
+                    {data.length &&
+                        data.map((post) => {
+                            return (
+                                <div className="postCard" key={post.id}>
+                                    <div className="card__desc">
+                                        <div className="post__date"><FontAwesomeIcon className='date__ico' icon={faClockRotateLeft} />{post.date}</div>
+                                        <h2 className="post__ttl"><Link to={`/posts/${post.category}/${post.slug}`}>{post.title}</Link></h2>
+                                        <div className="post__cat"><FontAwesomeIcon className='cat__ico' icon={faHashtag} />{post.category}</div>
+                                    </div>
+                                    <div className="card__thumbnail">
+                                        <img src={`${process.env.PUBLIC_URL}/media/${post.category}.svg`} alt="" />
+                                    </div>
+                                    <Link className='post__more' to={`/posts/${post.category}/${post.slug}`}>詳しく見る</Link>
+                                    <hr />
                                 </div>
-                                <div className="card__thumbnail">
-                                    <img src={`${process.env.PUBLIC_URL}/media/${post.category}.svg`} alt="" />
-                                </div>
-                                <Link className='post__more' to={`/posts/${post.category}/${post.slug}`}>詳しく見る</Link>
-                                <hr />
-                            </div>
-                        )
-                    })
-                }
-            </div>
+                            )
+                        })
+                    }
+                </div>
+            )}
         </div>
     )
 }

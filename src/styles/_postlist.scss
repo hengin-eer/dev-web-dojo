@@ -1,12 +1,30 @@
 @import 'vars';
 
 .postlist {
-    height: max-content;
-    min-height: 200vh;
-    max-width: 1080px;
-    padding: 20px 10px;
-    margin: 0 auto;
-    background: $bg-100;
-    
-    
+    >.postlist__topview {
+        width: 100vw;
+        background: $liner-100;
+
+        >.topview__ttl {
+            max-width: 1080px;
+            height: 200px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            >.ttl__main {
+                @include font(calc(1.5rem + 2vw), white);
+                font-family: $for-logo;
+            }
+
+            >.ttl__sub {
+                @include font(calc(.5rem + 1vw), $te-100);
+                max-width: 80vw;
+                font-size: 1rem;
+            }
+        }
+    }
 }

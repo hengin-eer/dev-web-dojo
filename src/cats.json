@@ -1,26 +1,38 @@
 [
     {
         "id": 1,
+        "title": "news",
+        "desc": "Web道場からのお知らせです",
+        "slug": "news"
+    },
+    {
+        "id": 2,
         "title": "Master",
         "desc": "HTML/CSS/JavaScript などのWeb道場の稽古全てを学ぶマスターコースです",
         "slug": "master"
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "HTML",
         "desc": "Webページ作成の骨組みであるHTMLの使い方を学習しよう",
         "slug": "html"
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "CSS",
         "desc": "Webページのデザインを創るCSSの使い方を学習しよう",
         "slug": "css"
     },
     {
-        "id": 4,
+        "id": 5,
         "title": "JavaScript",
         "desc": "Webページで様々の機能を実現できるJavaScriptに触れてみよう",
         "slug": "javascript"
+    },
+    {
+        "id": 6,
+        "title": "Git",
+        "desc": "チーム開発に欠かせないGitの使い方を学習しよう",
+        "slug": "git"
     }
 ]
