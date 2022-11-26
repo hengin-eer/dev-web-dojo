@@ -4,6 +4,7 @@
 @use 'cource';
 @use 'postlist';
 @use 'post';
+@use 'notfound';
 
 // @import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
 @font-face {
@@ -50,6 +51,7 @@ a {
 }
 
 img {
+    max-width: 100%;
     vertical-align: bottom;
 }
 

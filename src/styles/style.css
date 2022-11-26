@@ -97,13 +97,46 @@ header > .header__inner .header__menu > ul {
   }
 }
 header > .header__inner .header__menu > ul > li > a {
-  font-size: calc(0.7rem + 1vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header > .header__inner .header__menu > ul > li > a > span {
+  font-size: 1rem;
   color: #52616B;
+  line-height: 1.2;
 }
 @media screen and (max-width: 480px) {
-  header > .header__inner .header__menu > ul > li > a {
-    font-size: 2rem;
+  header > .header__inner .header__menu > ul > li > a > span {
+    font-size: 1.5rem;
     color: #52616B;
+  }
+}
+header > .header__inner .header__menu > ul > li > a > span.is__bigger {
+  font-size: 1.45rem;
+  color: #1E2022;
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 2px;
+}
+header > .header__inner .header__menu > ul > li > a > span.is__bigger::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  height: 2px;
+  width: 60px;
+  background: #28ffbe;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+@media screen and (max-width: 480px) {
+  header > .header__inner .header__menu > ul > li > a > span.is__bigger {
+    font-size: 2rem;
+    color: #1E2022;
   }
 }
 header > .header__inner .header__menu > .sns {
@@ -278,7 +311,7 @@ header > .header__inner .header__menu > .sns > a > img {
     gap: 30px;
   }
 }
-.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn {
+.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__default {
   padding: 10px 40px 10px 20px;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -293,8 +326,9 @@ header > .header__inner .header__menu > .sns > a > img {
   color: white;
   font-family: "Yuji Syuku";
   position: relative;
+  transition: all 0.3s ease;
 }
-.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn::after {
+.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__default::after {
   position: absolute;
   content: "";
   top: 22.5px;
@@ -306,7 +340,46 @@ header > .header__inner .header__menu > .sns > a > img {
   transform: rotate(-45deg);
   transition: all 0.3s ease;
 }
-.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn:hover::after {
+.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__default:hover::after {
+  transform: translateX(5px) rotate(-45deg);
+}
+.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__border {
+  padding: 10px 40px 10px 20px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 180px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: white;
+  border: solid 2px #2869ff;
+  border-radius: 50px;
+  font-size: 20px;
+  color: #2869ff;
+  font-family: "Yuji Syuku";
+  position: relative;
+  transition: all 0.3s ease;
+}
+.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__border::after {
+  position: absolute;
+  content: "";
+  top: 22.5px;
+  right: 25px;
+  height: 5px;
+  width: 5px;
+  border-right: solid 1.5px #2869ff;
+  border-bottom: solid 1.5px #2869ff;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease;
+}
+.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__border:hover {
+  color: white;
+  background: #2869ff;
+}
+.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__border:hover::after {
+  border-right: solid 1.5px white;
+  border-bottom: solid 1.5px white;
   transform: translateX(5px) rotate(-45deg);
 }
 .home > .home__topview > .topview__inner > .inner__scroll {
@@ -426,6 +499,7 @@ header > .header__inner .header__menu > .sns > a > img {
   color: white;
   font-family: "Yuji Syuku";
   position: relative;
+  transition: all 0.3s ease;
   margin-top: 50px;
   margin-left: auto;
 }
@@ -452,7 +526,6 @@ header > .header__inner .header__menu > .sns > a > img {
 }
 
 .course .course__topview {
-  height: 300px;
   width: 100vw;
   background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
 }
@@ -527,15 +600,30 @@ header > .header__inner .header__menu > .sns > a > img {
   color: #1E2022;
 }
 
-.postlist {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  min-height: 200vh;
+.postlist > .postlist__topview {
+  width: 100vw;
+  background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
+}
+.postlist > .postlist__topview > .topview__ttl {
   max-width: 1080px;
-  padding: 20px 10px;
+  height: 200px;
+  padding: 10px 20px;
   margin: 0 auto;
-  background: #F0F5F9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.postlist > .postlist__topview > .topview__ttl > .ttl__main {
+  font-size: calc(1.5rem + 2vw);
+  color: white;
+  font-family: "Yuji Syuku";
+}
+.postlist > .postlist__topview > .topview__ttl > .ttl__sub {
+  font-size: calc(0.5rem + 1vw);
+  color: #1E2022;
+  max-width: 80vw;
+  font-size: 1rem;
 }
 
 .post__date {
@@ -675,6 +763,214 @@ header > .header__inner .header__menu > .sns > a > img {
   opacity: 0.8;
 }
 
+.notfound {
+  max-width: 1080px;
+  padding: 30px 20px;
+  margin: 0 auto;
+}
+.notfound > .notfound__nav {
+  display: grid;
+  grid-template-rows: -webkit-max-content;
+  grid-template-rows: max-content;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-template-areas: "logo search__box";
+}
+@media screen and (max-width: 480px) {
+  .notfound > .notfound__nav {
+    grid-template-rows: -webkit-max-content -webkit-max-content;
+    grid-template-rows: max-content max-content;
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "search__box";
+  }
+}
+.notfound > .notfound__nav > .nav__logo {
+  grid-area: logo;
+  height: 40px;
+  padding: 5px;
+}
+@media screen and (max-width: 480px) {
+  .notfound > .notfound__nav > .nav__logo {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 20px auto;
+  }
+}
+.notfound > .notfound__nav > .nav__search {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  padding: 10px 30px;
+  margin-left: 30px;
+  grid-area: search__box;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px 1px #C9D6DF;
+}
+.notfound > .notfound__nav > .nav__search > .search__ico {
+  font-size: 1rem;
+  color: #52616B;
+  padding-right: 20px;
+}
+.notfound > .notfound__nav > .nav__search > .search__item {
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1rem;
+  color: #1E2022;
+}
+.notfound > .notfound__nav > .nav__search > .search__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -5px;
+  height: 100%;
+  width: 1px;
+  background: #52616B;
+  -webkit-animation: blinkCursor 0.5s ease infinite alternate;
+          animation: blinkCursor 0.5s ease infinite alternate;
+}
+@-webkit-keyframes blinkCursor {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blinkCursor {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.notfound > .searchs__txts {
+  padding: 10px 30px;
+  font-size: 0.8rem;
+  color: #52616B;
+}
+.notfound > .maybe__txts {
+  padding: 20px;
+}
+.notfound > .maybe__txts > span {
+  font-size: 1rem;
+  color: red;
+}
+.notfound > .maybe__txts > a {
+  font-size: 1.1rem;
+  color: #00e;
+  margin-left: 5px;
+  font-weight: bold;
+}
+.notfound > .notfound__desc {
+  display: flex;
+  align-items: flex-start;
+  gap: 10%;
+}
+.notfound > .notfound__desc > .descs {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+.notfound > .notfound__desc > .descs > .desc__ttl {
+  font-size: 3rem;
+  color: #1E2022;
+  margin-bottom: 30px;
+}
+.notfound > .notfound__desc > .descs > p {
+  font-size: 1.2rem;
+  color: #1E2022;
+}
+.notfound > .notfound__desc > .desc__pic {
+  box-sizing: content-box;
+  height: auto;
+  width: 50%;
+  padding: 20px;
+  margin-left: auto;
+}
+@media screen and (max-width: 768px) {
+  .notfound > .notfound__desc > .desc__pic {
+    width: 100%;
+  }
+}
+
+svg > #notfound > #server__fires > #fire1,
+svg > #notfound > #server__fires > #fire2,
+svg > #notfound > #server__fires > #fire3,
+svg > #notfound > #server__fires > #fire4 {
+  transform-origin: 108.701px 191.351px;
+}
+svg > #notfound > #server__fires > #fire1 {
+  fill: red;
+  -webkit-animation: shakeToLeft 1.5s linear infinite alternate, scaleDown 1.5s ease infinite alternate;
+          animation: shakeToLeft 1.5s linear infinite alternate, scaleDown 1.5s ease infinite alternate;
+}
+svg > #notfound > #server__fires > #fire2 {
+  -webkit-animation: shakeToRight 1.5s ease infinite alternate, scaleDown 1.5s ease infinite alternate;
+          animation: shakeToRight 1.5s ease infinite alternate, scaleDown 1.5s ease infinite alternate;
+}
+svg > #notfound > #server__fires > #fire3 {
+  -webkit-animation: shakeToRight 0.75s ease infinite alternate, scaleDown 2s ease 0.5s infinite alternate;
+          animation: shakeToRight 0.75s ease infinite alternate, scaleDown 2s ease 0.5s infinite alternate;
+}
+svg > #notfound > #server__fires > #fire4 {
+  fill: red;
+  -webkit-animation: shakeToRight 1s linear infinite alternate, scaleDown 1s ease infinite alternate;
+          animation: shakeToRight 1s linear infinite alternate, scaleDown 1s ease infinite alternate;
+}
+@-webkit-keyframes shakeToRight {
+  100% {
+    transform: rotate(15deg);
+  }
+}
+@keyframes shakeToRight {
+  100% {
+    transform: rotate(15deg);
+  }
+}
+@-webkit-keyframes shakeToLeft {
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes shakeToLeft {
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+@-webkit-keyframes scaleDown {
+  100% {
+    transform: scale(90%);
+  }
+}
+@keyframes scaleDown {
+  100% {
+    transform: scale(90%);
+  }
+}
+svg > #notfound > #server__light > #server__light1 {
+  fill: #28ffbe;
+}
+
 @font-face {
   font-family: "Yuji Syuku";
   src: url(./fonts/YujiSyuku-Regular.ttf) format(truetype);
@@ -706,6 +1002,7 @@ a {
 }
 
 img {
+  max-width: 100%;
   vertical-align: bottom;
 }
 
