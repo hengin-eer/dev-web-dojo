@@ -1,0 +1,196 @@
+@import 'vars';
+
+.notfound {
+    max-width: 1080px;
+    padding: 30px 20px;
+    margin: 0 auto;
+    // background: $bg-200;
+
+    >.notfound__nav {
+        display: grid;
+        grid-template-rows: max-content;
+        grid-template-columns: max-content 1fr;
+        grid-template-areas:
+            "logo search__box";
+
+        @include mq(sp) {
+            grid-template-rows: max-content max-content;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "logo"
+                "search__box";
+        }
+
+        >.nav__logo {
+            grid-area: logo;
+            height: 40px;
+            padding: 5px;
+
+            @include mq(sp) {
+                width: max-content;
+                margin: 20px auto;
+            }
+        }
+
+        >.nav__search {
+            display: flex;
+            align-items: center;
+            height: 45px;
+            padding: 10px 30px;
+            margin-left: 30px;
+            grid-area: search__box;
+            background: white;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px 1px $bg-200;
+
+            >.search__ico {
+                @include font(1rem, $te-200);
+                padding-right: 20px;
+            }
+
+            >.search__item {
+                position: relative;
+                width: max-content;
+                @include font(1rem, $te-100);
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: -5px;
+                    height: 100%;
+                    width: 1px;
+                    background: $te-200;
+                    animation: blinkCursor .5s ease infinite alternate;
+                }
+
+                @keyframes blinkCursor {
+                    0% {
+                        opacity: 0;
+                    }
+
+                    30% {
+                        opacity: 0;
+                    }
+
+                    70% {
+                        opacity: 1;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    >.searchs__txts {
+        padding: 10px 30px;
+        @include font(.8rem, $te-200);
+    }
+
+    >.maybe__txts {
+        padding: 20px;
+
+        >span {
+            @include font(1rem, red);
+        }
+
+        >a {
+            @include font(1.1rem, #00e);
+            margin-left: 5px;
+            font-weight: bold;
+        }
+    }
+
+    >.notfound__desc {
+        display: flex;
+        align-items: flex-start;
+        gap: 10%;
+
+        >.descs {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 10px;
+
+            >.desc__ttl {
+                @include font(3rem, $te-100);
+                margin-bottom: 30px;
+            }
+
+            >p {
+                @include font(1.2rem, $te-100);
+            }
+        }
+
+        >.desc__pic {
+            box-sizing: content-box;
+            height: auto;
+            width: 50%;
+            padding: 20px;
+            margin-left: auto;
+
+            @include mq(tab) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+svg>#notfound {
+    >#server__fires {
+
+        >#fire1,
+        >#fire2,
+        >#fire3,
+        >#fire4 {
+            transform-origin: 108.701px 191.351px;
+        }
+
+        >#fire1 {
+            fill: red;
+            animation: shakeToLeft 1.5s linear infinite alternate, scaleDown 1.5s ease infinite alternate;
+        }
+
+        >#fire2 {
+            animation: shakeToRight 1.5s ease infinite alternate, scaleDown 1.5s ease infinite alternate;
+        }
+
+        >#fire3 {
+            animation: shakeToRight .75s ease infinite alternate, scaleDown 2s ease .5s infinite alternate;
+        }
+
+        >#fire4 {
+            fill: red;
+            animation: shakeToRight 1s linear infinite alternate, scaleDown 1s ease infinite alternate;
+        }
+
+        @keyframes shakeToRight {
+            100% {
+                transform: rotate(15deg);
+            }
+        }
+
+        @keyframes shakeToLeft {
+            100% {
+                transform: rotate(-10deg);
+            }
+        }
+
+        @keyframes scaleDown {
+            100% {
+                transform: scale(90%);
+            }
+        }
+    }
+
+    >#server__light {
+        >#server__light1 {
+            fill: $primary-200;
+        }
+    }
+}
