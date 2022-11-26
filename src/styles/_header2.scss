@@ -87,10 +87,41 @@ header {
                 }
 
                 >li>a {
-                    @include font(calc(.7rem + 1vw), $te-200);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
 
-                    @include mq(sp) {
-                        @include font(2rem, $te-200);
+                    >span {
+                        @include font(1rem, $te-200);
+                        line-height: 1.2;
+
+                        @include mq(sp) {
+                            @include font(1.5rem, $te-200);
+                        }
+
+                        &.is__bigger {
+                            @include font(1.45rem, $te-100);
+                            position: relative;
+                            width: max-content;
+                            padding: 2px;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                height: 2px;
+                                width: 60px;
+                                background: $primary-200;
+                                transform: translateX(-50%);
+                                border-radius: 2px;
+                            }
+
+                            @include mq(sp) {
+                                @include font(2rem, $te-100);
+                            }
+                        }
                     }
                 }
             }
