@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/dev-web-dojo/static/css/main.dccc2121.css",
-    "main.js": "/dev-web-dojo/static/js/main.ed026bc4.js",
+    "main.css": "/dev-web-dojo/static/css/main.2f390d05.css",
+    "main.js": "/dev-web-dojo/static/js/main.b1dcfc28.js",
     "static/media/YujiSyuku-Regular.ttf": "/dev-web-dojo/static/media/YujiSyuku-Regular.597f191659eefd846b89.ttf",
     "static/media/about.png": "/dev-web-dojo/static/media/about.cf29de8b108c37da0921.png",
     "static/media/a.png": "/dev-web-dojo/static/media/a.6eef09a68c1e2c766802.png",
     "static/media/logoNobg.png": "/dev-web-dojo/static/media/logoNobg.5ad0133a62a4fca4f17e.png",
     "static/media/topview.svg": "/dev-web-dojo/static/media/topview.f1ab0abec7e23d2cf138d87a9802d5ee.svg",
+    "static/media/notfound.svg": "/dev-web-dojo/static/media/notfound.fbf839a0ea3fe38b32013e6103ac787e.svg",
+    "static/media/notfound__logo.svg": "/dev-web-dojo/static/media/notfound__logo.4aa27dc7fd3f190b6fa298ff04db4a93.svg",
     "index.html": "/dev-web-dojo/index.html",
     "static/media/section__backWave.svg": "/dev-web-dojo/static/media/section__backWave.bd622768053c04cdc86201b260d9a657.svg",
-    "main.dccc2121.css.map": "/dev-web-dojo/static/css/main.dccc2121.css.map",
-    "main.ed026bc4.js.map": "/dev-web-dojo/static/js/main.ed026bc4.js.map"
+    "main.2f390d05.css.map": "/dev-web-dojo/static/css/main.2f390d05.css.map",
+    "main.b1dcfc28.js.map": "/dev-web-dojo/static/js/main.b1dcfc28.js.map"
   },
   "entrypoints": [
-    "static/css/main.dccc2121.css",
-    "static/js/main.ed026bc4.js"
+    "static/css/main.2f390d05.css",
+    "static/js/main.b1dcfc28.js"
   ]
 }
