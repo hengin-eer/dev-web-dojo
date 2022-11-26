@@ -19,8 +19,8 @@ const Home = () => {
 						<img className='desc__pic' src={topview} alt="" />
 					</div>
 					<div className="inner__buttons">
-						<Link className='inner__btn' to="/courses">コース一覧</Link>
-						<Link className='inner__btn' to="/contact">お問い合わせ</Link>
+						<Link className='inner__btn is__default' to="/courses">コース一覧</Link>
+						<Link className='inner__btn is__border' to="/contact">お問い合わせ</Link>
 					</div>
 					<a href='#about' className="inner__scroll">
 						<span className='scroll__txt'>scroll</span>
