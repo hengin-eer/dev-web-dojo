@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.75797d82.css",
-    "main.js": "/static/js/main.06573cf7.js",
-    "static/media/YujiSyuku-Regular.ttf": "/static/media/YujiSyuku-Regular.597f191659eefd846b89.ttf",
-    "static/media/about.png": "/static/media/about.cf29de8b108c37da0921.png",
-    "static/media/a.png": "/static/media/a.6eef09a68c1e2c766802.png",
-    "static/media/logoNobg.png": "/static/media/logoNobg.5ad0133a62a4fca4f17e.png",
-    "static/media/topview.svg": "/static/media/topview.f1ab0abec7e23d2cf138d87a9802d5ee.svg",
-    "static/media/notfound.svg": "/static/media/notfound.fbf839a0ea3fe38b32013e6103ac787e.svg",
-    "static/media/notfound__logo.svg": "/static/media/notfound__logo.4aa27dc7fd3f190b6fa298ff04db4a93.svg",
-    "index.html": "/index.html",
-    "static/media/section__backWave.svg": "/static/media/section__backWave.bd622768053c04cdc86201b260d9a657.svg",
-    "main.75797d82.css.map": "/static/css/main.75797d82.css.map",
-    "main.06573cf7.js.map": "/static/js/main.06573cf7.js.map"
+    "main.css": "/dev-web-dojo/static/css/main.8632ef1e.css",
+    "main.js": "/dev-web-dojo/static/js/main.68c83819.js",
+    "static/media/YujiSyuku-Regular.ttf": "/dev-web-dojo/static/media/YujiSyuku-Regular.597f191659eefd846b89.ttf",
+    "static/media/about.png": "/dev-web-dojo/static/media/about.cf29de8b108c37da0921.png",
+    "static/media/a.png": "/dev-web-dojo/static/media/a.6eef09a68c1e2c766802.png",
+    "static/media/logoNobg.png": "/dev-web-dojo/static/media/logoNobg.5ad0133a62a4fca4f17e.png",
+    "static/media/topview.svg": "/dev-web-dojo/static/media/topview.f1ab0abec7e23d2cf138d87a9802d5ee.svg",
+    "static/media/notfound.svg": "/dev-web-dojo/static/media/notfound.fbf839a0ea3fe38b32013e6103ac787e.svg",
+    "static/media/notfound__logo.svg": "/dev-web-dojo/static/media/notfound__logo.4aa27dc7fd3f190b6fa298ff04db4a93.svg",
+    "index.html": "/dev-web-dojo/index.html",
+    "static/media/section__backWave.svg": "/dev-web-dojo/static/media/section__backWave.bd622768053c04cdc86201b260d9a657.svg",
+    "main.8632ef1e.css.map": "/dev-web-dojo/static/css/main.8632ef1e.css.map",
+    "main.68c83819.js.map": "/dev-web-dojo/static/js/main.68c83819.js.map"
   },
   "entrypoints": [
-    "static/css/main.75797d82.css",
-    "static/js/main.06573cf7.js"
+    "static/css/main.8632ef1e.css",
+    "static/js/main.68c83819.js"
   ]
 }
