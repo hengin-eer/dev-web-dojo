@@ -153,31 +153,31 @@ svg>#notfound {
 
         >#fire1 {
             fill: red;
-            animation: shakeToLeft 1.5s linear infinite alternate, scaleDown 1.5s ease infinite alternate;
+            animation: shakeToLeft .5s linear infinite alternate, scaleDown .01s ease .01s infinite alternate;
         }
 
         >#fire2 {
-            animation: shakeToRight 1.5s ease infinite alternate, scaleDown 1.5s ease infinite alternate;
+            animation: shakeToRight .5s linear infinite alternate, scaleDown .01s ease .01s infinite alternate;
         }
 
         >#fire3 {
-            animation: shakeToRight .75s ease infinite alternate, scaleDown 2s ease .5s infinite alternate;
+            animation: shakeToRight .5s linear .5s infinite alternate, scaleDown .01s ease infinite alternate;
         }
 
         >#fire4 {
             fill: red;
-            animation: shakeToRight 1s linear infinite alternate, scaleDown 1s ease infinite alternate;
+            animation: shakeToRight .5s linear .5s infinite alternate, scaleDown .01s ease infinite alternate;
         }
 
         @keyframes shakeToRight {
             100% {
-                transform: rotate(15deg);
+                transform: rotate(2.5deg);
             }
         }
 
         @keyframes shakeToLeft {
             100% {
-                transform: rotate(-10deg);
+                transform: rotate(-2.5deg);
             }
         }
 
@@ -189,8 +189,20 @@ svg>#notfound {
     }
 
     >#server__light {
-        >#server__light1 {
-            fill: $primary-200;
+        >#server__light1, >#server__light2, >#server__light3 {
+            >path {
+                fill: $primary-200;
+                animation: lightToggle .9s;
+            }
+        }
+        >#server__light1>path {
+            animation-delay: 0s;
+        }
+        >#server__light2>path {
+            animation-delay: .2s;
+        }
+        >#server__light3>path {
+            animation-delay: .4s;
         }
     }
 }

@@ -1,38 +1,36 @@
 @import 'vars';
 
 .course {
-    .course__topview {
-        width: 100vw;
-        background: $liner-100;
+    >.course__topview {
+        width: 100%;
 
-        .topview__ttl {
+        >.topview__ttl {
             max-width: 1080px;
-            height: 300px;
+            height: 200px;
             padding: 10px 20px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
+            row-gap: 15px;
 
             >.ttl__main {
-                @include font(3.5rem, white);
+                @include font(3rem, black);
                 font-family: $for-logo;
             }
 
             >.ttl__sub {
-                @include font(1.5rem, $te-100);
-                padding-left: 10px;
-                margin-top: 20px;
+                @include font(1.2rem, $te-100);
+                line-height: 2;
             }
         }
     }
 
-    .course__cats {
+    >.course__cats {
         max-width: 1080px;
         padding: 50px 20px;
         margin: 0 auto;
-        // background: #000;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -45,7 +43,7 @@
             gap: 50px;
         }
 
-        .course__cat {
+        >.course__cat {
             height: 320px;
             min-width: 250px;
             width: 30%;
@@ -58,7 +56,7 @@
             box-shadow: 2px 2px 8px $primary-100;
 
             @include mq(tab) {
-                height: 300px;
+                height: 320px;
                 width: 90%;
             }
 
@@ -74,7 +72,8 @@
             }
 
             >.cat__desc {
-                @include font(.95rem, $te-100);
+                @include font(1rem, $te-100);
+                line-height: 2;
             }
         }
     }

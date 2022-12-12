@@ -38,8 +38,11 @@ function Postlist() {
                 </div>
             </div>
             {datas ? (
-                <div>
-                    <h1>coming soon...</h1>
+                <div className="postCards">
+                    <h1>Coming soon...</h1>
+                    <p>ごめんなさい、まだ記事がありません</p>
+                    <p>Web道場の記事執筆に是非参加してください</p>
+                    <p></p>
                 </div>
             ) : (
                 <div className="postCards">
@@ -56,7 +59,6 @@ function Postlist() {
                                         <img src={`${process.env.PUBLIC_URL}/media/${post.category}.svg`} alt="" />
                                     </div>
                                     <Link className='post__more' to={`/posts/${post.category}/${post.slug}`}>詳しく見る</Link>
-                                    <hr />
                                 </div>
                             )
                         })

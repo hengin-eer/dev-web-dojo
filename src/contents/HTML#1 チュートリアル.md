@@ -1,5 +1,5 @@
 ---
-id: 1
+id: 1.1
 author: hengineer
 date: 9/27, 2022
 category: html
@@ -31,8 +31,6 @@ HTMLでは文章を`<p>`のような「タグ」と「タグ」で囲い記述�
 
 ## HTMLの歴史
 
-
-
 HTMLは「ティム・バーナーズ＝リー」という人物が1989年にコード化したツール群でした
 
 >ティム・バーナーズ＝リーは世界初のブラウザ「WorldWideWeb」を1991年に発表した人物でもあります
@@ -56,7 +54,7 @@ HTMLの記法を理解する上で「**タグ**」というものがあります
 ### 記述例
 
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="dojo-html-1-1" src="https://codepen.io/hengineer/embed/PoaeXZo?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="300" style="width: 100%;" scrolling="no" title="dojo-html-1-1" src="https://codepen.io/hengineer/embed/PoaeXZo?default-tab=html%2Cresult" frameborder="no" loading="lazy">
   See the Pen <a href="https://codepen.io/hengineer/pen/PoaeXZo">
   dojo-html-1-1</a> by hengineer (<a href="https://codepen.io/hengineer">@hengineer</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -71,7 +69,7 @@ HTMLの記法を理解する上で「**タグ**」というものがあります
 ### 記述例
 
 
-```html
+```html:template.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,3 +84,39 @@ HTMLの記法を理解する上で「**タグ**」というものがあります
 </html>
 ```
 
+それぞれのタグについて軽く解説していきます
+
+- `<!DOCTYPE html>`: ドキュメントの種類が`HTML`だと宣言しています
+- `<html lang="en">`: HTMLを記入していくには`<html></html>`で囲う必要があります 属性の`lang`には言語を入れますので日本語であれば`ja`を記入します
+- `<head>`: このタグの中に`<meta />`を入れていきます それぞれページのタイトルや説明、読み込むcssファイルなどの情報を書いていきます
+- `<body>`: コメントにあるとおりこの中に記述されているタグが画面に表示されていく部分になります
+
+ご覧の通り少しコードの量がありますので初心者の方にはこれだけでも苦痛になるかと思います
+
+そこで`VScode`を利用している方は言語モードを`html`に選択後、`!`を入力するだけで補完機能から入力できるかと思います
+
+## コメントアウト
+
+コードを記述していく際に**ちょっとしたメモ・注意点を残したり**、**一部のコードを無効化したいけどコードを消したくない**といったことがしばしばあります
+
+そんな期待に応えてくれる「**コメントアウト**」がほとんどの言語に備わっています
+
+ただ、言語によってコメントアウトの記述の仕方は若干違いますので、混同しないように注意しましょう
+
+HTMLでは`<!--  -->`でコードを囲うことでコメントアウトすることが出来ます
+
+```html:html
+<h1>Title</h1>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo</p>
+<!-- <p>The quick, brown fox jumps over a lazy dog. DJs</p> -->
+
+<!-- この中がコメントアウトされるコード -->
+```
+
+これでコードは無効化することが出来ています
+
+しかしHTMLの場合いちいちコードのコメントアウトを記述するのは疲れます
+
+そこで`VScode`を使用している方は任意のコード上にカーソルがフォーカスされていることを確認し、`Ctrl + /`を入力するだけでコメントアウト及びコメントアウトの解除を行うことが出来ます
+
+🚧building...

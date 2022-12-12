@@ -5,6 +5,7 @@
 @use 'postlist';
 @use 'post';
 @use 'notfound';
+@use 'footer';
 
 // @import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
 @font-face {
@@ -41,8 +42,15 @@ body.active {
     scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-    display: none;
+body::-webkit-scrollbar {
+    background: white;
+    box-shadow: -5px -5px 5px black;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: $primary-100;
+    border: solid 4px white;
+    border-radius: 50px;
 }
 
 a {

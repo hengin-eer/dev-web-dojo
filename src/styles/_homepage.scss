@@ -36,7 +36,7 @@
 
     >.home__topview {
         height: max-content;
-        width: 100vw;
+        width: 100%;
         // background: url('../conponents/media/topview.jpg') center;
         // background-size: cover;
 
@@ -46,7 +46,7 @@
 
         >.topview__inner {
             position: relative;
-            width: 100vw;
+            width: 100%;
             padding: 0 50px;
             display: flex;
             flex-direction: column;
@@ -167,7 +167,7 @@
     }
 
     >.home__about {
-        width: 100vw;
+        width: 100%;
         padding: 60px 0;
         background: $bg-300;
 
