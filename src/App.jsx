@@ -10,6 +10,7 @@ import Postlist from './conponents/Postlist';
 import Post from './conponents/Post';
 import ScrollToTop from './conponents/ScrollToTop';
 import { NotFound } from './conponents/NotFound';
+import Footer from './conponents/Footer';
 
 function App() {
   const [active, setActive] = useState(false);
@@ -50,6 +51,7 @@ function App() {
           <Route path='/posts/:cat/:id/' element={<Post />} />
         </Routes>
 
+        <Footer />
       </div>
     </Router>
   );
