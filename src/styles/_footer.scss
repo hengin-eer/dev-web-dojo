@@ -1,0 +1,45 @@
+@import 'vars';
+
+footer {
+    position: sticky;
+    bottom: -100px;
+    background: $liner-100;
+    font-family: $for-code;
+
+    .footer__inner {
+        height: 100px;
+        max-width: 1080px;
+        padding: 0 30px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        >.copyright__By {
+            @include font(.8rem, $te-100);
+        }
+
+        >.copyright__txt {
+            @include font(.8rem, $te-100);
+        }
+
+        .scroll__top {
+            position: fixed;
+            right: 30px;
+            bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 50px;
+            background: $primary-100;
+            border-radius: 50%;
+            z-index: 10;
+
+            >.scroll__ico {
+                @include font(20px, $bg-100);
+            }
+        }
+    }
+}

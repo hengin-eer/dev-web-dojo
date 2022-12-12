@@ -2,29 +2,37 @@
 
 .postlist {
     >.postlist__topview {
-        width: 100vw;
-        background: $liner-100;
+        width: 100%;
 
         >.topview__ttl {
             max-width: 1080px;
-            height: 200px;
+            height: 150px;
             padding: 10px 20px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            row-gap: 15px;
 
             >.ttl__main {
-                @include font(calc(1.5rem + 2vw), white);
+                @include font(2rem, black);
                 font-family: $for-logo;
             }
 
             >.ttl__sub {
-                @include font(calc(.5rem + 1vw), $te-100);
+                @include font(.8rem, $te-100);
                 max-width: 80vw;
-                font-size: 1rem;
+                line-height: 2;
             }
         }
+    }
+
+    >.postCards {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
     }
 }

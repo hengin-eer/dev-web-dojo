@@ -5,21 +5,28 @@
   padding-top: 60px;
 }
 
+.header__wrapper {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
 header {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  width: 100vw;
+  width: 100%;
   padding: 0 20px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: saturate(200%) blur(20px);
+          backdrop-filter: saturate(200%) blur(20px);
   font-family: "Yuji Syuku" !important;
+  box-shadow: 0 2px 4px #C9D6DF;
   z-index: 10;
 }
 header > .header__inner {
@@ -49,7 +56,7 @@ header > .header__inner .header__menu {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,7 +110,7 @@ header > .header__inner .header__menu > ul > li > a {
   justify-content: center;
 }
 header > .header__inner .header__menu > ul > li > a > span {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #52616B;
   line-height: 1.2;
 }
@@ -173,49 +180,40 @@ header > .header__inner .header__menu > .sns > a > img {
 @media screen and (max-width: 480px) {
   .hum {
     cursor: pointer;
-    height: 60px;
-    width: 60px;
+    position: fixed;
+    left: 50vw;
+    bottom: 10px;
+    transform: translate(-50%, 0);
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    z-index: 20;
+    background: #2869ff;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     transition: all 0.3s;
-    position: fixed !important;
-    left: 50vw;
-    bottom: 10px;
-    transform: translate(-50%, 0);
-    background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
+    z-index: 20;
   }
   .hum > span {
     height: 2px;
-    width: 30px;
+    width: 25px;
     background: #F0F5F9;
     border-radius: 2px;
     transition: 0.5s;
   }
-  .hum > span:nth-of-type(1) {
-    top: 10px;
-  }
-  .hum > span:nth-of-type(2) {
-    top: 19px;
-  }
-  .hum > span:nth-of-type(3) {
-    top: 28px;
-  }
 }
 @media screen and (max-width: 480px) and (max-width: 480px) {
   .hum.active > span:nth-of-type(1) {
-    width: 30px;
+    width: 25px;
   }
   .hum.active > span:nth-of-type(2) {
-    width: 20px;
+    width: 15px;
   }
   .hum.active > span:nth-of-type(3) {
-    width: 10px;
+    width: 5px;
   }
 }
 
@@ -253,7 +251,7 @@ header > .header__inner .header__menu > .sns > a > img {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  width: 100vw;
+  width: 100%;
 }
 @media screen and (max-width: 480px) {
   .home > .home__topview {
@@ -262,7 +260,7 @@ header > .header__inner .header__menu > .sns > a > img {
 }
 .home > .home__topview > .topview__inner {
   position: relative;
-  width: 100vw;
+  width: 100%;
   padding: 0 50px;
   display: flex;
   flex-direction: column;
@@ -441,7 +439,7 @@ header > .header__inner .header__menu > .sns > a > img {
   }
 }
 .home > .home__about {
-  width: 100vw;
+  width: 100%;
   padding: 60px 0;
   background: #171717;
 }
@@ -525,32 +523,31 @@ header > .header__inner .header__menu > .sns > a > img {
   padding-right: 10px;
 }
 
-.course .course__topview {
-  width: 100vw;
-  background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
+.course > .course__topview {
+  width: 100%;
 }
-.course .course__topview .topview__ttl {
+.course > .course__topview > .topview__ttl {
   max-width: 1080px;
-  height: 300px;
+  height: 200px;
   padding: 10px 20px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  row-gap: 15px;
 }
-.course .course__topview .topview__ttl > .ttl__main {
-  font-size: 3.5rem;
-  color: white;
+.course > .course__topview > .topview__ttl > .ttl__main {
+  font-size: 3rem;
+  color: black;
   font-family: "Yuji Syuku";
 }
-.course .course__topview .topview__ttl > .ttl__sub {
-  font-size: 1.5rem;
+.course > .course__topview > .topview__ttl > .ttl__sub {
+  font-size: 1.2rem;
   color: #1E2022;
-  padding-left: 10px;
-  margin-top: 20px;
+  line-height: 2;
 }
-.course .course__cats {
+.course > .course__cats {
   max-width: 1080px;
   padding: 50px 20px;
   margin: 0 auto;
@@ -561,13 +558,13 @@ header > .header__inner .header__menu > .sns > a > img {
   gap: 50px 5%;
 }
 @media screen and (max-width: 768px) {
-  .course .course__cats {
+  .course > .course__cats {
     flex-wrap: nowrap;
     flex-direction: column;
     gap: 50px;
   }
 }
-.course .course__cats .course__cat {
+.course > .course__cats > .course__cat {
   height: 320px;
   min-width: 250px;
   width: 30%;
@@ -580,53 +577,64 @@ header > .header__inner .header__menu > .sns > a > img {
   box-shadow: 2px 2px 8px #2869ff;
 }
 @media screen and (max-width: 768px) {
-  .course .course__cats .course__cat {
-    height: 300px;
+  .course > .course__cats > .course__cat {
+    height: 320px;
     width: 90%;
   }
 }
-.course .course__cats .course__cat > img {
+.course > .course__cats > .course__cat > img {
   height: 100px;
   margin-bottom: 10px;
 }
-.course .course__cats .course__cat > .cat__ttl {
+.course > .course__cats > .course__cat > .cat__ttl {
   font-size: 2rem;
   color: #1E2022;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.course .course__cats .course__cat > .cat__desc {
-  font-size: 0.95rem;
+.course > .course__cats > .course__cat > .cat__desc {
+  font-size: 1rem;
   color: #1E2022;
+  line-height: 2;
 }
 
 .postlist > .postlist__topview {
-  width: 100vw;
-  background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
+  width: 100%;
 }
 .postlist > .postlist__topview > .topview__ttl {
   max-width: 1080px;
-  height: 200px;
+  height: 150px;
   padding: 10px 20px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  row-gap: 15px;
 }
 .postlist > .postlist__topview > .topview__ttl > .ttl__main {
-  font-size: calc(1.5rem + 2vw);
-  color: white;
+  font-size: 2rem;
+  color: black;
   font-family: "Yuji Syuku";
 }
 .postlist > .postlist__topview > .topview__ttl > .ttl__sub {
-  font-size: calc(0.5rem + 1vw);
+  font-size: 0.8rem;
   color: #1E2022;
   max-width: 80vw;
-  font-size: 1rem;
+  line-height: 2;
+}
+.postlist > .postCards {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 50px;
 }
 
 .post__date {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   padding: 10px 0;
   font-size: 1.2rem;
   color: #1E2022;
@@ -655,15 +663,97 @@ header > .header__inner .header__menu > .sns > a > img {
 }
 
 .post {
+  display: flex;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   min-height: 100vh;
-  max-width: 1080px;
-  padding: 20px 30px;
-  margin: 0 auto;
 }
-.post .post__back {
+.post .post__toc {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+  height: 100vh;
+  width: 320px;
+  padding: 20px;
+  background: white;
+  border-right: solid 1px #C9D6DF;
+}
+@media screen and (max-width: 768px) {
+  .post .post__toc {
+    position: fixed;
+    top: 60px;
+    width: 50%;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s;
+    z-index: 10;
+  }
+  .post .post__toc.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.post .post__toc .toc {
+  margin: 0 auto;
+  list-style: none;
+}
+.post .post__toc .toc li {
+  line-height: 2;
+  border-bottom: solid 1px black;
+  margin-bottom: 10px;
+}
+.post .post__toc .toc li > a {
+  color: #1E2022;
+}
+.post .post__toc .toc ul {
+  list-style: none;
+  padding-left: 30px;
+}
+.post .toggle__toclists {
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  right: 30px;
+  bottom: 70px;
+  height: 50px;
+  width: 50px;
+  background: white;
+  border: solid 2px #2869ff;
+  border-radius: 50%;
+  transition: all 0.3s;
+  z-index: 20;
+}
+.post .toggle__toclists > .toclists__ico {
+  font-size: 20px;
+  color: #2869ff;
+}
+.post .toggle__toclists.active {
+  background: #2869ff;
+}
+.post .toggle__toclists.active > .toclists__ico {
+  font-size: 20px;
+  color: #F0F5F9;
+}
+@media screen and (max-width: 768px) {
+  .post .toggle__toclists {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.post .post__article {
+  width: calc(100% - 320px);
+  padding: 20px;
+}
+@media screen and (max-width: 768px) {
+  .post .post__article {
+    width: 100%;
+  }
+}
+.post .post__article .post__back {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -674,19 +764,19 @@ header > .header__inner .header__menu > .sns > a > img {
   border-radius: 100px;
   transition: 0.3s;
 }
-.post .post__back > a {
+.post .post__article .post__back > a {
   text-decoration: none;
   font-size: 1rem;
   color: #2869ff;
   transition: 0.3s;
 }
-.post .post__back:hover {
+.post .post__article .post__back:hover {
   background: #2869ff;
 }
-.post .post__back:hover > a {
+.post .post__article .post__back:hover > a {
   color: white;
 }
-.post .post__author {
+.post .post__article .post__author {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -695,7 +785,7 @@ header > .header__inner .header__menu > .sns > a > img {
   gap: 20px;
   margin: 20px 0;
 }
-.post .post__author .author__ico {
+.post .post__article .post__author .author__ico {
   height: 40px;
   width: 40px;
   -o-object-fit: cover;
@@ -704,63 +794,106 @@ header > .header__inner .header__menu > .sns > a > img {
      object-position: center;
   border-radius: 50%;
 }
-.post .post__author .author__name {
+.post .post__article .post__author .author__name {
   font-size: 20px;
   color: #1E2022;
 }
-.post .post__contents .toc__ttl {
-  font-size: 1.5rem;
-  color: #52616B;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+.post .post__article .post__contents .codes__wrapper {
   padding: 10px;
-  margin: 0 auto;
+  margin: 30px 0;
+  background: #272822;
 }
-.post .post__contents .toc {
-  width: 80vw;
-  padding: 20px;
-  margin: 0 auto;
-  border: solid 1px black;
+.post .post__article .post__contents .codes__wrapper .codes__header {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #272822;
 }
-.post .post__contents .toc ul {
-  margin-left: 20px;
+.post .post__article .post__contents .codes__wrapper .codes__header > .file__name {
+  font-size: 1rem;
+  color: #52616B;
+  font-weight: bold;
 }
-.post .post__contents > h1,
-.post .post__contents > h2,
-.post .post__contents > h3 {
+.post .post__article .post__contents .codes__wrapper .codes__header > .copy__codes {
+  padding: 2px 6px;
+  font-size: 1rem;
+  color: #28ffbe;
+  background: transparent;
+  border: solid 1px #28ffbe;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.post .post__article .post__contents > h1,
+.post .post__article .post__contents > h2,
+.post .post__article .post__contents > h3 {
   color: #1E2022;
-  padding: 5px 10px;
-  margin: 50px 0 25px 0;
+  padding: 75px 10px 10px 10px;
+  margin: -40px 0 25px 0;
   border-bottom: solid 1px #C9D6DF;
 }
-.post .post__contents > h1 {
+.post .post__article .post__contents > h1::before,
+.post .post__article .post__contents > h2::before,
+.post .post__article .post__contents > h3::before {
+  padding-right: 10px;
+  font-family: "Source Code Pro";
+  background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.post .post__article .post__contents > h1 {
   font-size: 28px;
 }
-.post .post__contents > h2 {
+.post .post__article .post__contents > h1::before {
+  content: "#";
+  font-size: 32px;
+  color: transparent;
+}
+.post .post__article .post__contents > h2 {
   font-size: 24px;
 }
-.post .post__contents > h3 {
+.post .post__article .post__contents > h2::before {
+  content: "##";
+  font-size: 28px;
+  color: transparent;
+}
+.post .post__article .post__contents > h3 {
   font-size: 20px;
 }
-.post .post__contents p {
+.post .post__article .post__contents p {
   color: #1E2022;
   line-height: 2;
 }
-.post .post__contents p > strong {
-  background: linear-gradient(to bottom, transparent 60%, #28ffbe 60% 90%, transparent 90%);
+.post .post__article .post__contents p > strong {
+  background: linear-gradient(to bottom, transparent 60%, #28ffbe 60%);
 }
-.post .post__contents p > code {
+.post .post__article .post__contents ul {
+  padding-left: 20px;
+  margin: 20px 0;
+}
+.post .post__article .post__contents ul li {
+  line-height: 2;
+}
+.post .post__article .post__contents :not(pre) > code {
+  font-size: 0.9rem;
+  color: #2869ff;
   background: #C9D6DF;
-  color: black;
-  padding: 1.5px 6px;
-  border-radius: 20px;
+  padding: 1px 4px;
+  margin: 0 2px;
+  border-radius: 2px;
 }
-.post .post__contents > blockquote {
+.post .post__article .post__contents iframe {
+  height: 400px;
+  margin: 30px 0;
+}
+.post .post__article .post__contents > blockquote {
   border-left: 4px solid #C9D6DF;
   padding: 15px 0 15px 20px;
   margin: 1.5em 0;
-  opacity: 0.8;
 }
 
 .notfound {
@@ -921,40 +1054,40 @@ svg > #notfound > #server__fires > #fire4 {
 }
 svg > #notfound > #server__fires > #fire1 {
   fill: red;
-  -webkit-animation: shakeToLeft 1.5s linear infinite alternate, scaleDown 1.5s ease infinite alternate;
-          animation: shakeToLeft 1.5s linear infinite alternate, scaleDown 1.5s ease infinite alternate;
+  -webkit-animation: shakeToLeft 0.5s linear infinite alternate, scaleDown 0.01s ease 0.01s infinite alternate;
+          animation: shakeToLeft 0.5s linear infinite alternate, scaleDown 0.01s ease 0.01s infinite alternate;
 }
 svg > #notfound > #server__fires > #fire2 {
-  -webkit-animation: shakeToRight 1.5s ease infinite alternate, scaleDown 1.5s ease infinite alternate;
-          animation: shakeToRight 1.5s ease infinite alternate, scaleDown 1.5s ease infinite alternate;
+  -webkit-animation: shakeToRight 0.5s linear infinite alternate, scaleDown 0.01s ease 0.01s infinite alternate;
+          animation: shakeToRight 0.5s linear infinite alternate, scaleDown 0.01s ease 0.01s infinite alternate;
 }
 svg > #notfound > #server__fires > #fire3 {
-  -webkit-animation: shakeToRight 0.75s ease infinite alternate, scaleDown 2s ease 0.5s infinite alternate;
-          animation: shakeToRight 0.75s ease infinite alternate, scaleDown 2s ease 0.5s infinite alternate;
+  -webkit-animation: shakeToRight 0.5s linear 0.5s infinite alternate, scaleDown 0.01s ease infinite alternate;
+          animation: shakeToRight 0.5s linear 0.5s infinite alternate, scaleDown 0.01s ease infinite alternate;
 }
 svg > #notfound > #server__fires > #fire4 {
   fill: red;
-  -webkit-animation: shakeToRight 1s linear infinite alternate, scaleDown 1s ease infinite alternate;
-          animation: shakeToRight 1s linear infinite alternate, scaleDown 1s ease infinite alternate;
+  -webkit-animation: shakeToRight 0.5s linear 0.5s infinite alternate, scaleDown 0.01s ease infinite alternate;
+          animation: shakeToRight 0.5s linear 0.5s infinite alternate, scaleDown 0.01s ease infinite alternate;
 }
 @-webkit-keyframes shakeToRight {
   100% {
-    transform: rotate(15deg);
+    transform: rotate(2.5deg);
   }
 }
 @keyframes shakeToRight {
   100% {
-    transform: rotate(15deg);
+    transform: rotate(2.5deg);
   }
 }
 @-webkit-keyframes shakeToLeft {
   100% {
-    transform: rotate(-10deg);
+    transform: rotate(-2.5deg);
   }
 }
 @keyframes shakeToLeft {
   100% {
-    transform: rotate(-10deg);
+    transform: rotate(-2.5deg);
   }
 }
 @-webkit-keyframes scaleDown {
@@ -967,8 +1100,65 @@ svg > #notfound > #server__fires > #fire4 {
     transform: scale(90%);
   }
 }
-svg > #notfound > #server__light > #server__light1 {
+svg > #notfound > #server__light > #server__light1 > path, svg > #notfound > #server__light > #server__light2 > path, svg > #notfound > #server__light > #server__light3 > path {
   fill: #28ffbe;
+  -webkit-animation: lightToggle 0.9s;
+          animation: lightToggle 0.9s;
+}
+svg > #notfound > #server__light > #server__light1 > path {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+svg > #notfound > #server__light > #server__light2 > path {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+svg > #notfound > #server__light > #server__light3 > path {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: -100px;
+  background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
+  font-family: "Source Code Pro";
+}
+footer .footer__inner {
+  height: 100px;
+  max-width: 1080px;
+  padding: 0 30px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer .footer__inner > .copyright__By {
+  font-size: 0.8rem;
+  color: #1E2022;
+}
+footer .footer__inner > .copyright__txt {
+  font-size: 0.8rem;
+  color: #1E2022;
+}
+footer .footer__inner .scroll__top {
+  position: fixed;
+  right: 30px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  background: #2869ff;
+  border-radius: 50%;
+  z-index: 10;
+}
+footer .footer__inner .scroll__top > .scroll__ico {
+  font-size: 20px;
+  color: #F0F5F9;
 }
 
 @font-face {
@@ -992,8 +1182,15 @@ body.active {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  display: none;
+body::-webkit-scrollbar {
+  background: white;
+  box-shadow: -5px -5px 5px black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2869ff;
+  border: solid 4px white;
+  border-radius: 50px;
 }
 
 a {
