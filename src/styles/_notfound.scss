@@ -105,104 +105,27 @@
     }
 
     >.notfound__desc {
-        display: flex;
-        align-items: flex-start;
-        gap: 10%;
-
         >.descs {
-            width: 40%;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 20px;
 
             >.desc__ttl {
                 @include font(3rem, $te-100);
                 margin-bottom: 30px;
             }
 
-            >p {
-                @include font(1.2rem, $te-100);
+            >.desc__txts {
+                padding: 50px;
+                text-align: center;
+
+                >p {
+                    @include font(1.2rem, $te-100);
+                    padding: 10px;
+                }
             }
-        }
-
-        >.desc__pic {
-            box-sizing: content-box;
-            height: auto;
-            width: 50%;
-            padding: 20px;
-            margin-left: auto;
-
-            @include mq(tab) {
-                width: 100%;
-            }
-        }
-    }
-}
-
-svg>#notfound {
-    >#server__fires {
-
-        >#fire1,
-        >#fire2,
-        >#fire3,
-        >#fire4 {
-            transform-origin: 108.701px 191.351px;
-        }
-
-        >#fire1 {
-            fill: red;
-            animation: shakeToLeft .5s linear infinite alternate, scaleDown .01s ease .01s infinite alternate;
-        }
-
-        >#fire2 {
-            animation: shakeToRight .5s linear infinite alternate, scaleDown .01s ease .01s infinite alternate;
-        }
-
-        >#fire3 {
-            animation: shakeToRight .5s linear .5s infinite alternate, scaleDown .01s ease infinite alternate;
-        }
-
-        >#fire4 {
-            fill: red;
-            animation: shakeToRight .5s linear .5s infinite alternate, scaleDown .01s ease infinite alternate;
-        }
-
-        @keyframes shakeToRight {
-            100% {
-                transform: rotate(2.5deg);
-            }
-        }
-
-        @keyframes shakeToLeft {
-            100% {
-                transform: rotate(-2.5deg);
-            }
-        }
-
-        @keyframes scaleDown {
-            100% {
-                transform: scale(90%);
-            }
-        }
-    }
-
-    >#server__light {
-        >#server__light1, >#server__light2, >#server__light3 {
-            >path {
-                fill: $primary-200;
-                animation: lightToggle .9s;
-            }
-        }
-        >#server__light1>path {
-            animation-delay: 0s;
-        }
-        >#server__light2>path {
-            animation-delay: .2s;
-        }
-        >#server__light3>path {
-            animation-delay: .4s;
         }
     }
 }
