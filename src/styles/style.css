@@ -43,6 +43,10 @@ header > .header__inner {
   }
 }
 header > .header__inner > .header__ttl > a {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
   font-size: 2rem;
   color: transparent;
 }
@@ -278,6 +282,11 @@ header > .header__inner .header__menu > .sns > a > img {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  .home > .home__topview > .topview__inner > .inner__desc {
+    flex-direction: column-reverse;
+  }
+}
 .home > .home__topview > .topview__inner > .inner__desc > .desc__ttls {
   display: flex;
   flex-direction: column;
@@ -296,7 +305,12 @@ header > .header__inner .header__menu > .sns > a > img {
   color: #52616B;
 }
 .home > .home__topview > .topview__inner > .inner__desc > .desc__pic {
-  width: 35vw;
+  width: 500px;
+}
+@media screen and (max-width: 768px) {
+  .home > .home__topview > .topview__inner > .inner__desc > .desc__pic {
+    width: 70%;
+  }
 }
 .home > .home__topview > .topview__inner > .inner__buttons {
   display: flex;
@@ -309,77 +323,6 @@ header > .header__inner .header__menu > .sns > a > img {
     gap: 30px;
   }
 }
-.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__default {
-  padding: 10px 40px 10px 20px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  width: 180px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
-  border-radius: 50px;
-  font-size: 20px;
-  color: white;
-  font-family: "Yuji Syuku";
-  position: relative;
-  transition: all 0.3s ease;
-}
-.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__default::after {
-  position: absolute;
-  content: "";
-  top: 22.5px;
-  right: 25px;
-  height: 5px;
-  width: 5px;
-  border-right: solid 1.5px white;
-  border-bottom: solid 1.5px white;
-  transform: rotate(-45deg);
-  transition: all 0.3s ease;
-}
-.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__default:hover::after {
-  transform: translateX(5px) rotate(-45deg);
-}
-.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__border {
-  padding: 10px 40px 10px 20px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  width: 180px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  background: white;
-  border: solid 2px #2869ff;
-  border-radius: 50px;
-  font-size: 20px;
-  color: #2869ff;
-  font-family: "Yuji Syuku";
-  position: relative;
-  transition: all 0.3s ease;
-}
-.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__border::after {
-  position: absolute;
-  content: "";
-  top: 22.5px;
-  right: 25px;
-  height: 5px;
-  width: 5px;
-  border-right: solid 1.5px #2869ff;
-  border-bottom: solid 1.5px #2869ff;
-  transform: rotate(-45deg);
-  transition: all 0.3s ease;
-}
-.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__border:hover {
-  color: white;
-  background: #2869ff;
-}
-.home > .home__topview > .topview__inner > .inner__buttons > .inner__btn.is__border:hover::after {
-  border-right: solid 1.5px white;
-  border-bottom: solid 1.5px white;
-  transform: translateX(5px) rotate(-45deg);
-}
 .home > .home__topview > .topview__inner > .inner__scroll {
   position: absolute;
   bottom: -120px;
@@ -389,7 +332,6 @@ header > .header__inner .header__menu > .sns > a > img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   z-index: 1;
 }
 .home > .home__topview > .topview__inner > .inner__scroll > .scroll__txt {
@@ -399,43 +341,28 @@ header > .header__inner .header__menu > .sns > a > img {
   font-weight: bold;
 }
 .home > .home__topview > .topview__inner > .inner__scroll > .scroll__arrow {
-  position: relative;
-  height: 20px;
-  width: 40px;
+  rotate: 90deg;
+  scale: 1;
   -webkit-animation: upDown none 1s infinite ease alternate;
           animation: upDown none 1s infinite ease alternate;
 }
-.home > .home__topview > .topview__inner > .inner__scroll > .scroll__arrow > span {
-  position: absolute;
-  top: 50%;
-  height: 2px;
-  width: 20px;
-  background: #52616B;
-  border-radius: 50px;
-  transform: translateY(-50%);
-}
-.home > .home__topview > .topview__inner > .inner__scroll > .scroll__arrow > span:nth-child(1) {
-  left: 3.2px;
-  transform: rotate(45deg);
-}
-.home > .home__topview > .topview__inner > .inner__scroll > .scroll__arrow > span:nth-child(2) {
-  right: 3.2px;
-  transform: rotate(-45deg);
+.home > .home__topview > .topview__inner > .inner__scroll > .scroll__arrow > path {
+  fill: #52616B;
 }
 @-webkit-keyframes upDown {
   0% {
-    transform: translateY(0px);
+    transform: translateX(-10px);
   }
   100% {
-    transform: translateY(15px);
+    transform: translateX(10px);
   }
 }
 @keyframes upDown {
   0% {
-    transform: translateY(0px);
+    transform: translateX(-10px);
   }
   100% {
-    transform: translateY(15px);
+    transform: translateX(10px);
   }
 }
 .home > .home__about {
@@ -446,11 +373,22 @@ header > .header__inner .header__menu > .sns > a > img {
 .home > .home__about > .about__inner {
   max-width: 1080px;
   margin: 0 auto;
+  padding: 0 30px;
   display: grid;
   grid-template-rows: -webkit-max-content -webkit-max-content -webkit-max-content;
   grid-template-rows: max-content max-content max-content;
-  grid-template-columns: 60% 40%;
-  grid-template-areas: "about__ttl     about__pic" "about__desc    about__pic" "about__desc    about__btn";
+  grid-template-columns: 50% 40%;
+  grid-template-areas: "about__ttl     about__pic" "about__desc    about__pic" "about__btn     .";
+  -moz-column-gap: 10%;
+       column-gap: 10%;
+}
+@media screen and (max-width: 768px) {
+  .home > .home__about > .about__inner {
+    grid-template-rows: -webkit-max-content -webkit-max-content -webkit-max-content -webkit-max-content;
+    grid-template-rows: max-content max-content max-content max-content;
+    grid-template-columns: 100%;
+    grid-template-areas: "about__ttl" "about__pic" "about__desc" "about__btn";
+  }
 }
 .home > .home__about > .about__inner > .about__ttl {
   grid-area: about__ttl;
@@ -468,7 +406,7 @@ header > .header__inner .header__menu > .sns > a > img {
   margin-top: 60px;
 }
 .home > .home__about > .about__inner .about__desc > p {
-  font-size: calc(0.5rem + 1vw);
+  font-size: 1.1rem;
   color: #B4A5A5;
 }
 .home > .home__about > .about__inner .about__pic {
@@ -483,44 +421,195 @@ header > .header__inner .header__menu > .sns > a > img {
 }
 .home > .home__about > .about__inner .about__btn {
   grid-area: about__btn;
-  padding: 10px 40px 10px 20px;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  width: 180px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  background: linear-gradient(45deg, #2869ff, #28ffbe 100%);
-  border-radius: 50px;
-  font-size: 20px;
-  color: white;
-  font-family: "Yuji Syuku";
-  position: relative;
-  transition: all 0.3s ease;
   margin-top: 50px;
-  margin-left: auto;
 }
-.home > .home__about > .about__inner .about__btn::after {
-  position: absolute;
-  content: "";
-  top: 22.5px;
-  right: 25px;
-  height: 5px;
-  width: 5px;
-  border-right: solid 1.5px white;
-  border-bottom: solid 1.5px white;
-  transform: rotate(-45deg);
-  transition: all 0.3s ease;
-}
-.home > .home__about > .about__inner .about__btn:hover::after {
-  transform: translateX(5px) rotate(-45deg);
+.home .home__course .course__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 .home .home__course .course__inner .course__ttl {
   align-items: flex-end;
+  margin-bottom: 30px;
 }
 .home .home__course .course__inner .course__ttl .ttl__sub {
   padding-right: 10px;
+}
+.home .home__course .course__inner > .course__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.home .home__course .course__inner > .course__desc .map__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 70px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.home .home__course .course__inner > .course__desc .map__wrapper > .map__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.home .home__course .course__inner > .course__desc .map__wrapper > .map__item > .item__box {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 8px #171717;
+  border-radius: 20px;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .home .home__course .course__inner > .course__desc .map__wrapper > .map__item > .item__box {
+    flex-direction: column;
+  }
+}
+.home .home__course .course__inner > .course__desc .map__wrapper > .map__item > .item__box > .box__pic {
+  height: 250px;
+  width: 300px;
+  background: white;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .home .home__course .course__inner > .course__desc .map__wrapper > .map__item > .item__box > .box__pic {
+    height: 250px;
+    width: 80vw;
+  }
+}
+.home .home__course .course__inner > .course__desc .map__wrapper > .map__item > .item__box > .box__txts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  row-gap: 20px;
+  height: 250px;
+  width: 400px;
+  padding: 0 20px;
+  background: #2869ff;
+}
+@media screen and (max-width: 768px) {
+  .home .home__course .course__inner > .course__desc .map__wrapper > .map__item > .item__box > .box__txts {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    width: 80vw;
+    padding: 30px;
+  }
+}
+.home .home__course .course__inner > .course__desc .map__wrapper > .map__item > .item__box > .box__txts > p {
+  font-size: 1.2rem;
+  color: white;
+  font-family: "Yuji Syuku";
+}
+.home .home__course .course__inner > .course__desc .map__wrapper > .map__item > .item__num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 5rem;
+  color: #2869ff;
+  font-family: "Source Code Pro";
+}
+.home .home__course .course__inner > .course__desc > .course__start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin: 100px 0;
+}
+.home .home__course .course__inner > .course__desc > .course__start > .start__txts {
+  font-size: 2rem;
+  color: #1E2022;
+  font-family: "Yuji Syuku";
+}
+.home > .home__contact {
+  padding: 100px 0;
+  background: #F0F5F9;
+}
+.home > .home__contact > .contact__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.home > .home__contact > .contact__inner > .contact__ttl {
+  align-items: center;
+}
+.home > .home__contact > .contact__inner > .contact__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+.home > .home__contact > .contact__inner > .contact__desc > .desc__txts {
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1E2022;
+  font-family: "Yuji Syuku";
+}
+@media screen and (max-width: 480px) {
+  .home > .home__contact > .contact__inner > .contact__desc > .desc__txts {
+    font-size: 1.2rem;
+  }
+}
+.home > .home__contact > .contact__inner > .contact__desc > .contacts__wrapper {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 70px;
+}
+.home > .home__contact > .contact__inner > .contact__desc > .contacts__wrapper > .contacts__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 50px;
+  max-width: 600px;
+  width: 80vw;
+  padding: 50px;
+  background: #C9D6DF;
+  border-radius: 20px;
+}
+.home > .home__contact > .contact__inner > .contact__desc > .contacts__wrapper > .contacts__item > .contacts__ttl {
+  font-size: 1.5rem;
+  color: #1E2022;
+  font-family: "Yuji Syuku";
+}
+.home > .home__contact > .contact__inner > .contact__desc > .contacts__wrapper > .contacts__item > .contacts__links {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+@media screen and (max-width: 768px) {
+  .home > .home__contact > .contact__inner > .contact__desc > .contacts__wrapper > .contacts__item > .contacts__links {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+  }
+}
+.home > .home__contact > .contact__inner > .contact__desc > .contacts__wrapper > .contacts__item > .contacts__links > .contacts__link {
+  display: flex;
+  align-items: center;
+}
+.home > .home__contact > .contact__inner > .contact__desc > .contacts__wrapper > .contacts__item > .contacts__links > .contacts__link > .link__ico {
+  height: 30px;
+}
+.home > .home__contact > .contact__inner > .contact__desc > .contacts__wrapper > .contacts__item > .contacts__links > .contacts__link > .link__txt {
+  font-size: 1.2rem;
+  color: #2869ff;
+  font-family: "Source Code Pro";
+  padding-left: 10px;
+}
+.home > .home__contact > .contact__inner > .contact__desc > .contacts__btn {
+  margin-top: 100px;
 }
 
 .course > .course__topview {
@@ -655,7 +744,9 @@ header > .header__inner .header__menu > .sns > a > img {
   width: -moz-max-content;
   width: max-content;
   padding: 2px 5px;
+  color: #1E2022;
   border: solid 2px #C9D6DF;
+  border-radius: 5px;
   background: white;
 }
 .post__cat > .cat__ico {
@@ -1011,111 +1102,26 @@ header > .header__inner .header__menu > .sns > a > img {
   margin-left: 5px;
   font-weight: bold;
 }
-.notfound > .notfound__desc {
-  display: flex;
-  align-items: flex-start;
-  gap: 10%;
-}
 .notfound > .notfound__desc > .descs {
-  width: 40%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 .notfound > .notfound__desc > .descs > .desc__ttl {
   font-size: 3rem;
   color: #1E2022;
   margin-bottom: 30px;
 }
-.notfound > .notfound__desc > .descs > p {
+.notfound > .notfound__desc > .descs > .desc__txts {
+  padding: 50px;
+  text-align: center;
+}
+.notfound > .notfound__desc > .descs > .desc__txts > p {
   font-size: 1.2rem;
   color: #1E2022;
-}
-.notfound > .notfound__desc > .desc__pic {
-  box-sizing: content-box;
-  height: auto;
-  width: 50%;
-  padding: 20px;
-  margin-left: auto;
-}
-@media screen and (max-width: 768px) {
-  .notfound > .notfound__desc > .desc__pic {
-    width: 100%;
-  }
-}
-
-svg > #notfound > #server__fires > #fire1,
-svg > #notfound > #server__fires > #fire2,
-svg > #notfound > #server__fires > #fire3,
-svg > #notfound > #server__fires > #fire4 {
-  transform-origin: 108.701px 191.351px;
-}
-svg > #notfound > #server__fires > #fire1 {
-  fill: red;
-  -webkit-animation: shakeToLeft 0.5s linear infinite alternate, scaleDown 0.01s ease 0.01s infinite alternate;
-          animation: shakeToLeft 0.5s linear infinite alternate, scaleDown 0.01s ease 0.01s infinite alternate;
-}
-svg > #notfound > #server__fires > #fire2 {
-  -webkit-animation: shakeToRight 0.5s linear infinite alternate, scaleDown 0.01s ease 0.01s infinite alternate;
-          animation: shakeToRight 0.5s linear infinite alternate, scaleDown 0.01s ease 0.01s infinite alternate;
-}
-svg > #notfound > #server__fires > #fire3 {
-  -webkit-animation: shakeToRight 0.5s linear 0.5s infinite alternate, scaleDown 0.01s ease infinite alternate;
-          animation: shakeToRight 0.5s linear 0.5s infinite alternate, scaleDown 0.01s ease infinite alternate;
-}
-svg > #notfound > #server__fires > #fire4 {
-  fill: red;
-  -webkit-animation: shakeToRight 0.5s linear 0.5s infinite alternate, scaleDown 0.01s ease infinite alternate;
-          animation: shakeToRight 0.5s linear 0.5s infinite alternate, scaleDown 0.01s ease infinite alternate;
-}
-@-webkit-keyframes shakeToRight {
-  100% {
-    transform: rotate(2.5deg);
-  }
-}
-@keyframes shakeToRight {
-  100% {
-    transform: rotate(2.5deg);
-  }
-}
-@-webkit-keyframes shakeToLeft {
-  100% {
-    transform: rotate(-2.5deg);
-  }
-}
-@keyframes shakeToLeft {
-  100% {
-    transform: rotate(-2.5deg);
-  }
-}
-@-webkit-keyframes scaleDown {
-  100% {
-    transform: scale(90%);
-  }
-}
-@keyframes scaleDown {
-  100% {
-    transform: scale(90%);
-  }
-}
-svg > #notfound > #server__light > #server__light1 > path, svg > #notfound > #server__light > #server__light2 > path, svg > #notfound > #server__light > #server__light3 > path {
-  fill: #28ffbe;
-  -webkit-animation: lightToggle 0.9s;
-          animation: lightToggle 0.9s;
-}
-svg > #notfound > #server__light > #server__light1 > path {
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-}
-svg > #notfound > #server__light > #server__light2 > path {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-}
-svg > #notfound > #server__light > #server__light3 > path {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  padding: 10px;
 }
 
 footer {
@@ -1137,11 +1143,14 @@ footer .footer__inner {
 }
 footer .footer__inner > .copyright__By {
   font-size: 0.8rem;
-  color: #1E2022;
+  color: white;
+}
+footer .footer__inner > .copyright__By > .heart {
+  color: red;
 }
 footer .footer__inner > .copyright__txt {
   font-size: 0.8rem;
-  color: #1E2022;
+  color: white;
 }
 footer .footer__inner .scroll__top {
   position: fixed;
@@ -1171,7 +1180,7 @@ body.active {
 
 .App {
   min-height: 100vh;
-  background: #F0F5F9;
+  background: white;
   font-family: "Noto Sans JP";
 }
 
@@ -1223,4 +1232,46 @@ img {
   opacity: 1;
   visibility: visible;
   transform: translate(0px, 0px);
+}
+
+.primary__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 50px;
+  min-width: 200px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: white;
+  border: solid 2px #2869ff;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+.primary__button > .inner__txt {
+  font-size: 20px;
+  color: #2869ff;
+  font-family: "Yuji Syuku";
+}
+.primary__button > .btn__arrow {
+  height: 20px;
+  margin-left: 20px;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+.primary__button > .btn__arrow > path {
+  fill: #2869ff;
+}
+.primary__button:hover {
+  background: #2869ff;
+}
+.primary__button:hover > .inner__txt {
+  color: white;
+}
+.primary__button:hover > .btn__arrow {
+  transform: translateX(0px);
+}
+.primary__button:hover > .btn__arrow > path {
+  fill: white;
 }/*# sourceMappingURL=style.css.map */

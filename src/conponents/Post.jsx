@@ -101,7 +101,7 @@ const Post = () => {
                 </div>
                 <div className="post__date"><FontAwesomeIcon className='date__ico' icon={faClockRotateLeft} />{fetchedPost.date}</div>
                 <div className="post__ttl">{fetchedPost.title}</div>
-                <div className="post__cat"><FontAwesomeIcon className='cat__ico' icon={faHashtag} />{fetchedPost.category}</div>
+                <Link to={`/posts/${fetchedPost.category}`} className="post__cat"><FontAwesomeIcon className='cat__ico' icon={faHashtag} />{fetchedPost.category}</Link>
                 <div className="post__author">
                     <img className='author__ico' src={`${process.env.PUBLIC_URL}/media/${fetchedPost.author}.png`} alt="" />
                     <div className="author__name">{fetchedPost.author}</div>

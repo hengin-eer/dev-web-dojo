@@ -4,7 +4,6 @@ import HomePage from './conponents/HomePage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CoursePage from './conponents/CoursePage';
 import AboutPage from './conponents/AboutPage';
-import ContactPage from './conponents/ContactPage';
 import { useState } from 'react';
 import Postlist from './conponents/Postlist';
 import Post from './conponents/Post';
@@ -46,7 +45,6 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path='/courses/' element={<CoursePage />} />
           <Route path='/about/' element={<AboutPage />} />
-          <Route path='/contact/' element={<ContactPage />} />
           <Route path='/posts/:cat/' element={<Postlist />} />
           <Route path='/posts/:cat/:id/' element={<Post />} />
         </Routes>

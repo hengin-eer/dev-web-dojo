@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHashtag, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons'
 import { useEffect } from 'react'
+import { PrimaryButton } from './PrimaryButton'
 
 function Postlist() {
     const category = useParams()
@@ -42,7 +43,8 @@ function Postlist() {
                     <h1>Coming soon...</h1>
                     <p>ごめんなさい、まだ記事がありません</p>
                     <p>Web道場の記事執筆に是非参加してください</p>
-                    <p></p>
+                    <p>お問い合わせからどうぞ</p>
+                    <PrimaryButton inner="トップページへ" to="/" />
                 </div>
             ) : (
                 <div className="postCards">

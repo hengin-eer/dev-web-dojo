@@ -1,8 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import notFound__logo from '../media/notfound__logo.svg'
-import {ReactComponent as NotfoundPic} from '../media/notfound.svg'
+import notFound__logo from '../media/logo.svg'
 
 export const NotFound = () => {
     return (
@@ -19,10 +18,11 @@ export const NotFound = () => {
             <div className="notfound__desc">
                 <div className="descs">
                     <div className="desc__ttl">404 Page not found</div>
-                    <p>お探しのページは見つかりませんでした</p>
-                    <p>アクセスしようとしたページは削除又は移動された可能性があります</p>
+                    <div className="desc__txts">
+                        <p>お探しのページは見つかりませんでした</p>
+                        <p>アクセスしようとしたページは削除又は移動された可能性があります</p>
+                    </div>
                 </div>
-                <NotfoundPic className="desc__pic" />
             </div>
         </div>
     )

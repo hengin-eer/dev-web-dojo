@@ -17,11 +17,14 @@ footer {
         justify-content: center;
 
         >.copyright__By {
-            @include font(.8rem, $te-100);
+            @include font(.8rem, white);
+            >.heart {
+                color: red;
+            }
         }
 
         >.copyright__txt {
-            @include font(.8rem, $te-100);
+            @include font(.8rem, white);
         }
 
         .scroll__top {

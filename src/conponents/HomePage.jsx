@@ -1,10 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import backWave from '../media/section__backWave.svg'
 import topview from '../media/topview.svg'
 import about from '../media/about.png'
-import a from '../media/a.png'
-// import logo from './media/logo.png'
+import nitacwpl from '../media/logoNobg.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { PrimaryButton } from './PrimaryButton'
+import traininglist from '../training.json'
+import { ReactComponent as BtnArrow } from '../media/btnArrow.svg'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const Home = () => {
 	return (
@@ -19,16 +22,13 @@ const Home = () => {
 						<img className='desc__pic' src={topview} alt="" />
 					</div>
 					<div className="inner__buttons">
-						<Link className='inner__btn is__default' to="/courses">コース一覧</Link>
-						<Link className='inner__btn is__border' to="/contact">お問い合わせ</Link>
+						<PrimaryButton inner="コース一覧" to="/courses" />
+						<PrimaryButton inner="お問い合わせ" to="/#contact" isLink={false} />
 					</div>
-					<a href='#about' className="inner__scroll">
+					<div className="inner__scroll">
 						<span className='scroll__txt'>scroll</span>
-						<div className='scroll__arrow'>
-							<span></span>
-							<span></span>
-						</div>
-					</a>
+						<BtnArrow className='scroll__arrow' />
+					</div>
 				</div>
 				<img className='backwave' src={backWave} alt="" />
 			</section>
@@ -39,15 +39,11 @@ const Home = () => {
 						<div className="ttl__sub">What</div>
 					</div>
 					<div className="about__desc">
-						<p>Web道場ではウェブページを作るための技術を学べます</p>
-						<p>HTMLとCSSを使えればウェブサイトを作ることが出来ます</p>
-						<p>とはいっても、世の中のサイトの多くは他の言語やツールを組み合わせて作られています</p>
-						<p>しかし<span className='colorLinear'>「千里の道も一歩より」</span></p>
-						<p>自分だけのウェブサイトを完成させるために</p>
-						<p>コツコツと継続的にやっていきましょう</p>
+						<p>Web道場はウェブページを作る技術を学べるサイトです</p>
+						<p>自分だけのウェブサイトを完成させるためにコツコツとやっていきましょう</p>
 					</div>
 					<img className='about__pic' src={about} alt="" />
-					<Link className='about__btn' to="/about">Web道場を覗く</Link>
+					<PrimaryButton inner="Web道場を覗く" to="/about" className='about__btn' />
 				</div>
 			</section>
 			<section className="home__course">
@@ -58,15 +54,67 @@ const Home = () => {
 						<div className="ttl__sub">Training</div>
 					</div>
 					<div className="course__desc">
-						<img src={a} alt="" />
+						<div className="map__wrapper">
+							{traininglist.length &&
+								traininglist.map((train) => {
+									return (
+										<div className="map__item">
+											<div className="item__box">
+												<img src={`${process.env.PUBLIC_URL}/media/training${train.id}.svg`} className="box__pic" alt={`training${train.id}`} />
+												<div className="box__txts">
+													<p>{train.desc1}</p>
+													<p>{train.desc2}</p>
+												</div>
+											</div>
+											<div className="item__num">{`0${train.id}`}</div>
+										</div>
+									)
+								})}
+						</div>
+						<div className="course__start">
+							<p className="start__txts">さっそく稽古をはじめよう</p>
+							<PrimaryButton inner="コース一覧" to="/courses" />
+						</div>
 					</div>
 				</div>
 			</section>
-			<section className="home__contact">
+			<section className="home__contact" id='contact'>
 				<div className="contact__inner">
 					<div className="contact__ttl section__ttl">
-						<div className="ttl__main">Contact</div>
-						<div className="ttl__sub">お問い合わせ</div>
+						<div className="ttl__main">お問い合わせ</div>
+						<div className="ttl__sub">Contact</div>
+					</div>
+					<div className="contact__desc">
+						<div className="desc__txts">記事の修正・明石高専ウェブ研究部へのご連絡・運営者へのご連絡などお気軽にご連絡ください</div>
+						<div className="contacts__wrapper">
+							<div className="contacts__item">
+								<div className="contacts__ttl">明石高専ウェブ研究部</div>
+								<div className="contacts__links">
+									<div className="contacts__link">
+										<FontAwesomeIcon icon={faTwitter} className="link__ico" />
+										<a href="https://twitter.com/nitacwpl" className="link__txt" target="_blank" rel="noreferrer">@nitacwpl</a>
+									</div>
+									<div className="contacts__link">
+										<img src={nitacwpl} alt="nitacwpl" className='link__ico' />
+										<a href="https://nitacwpl.tech" className="link__txt" target="_blank" rel="noreferrer">nitacwpl.tech</a>
+									</div>
+								</div>
+							</div>
+							<div className="contacts__item">
+								<div className="contacts__ttl">運営者</div>
+								<div className="contacts__links">
+									<div className="contacts__link">
+										<FontAwesomeIcon icon={faTwitter} className="link__ico" />
+										<a href="https://twitter.com/tim_daik" className="link__txt" target="_blank" rel="noreferrer">@tim_daik</a>
+									</div>
+									<div className="contacts__link">
+										<img src={nitacwpl} alt="nitacwpl" className='link__ico' />
+										<a href="https://github.com/hengin-eer" className="link__txt" target="_blank" rel="noreferrer">@hengin-eer</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<PrimaryButton inner="お問い合わせフォーム" to="https://docs.google.com/forms/d/e/1FAIpQLSerzLp6he7eKAoQkf-Whf8yIiYErMEfk-DFXxAi2NBrDF-ewA/viewform" className="contacts__btn" isLink={false} target='_blank' />
 					</div>
 				</div>
 			</section>
