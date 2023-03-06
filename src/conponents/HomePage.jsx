@@ -60,7 +60,7 @@ const Home = () => {
 									return (
 										<div className="map__item">
 											<div className="item__box">
-												<img src={`${process.env.PUBLIC_URL}/media/training${train.id}.svg`} className="box__pic" alt={`training${train.id}`} />
+												<img src={`${process.env.PUBLIC_URL}/media/${train.image}.svg`} className="box__pic" alt={`training${train.id}`} />
 												<div className="box__txts">
 													<p>{train.desc1}</p>
 													<p>{train.desc2}</p>
