@@ -57,9 +57,6 @@ function Postlist() {
                                         <h2 className="post__ttl"><Link to={`/posts/${post.category}/${post.slug}`}>{post.title}</Link></h2>
                                         <div className="post__cat"><FontAwesomeIcon className='cat__ico' icon={faHashtag} />{post.category}</div>
                                     </div>
-                                    <div className="card__thumbnail">
-                                        <img src={`${process.env.PUBLIC_URL}/media/${post.category}.svg`} alt="" />
-                                    </div>
                                     <Link className='post__more' to={`/posts/${post.category}/${post.slug}`}>詳しく見る</Link>
                                 </div>
                             )
