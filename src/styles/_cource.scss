@@ -5,24 +5,29 @@
         width: 100%;
 
         >.topview__ttl {
-            max-width: 1080px;
-            height: 200px;
             padding: 10px 20px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            row-gap: 15px;
 
             >.ttl__main {
                 @include font(3rem, black);
+                padding: 1rem;
                 font-family: $for-logo;
+
+                @include mq(tab) {
+                    font-size: 2rem
+                }
             }
 
             >.ttl__sub {
                 @include font(1.2rem, $te-100);
                 line-height: 2;
+
+                @include mq(tab) {
+                    font-size: 1rem;
+                }
             }
         }
     }
@@ -44,10 +49,10 @@
         }
 
         >.course__cat {
-            height: 320px;
+            height: 350px;
             min-width: 250px;
             width: 30%;
-            padding: 25px 50px;
+            padding: 50px 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -56,7 +61,7 @@
             box-shadow: 2px 2px 8px $primary-100;
 
             @include mq(tab) {
-                height: 320px;
+                height: max-content;
                 width: 90%;
             }
 
