@@ -64,6 +64,7 @@ function Postlist() {
                     }
                 </div>
             )}
+            <PrimaryButton inner="稽古一覧へ" to="/courses" className="to__courses" />
         </div>
     )
 }
