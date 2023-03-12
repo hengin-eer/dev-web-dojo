@@ -1,0 +1,11 @@
+name: タスクリスト
+description: 機能追加のタスクを作成します
+title: "[feat]:"
+body:
+  - type: textarea
+    id: tasklist
+    attributes:
+      label: タスク
+      description: 機能追加のためにやることを記入してください
+      value: |
+        - [] タスクを立てる
