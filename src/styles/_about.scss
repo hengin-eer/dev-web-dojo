@@ -1,0 +1,133 @@
+@import 'vars';
+
+.about {
+    .topview {
+        width: 100%;
+        background: $bg-100;
+
+        &__ttl {
+            @include font(2.5rem, $te-100);
+            font-family: $for-logo;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        &__desc {
+            width: 100%;
+            padding: 30px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 50px;
+
+            &__img {
+                aspect-ratio: 5/3;
+                object-fit: cover;
+                width: 35vw;
+                background: $bg-200;
+                border-radius: 20px;
+            }
+
+            &__text {
+                width: 40vw;
+
+                >p {
+                    @include font(1rem, $te-100);
+                    padding-bottom: 1rem;
+                    line-height: 1.7;
+                }
+            }
+        }
+    }
+
+    .back-triangle {
+        height: auto;
+        width: 100%;
+    }
+
+    .tech {
+        margin-bottom: 100px;
+
+        &__ttl {
+            @include font(2.5rem, $te-100);
+            font-family: $for-logo;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        &__desc {
+            max-width: 80vw;
+            margin: 30px auto;
+
+            >p {
+                @include font(1rem, $te-100);
+                text-align: center;
+                line-height: 2;
+            }
+        }
+
+        &__cards {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 50px;
+            padding: 0 20px;
+            padding-bottom: 30px;
+            margin: 70px 0 30px 0;
+
+            @include mq(pc) {
+                justify-content: flex-start;
+                overflow: scroll;
+                -webkit-overflow-scrolling: touch;
+
+                &::-webkit-scrollbar {
+                    background: transparent;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: $primary-100;
+                    border: solid 6px white;
+                    border-radius: 50px;
+                }
+            }
+
+            .tech__card {
+                flex-shrink: 0;
+                height: 350px;
+                width: 300px;
+                background: white;
+                border-radius: 20px;
+                box-shadow: 2px 2px 8px $primary-100;
+
+                &__img {
+                    height: 180px;
+                    width: 100%;
+                }
+
+                &__level {
+                    @include font(1.2rem, $te-100);
+                    font-family: $for-logo;
+                    text-align: center;
+                    padding-top: 1rem;
+                }
+
+                &__ttl {
+                    @include font(2rem, $te-100);
+                    font-family: $for-logo;
+                    text-align: center;
+                    padding-bottom: 1rem;
+                }
+
+                &__desc {
+                    text-align: center;
+                }
+            }
+        }
+
+        &__foot__button {
+            margin: 0 auto;
+        }
+    }
+}
