@@ -9,7 +9,7 @@ import { PrimaryButton } from './PrimaryButton'
 
 function Postlist() {
     const category = useParams()
-    const [data, setData] = useState(postlist)
+    const [data, setData] = useState([])
     const [cat, setCat] = useState(catlist)
 
     useEffect(() => {
@@ -57,9 +57,6 @@ function Postlist() {
                                         <h2 className="post__ttl"><Link to={`/posts/${post.category}/${post.slug}`}>{post.title}</Link></h2>
                                         <div className="post__cat"><FontAwesomeIcon className='cat__ico' icon={faHashtag} />{post.category}</div>
                                     </div>
-                                    <div className="card__thumbnail">
-                                        <img src={`${process.env.PUBLIC_URL}/media/${post.category}.svg`} alt="" />
-                                    </div>
                                     <Link className='post__more' to={`/posts/${post.category}/${post.slug}`}>詳しく見る</Link>
                                 </div>
                             )
@@ -67,6 +64,7 @@ function Postlist() {
                     }
                 </div>
             )}
+            <PrimaryButton inner="稽古一覧へ" to="/courses" className="to__courses" />
         </div>
     )
 }

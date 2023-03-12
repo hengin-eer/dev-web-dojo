@@ -1,16 +1,19 @@
 [
     {
         "id": 1,
+        "image": "html-css",
         "desc1": "HTML・CSSを用いた簡単なウェブページを制作します",
         "desc2": "完成したら実際に公開してみましょう"
     },
     {
         "id": 2,
+        "image": "javascript",
         "desc1": "JavaScriptを用いたウェブページを制作します",
         "desc2": "動的なページを制作することが可能になります"
     },
     {
         "id": 3,
+        "image": "modern-dev",
         "desc1": "効率よくCSSを書けるSassを使ってみよう",
         "desc2": "node.jsをインストールしてモダンな開発を体験してみよう"
     }

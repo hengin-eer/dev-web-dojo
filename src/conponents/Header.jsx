@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import nitacwpl from '../media/logoNobg.png'
+import nitacwpl from '../media/logo.png'
 import { Link } from 'react-router-dom'
 import { ReactComponent as Logo } from '../media/logo.svg'
 

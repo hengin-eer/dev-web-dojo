@@ -1,38 +1,38 @@
 [
     {
         "id": 1,
-        "title": "news",
-        "desc": "Web道場からのお知らせです",
+        "title": "News",
+        "desc": "Web道場からのお知らせです。記事の追加や更新などの情報をお伝えします",
         "slug": "news"
     },
     {
         "id": 2,
-        "title": "Master",
-        "desc": "HTML/CSS/JavaScript などのWeb道場の稽古全てを学ぶマスターコースです",
-        "slug": "master"
+        "title": "Blog",
+        "desc": "Web制作に関連するテクニックやお役立ち情報をお届けします",
+        "slug": "blog"
     },
     {
         "id": 3,
-        "title": "HTML",
-        "desc": "Webページ作成の骨組みであるHTMLの使い方を学習しよう",
-        "slug": "html"
+        "title": "Tutorial",
+        "desc": "ウェブページ作りで必要な基礎知識の学習、環境構築を行います",
+        "slug": "tutorial"
     },
     {
         "id": 4,
-        "title": "CSS",
-        "desc": "Webページのデザインを創るCSSの使い方を学習しよう",
-        "slug": "css"
+        "title": "HTML/CSS",
+        "desc": "Webページ作成の流れを学習しよう。HTML/CSSではじめてのウェブページを作成しよう",
+        "slug": "html-css"
     },
     {
         "id": 5,
         "title": "JavaScript",
-        "desc": "Webページで様々の機能を実現できるJavaScriptに触れてみよう",
+        "desc": "Webページのデザインを創るCSSの使い方を学習しよう",
         "slug": "javascript"
     },
     {
         "id": 6,
-        "title": "Git",
-        "desc": "チーム開発に欠かせないGitの使い方を学習しよう",
-        "slug": "git"
+        "title": "Sass/Node.js",
+        "desc": "Webページで様々の機能を実現できるJavaScriptに触れてみよう",
+        "slug": "modern-dev"
     }
 ]

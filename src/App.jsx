@@ -19,21 +19,6 @@ function App() {
     document.body.classList.remove('active');
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log(entry)
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active__anime')
-        observer.unobserve(entry)
-      }
-    })
-  }, {
-    rootMargin: '-30% 0px',
-  })
-  const hiddenElements = document.querySelectorAll('.hidden__anime')
-  hiddenElements.forEach((el) => { observer.observe(el) })
-
-
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className='App'>

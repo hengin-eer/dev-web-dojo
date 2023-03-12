@@ -6,33 +6,84 @@
 
         >.topview__ttl {
             max-width: 1080px;
-            height: 150px;
             padding: 10px 20px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            row-gap: 15px;
 
             >.ttl__main {
-                @include font(2rem, black);
+                @include font(3rem, black);
+                padding: 1rem;
                 font-family: $for-logo;
+
+                @include mq(tab) {
+                    font-size: 2rem
+                }
             }
 
             >.ttl__sub {
-                @include font(.8rem, $te-100);
+                @include font(1.2rem, $te-100);
                 max-width: 80vw;
+                padding-bottom: 2rem;
                 line-height: 2;
+
+                @include mq(tab) {
+                    font-size: 1rem;
+                }
             }
         }
     }
 
     >.postCards {
-        min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         row-gap: 50px;
+
+        >.postCard {
+            height: max-content;
+            width: 60%;
+            padding: 20px 50px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 2px 2px 8px $primary-100;
+
+            @include mq(tab) {
+                width: 90%;
+            }
+
+            >.card__desc {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                // row-gap: 15px;
+
+                .post__ttl a {
+                    @include font(2rem, $te-100);
+
+                    @include mq(tab) {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .post__cat {
+                    margin-top: 10px;
+                }
+            }
+
+            >.post__more {
+                @include font(1rem, $primary-100);
+                font-weight: bold;
+                display: block;
+                text-align: center;
+                padding-top: 20px;
+            }
+        }
+    }
+
+    .to__courses {
+        margin: 50px auto;
     }
 }

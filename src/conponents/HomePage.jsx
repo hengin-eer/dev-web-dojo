@@ -1,13 +1,13 @@
 import React from 'react'
 import backWave from '../media/section__backWave.svg'
 import topview from '../media/topview.svg'
-import about from '../media/about.png'
-import nitacwpl from '../media/logoNobg.png'
+import about from '../media/about.webp'
+import nitacwpl from '../media/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { PrimaryButton } from './PrimaryButton'
 import traininglist from '../training.json'
 import { ReactComponent as BtnArrow } from '../media/btnArrow.svg'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const Home = () => {
 	return (
@@ -42,12 +42,12 @@ const Home = () => {
 						<p>Web道場はウェブページを作る技術を学べるサイトです</p>
 						<p>自分だけのウェブサイトを完成させるためにコツコツとやっていきましょう</p>
 					</div>
-					<img className='about__pic' src={about} alt="" />
+					<img className='about__pic' src={about} alt="" loading='lazy' />
 					<PrimaryButton inner="Web道場を覗く" to="/about" className='about__btn' />
 				</div>
 			</section>
 			<section className="home__course">
-				<img className='backwave rev__wave' src={backWave} alt="" />
+				<img className='backwave rev__wave' src={backWave} alt="" loading='lazy' />
 				<div className="course__inner">
 					<div className="course__ttl section__ttl">
 						<div className="ttl__main">稽古の流れ</div>
@@ -58,9 +58,9 @@ const Home = () => {
 							{traininglist.length &&
 								traininglist.map((train) => {
 									return (
-										<div className="map__item">
+										<div className="map__item" key={train.id}>
 											<div className="item__box">
-												<img src={`${process.env.PUBLIC_URL}/media/training${train.id}.svg`} className="box__pic" alt={`training${train.id}`} />
+												<img src={`${process.env.PUBLIC_URL}/media/${train.image}.svg`} className="box__pic" alt={`training${train.id}`} loading='lazy' />
 												<div className="box__txts">
 													<p>{train.desc1}</p>
 													<p>{train.desc2}</p>
@@ -95,7 +95,7 @@ const Home = () => {
 										<a href="https://twitter.com/nitacwpl" className="link__txt" target="_blank" rel="noreferrer">@nitacwpl</a>
 									</div>
 									<div className="contacts__link">
-										<img src={nitacwpl} alt="nitacwpl" className='link__ico' />
+										<img src={nitacwpl} alt="nitacwpl" className='link__ico' loading='lazy' />
 										<a href="https://nitacwpl.tech" className="link__txt" target="_blank" rel="noreferrer">nitacwpl.tech</a>
 									</div>
 								</div>
@@ -108,7 +108,7 @@ const Home = () => {
 										<a href="https://twitter.com/tim_daik" className="link__txt" target="_blank" rel="noreferrer">@tim_daik</a>
 									</div>
 									<div className="contacts__link">
-										<img src={nitacwpl} alt="nitacwpl" className='link__ico' />
+										<FontAwesomeIcon icon={faGithub} className='link__ico' />
 										<a href="https://github.com/hengin-eer" className="link__txt" target="_blank" rel="noreferrer">@hengin-eer</a>
 									</div>
 								</div>
