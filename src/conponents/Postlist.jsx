@@ -9,7 +9,7 @@ import { PrimaryButton } from './PrimaryButton'
 
 function Postlist() {
     const category = useParams()
-    const [data, setData] = useState(postlist)
+    const [data, setData] = useState([])
     const [cat, setCat] = useState(catlist)
 
     useEffect(() => {
