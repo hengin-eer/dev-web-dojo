@@ -7,21 +7,6 @@
 @use 'post';
 @use 'notfound';
 @use 'footer';
-
-// @import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
-@font-face {
-    font-family: 'Yuji Syuku';
-    src: url(./fonts/YujiSyuku-Regular.ttf) format(truetype);
-}
-
-// for logo
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
-// Noto Serif JP
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
-// Noto Sans JP
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-// Source Code Pro
-
 @import 'vars';
 
 body.active {
@@ -31,7 +16,6 @@ body.active {
 .App {
     min-height: 100vh;
     background: white;
-    // font-family: 'Noto Serif JP';
     font-family: $nofont;
 }
 
