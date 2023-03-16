@@ -3,6 +3,7 @@ id: 1
 author: hengineer
 date: 3/12 2023
 category: news
+slug: web-dojo-released
 ---
 
 
