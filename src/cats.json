@@ -14,25 +14,19 @@
     {
         "id": 3,
         "title": "Tutorial",
-        "desc": "ウェブページ作りで必要な基礎知識の学習、環境構築を行います",
+        "desc": "初めてのウェブサイトを製作して公開までやってみよう",
         "slug": "tutorial"
     },
     {
         "id": 4,
         "title": "HTML/CSS",
-        "desc": "Webページ作成の流れを学習しよう。HTML/CSSではじめてのウェブページを作成しよう",
+        "desc": "HTML/CSSへの理解を深めながら、本格的なサイトを製作しよう",
         "slug": "html-css"
     },
     {
         "id": 5,
         "title": "JavaScript",
-        "desc": "Webページのデザインを創るCSSの使い方を学習しよう",
+        "desc": "JavaScriptでウェブサイトに機能を追加して完成させよう",
         "slug": "javascript"
-    },
-    {
-        "id": 6,
-        "title": "Sass/Node.js",
-        "desc": "Webページで様々の機能を実現できるJavaScriptに触れてみよう",
-        "slug": "modern-dev"
     }
 ]
