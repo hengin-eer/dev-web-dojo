@@ -48,7 +48,7 @@ const getPost = () => {
                     author: metadata.author ? metadata.author : "No author",
                     date: metadata.date ? metadata.date : "No date",
                     category: metadata.category ? metadata.category : "No category",
-                    slug: replacedSlug.replace(".md", ""),
+                    slug: metadata.slug ? metadata.slug : replacedSlug.replace(".md", ""),
                     content: content ? content : "No content",
                 }
                 postlist.push(post)
