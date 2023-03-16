@@ -9,6 +9,7 @@ import { NotFound } from './NotFound'
 import { useState } from 'react'
 import Highlighter from 'react-syntax-highlighter'
 import { monokai } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import gfm from 'remark-gfm'
 
 const Post = () => {
     const [toclists, toggleToclists] = useState(false)
@@ -107,7 +108,7 @@ const Post = () => {
                     <div className="author__name">{fetchedPost.author}</div>
                 </div>
                 <div className="post__contents">
-                    <ReactMarkdown components={{ h1: H1, h2: H2, pre: CopyCode }} rehypePlugins={[rehypeRaw]} >{fetchedPost.content}</ReactMarkdown>
+                    <ReactMarkdown components={{ h1: H1, h2: H2, pre: CopyCode }} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw]} >{fetchedPost.content}</ReactMarkdown>
                 </div>
             </div>
         </div>
