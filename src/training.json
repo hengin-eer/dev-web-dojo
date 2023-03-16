@@ -1,20 +1,20 @@
 [
     {
         "id": 1,
-        "image": "html-css",
-        "desc1": "HTML・CSSを用いた簡単なウェブページを制作します",
+        "image": "tutorial",
+        "desc1": "基礎知識の学習と初めてのウェブサイトを作ります",
         "desc2": "完成したら実際に公開してみましょう"
     },
     {
         "id": 2,
-        "image": "javascript",
-        "desc1": "JavaScriptを用いたウェブページを制作します",
-        "desc2": "動的なページを制作することが可能になります"
+        "image": "html-css",
+        "desc1": "本格的なウェブサイトを作ります",
+        "desc2": "製作を経てHTML/CSSへの理解を深めていきます"
     },
     {
         "id": 3,
-        "image": "modern-dev",
-        "desc1": "効率よくCSSを書けるSassを使ってみよう",
-        "desc2": "node.jsをインストールしてモダンな開発を体験してみよう"
+        "image": "javascript",
+        "desc1": "JavaScriptを使ってウェブサイトに機能を追加します",
+        "desc2": "HTML/CSSコースで作ったウェブサイトを完成させます"
     }
 ]
