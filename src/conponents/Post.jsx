@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import postlist from '../posts.json'
 import ReactMarkdown from 'react-markdown'
@@ -10,6 +10,8 @@ import { useState } from 'react'
 import Highlighter from 'react-syntax-highlighter'
 import { monokai } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import gfm from 'remark-gfm'
+
+const Share = lazy(() => import('./Share'));
 
 const Post = () => {
     const [toclists, toggleToclists] = useState(false)
@@ -109,6 +111,7 @@ const Post = () => {
                 </div>
                 <div className="post__contents">
                     <ReactMarkdown components={{ h1: H1, h2: H2, pre: CopyCode }} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw]} >{fetchedPost.content}</ReactMarkdown>
+                    <Share />
                 </div>
             </div>
         </div>
