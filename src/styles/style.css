@@ -1137,6 +1137,33 @@ header > .header__inner .header__menu > .sns > a > img {
   margin: 1.5em 0;
 }
 
+.share {
+  max-width: 500px;
+  width: 100%;
+  padding: 10px;
+  margin: 30px auto;
+  background: #F0F5F9;
+  border-radius: 20px;
+}
+.share__ttl {
+  font-size: 2rem;
+  color: #1E2022;
+  font-family: "Yuji Syuku";
+  text-align: center;
+  padding-bottom: 20px;
+}
+.share__links {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.share__links a svg {
+  display: block;
+  height: 2rem;
+}
+
 .notfound {
   max-width: 1080px;
   padding: 30px 20px;
