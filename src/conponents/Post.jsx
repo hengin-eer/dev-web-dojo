@@ -10,6 +10,7 @@ import { useState } from 'react'
 import Highlighter from 'react-syntax-highlighter'
 import { monokai } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import gfm from 'remark-gfm'
+import { Helmet } from 'react-helmet-async'
 
 const Share = lazy(() => import('./Share'));
 
@@ -90,6 +91,9 @@ const Post = () => {
 
     return (
         <div className='post' id='postTop'>
+            <Helmet>
+                <title>{fetchedPost.title} Web道場 by NITACwpl</title>
+            </Helmet>
             <div className={toclists ? "post__toc active" : "post__toc"}>
                 <div className="toc">
                     <ReactMarkdown components={{ h1: Toclist1, h2: Toclist2 }} allowedElements={["h1", "h2"]} rehypePlugins={[rehypeRaw]} >{fetchedPost.content}</ReactMarkdown>
