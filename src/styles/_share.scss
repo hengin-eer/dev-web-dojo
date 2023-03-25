@@ -22,11 +22,16 @@
         padding: 1rem;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-around;
 
-        a svg {
-            display: block;
-            height: 2rem;
+        &__btn {
+            cursor: pointer;
+            -webkit-tap-highlight-color: #0000;
+
+            svg {
+                display: block;
+                height: 2rem;
+            }
         }
     }
 }
