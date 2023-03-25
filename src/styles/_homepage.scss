@@ -1,4 +1,4 @@
-@import 'vars';
+@use 'vars';
 
 .home {
     >section {
@@ -20,16 +20,16 @@
             >.ttl__main {
                 width: max-content;
                 line-height: 1;
-                @include font(calc(2rem + 3vw), $nocl);
+                @include vars.font(calc(2rem + 3vw), vars.$nocl);
                 word-break: keep-all;
-                font-family: $for-logo;
-                background: $liner-100;
+                font-family: vars.$for-logo;
+                background: vars.$liner-100;
                 background-clip: text;
             }
 
             >.ttl__sub {
                 padding-top: 20px;
-                @include font(calc(1rem + 1vw), $te-200);
+                @include vars.font(calc(1rem + 1vw), vars.$te-200);
             }
         }
     }
@@ -40,7 +40,7 @@
         // background: url('../conponents/media/topview.jpg') center;
         // background-size: cover;
 
-        @include mq(sp) {
+        @include vars.mq(sp) {
             background-position: 20% center;
         }
 
@@ -54,7 +54,7 @@
             justify-content: center;
             gap: 0px;
 
-            @include mq(tab) {
+            @include vars.mq(tab) {
                 margin: 50px 0;
                 gap: 30px;
             }
@@ -63,7 +63,7 @@
                 display: flex;
                 align-items: center;
 
-                @include mq(tab) {
+                @include vars.mq(tab) {
                     flex-direction: column-reverse;
                 }
 
@@ -76,19 +76,19 @@
                     .ttl__main {
                         word-break: keep-all;
                         text-align: start;
-                        @include font(calc(2rem + 2vw), $te-100);
+                        @include vars.font(calc(2rem + 2vw), vars.$te-100);
                         max-width: 17ch;
                     }
 
                     .ttl__sub {
-                        @include font(calc(1rem + 1vw), $te-200);
+                        @include vars.font(calc(1rem + 1vw), vars.$te-200);
                     }
                 }
 
                 >.desc__pic {
                     width: 500px;
 
-                    @include mq(tab) {
+                    @include vars.mq(tab) {
                         width: 70%;
                     }
                 }
@@ -99,7 +99,7 @@
                 align-items: center;
                 gap: 70px;
 
-                @include mq(sp) {
+                @include vars.mq(sp) {
                     flex-direction: column;
                     gap: 30px;
                 }
@@ -117,8 +117,8 @@
                 z-index: 1;
 
                 >.scroll__txt {
-                    @include font(1.2rem, $te-200);
-                    font-family: $for-code;
+                    @include vars.font(1.2rem, vars.$te-200);
+                    font-family: vars.$for-code;
                     font-weight: bold;
                 }
 
@@ -128,7 +128,7 @@
                     animation: upDown none 1s infinite ease alternate;
 
                     >path {
-                        fill: $te-200;
+                        fill: vars.$te-200;
                     }
                 }
 
@@ -148,7 +148,7 @@
     >.home__about {
         width: 100%;
         padding: 60px 0;
-        background: $bg-300;
+        background: vars.$bg-300;
 
 
         >.about__inner {
@@ -164,7 +164,7 @@
                 "about__btn     .";
             column-gap: 10%;
 
-            @include mq(tab) {
+            @include vars.mq(tab) {
                 grid-template-rows: max-content max-content max-content max-content;
                 grid-template-columns: 100%;
                 grid-template-areas: 
@@ -192,7 +192,7 @@
                 margin-top: 60px;
 
                 >p {
-                    @include font(1.1rem, $te-300);
+                    @include vars.font(1.1rem, vars.$te-300);
                 }
             }
 
@@ -251,11 +251,11 @@
                         >.item__box {
                             display: flex;
                             align-items: center;
-                            box-shadow: 0 0 8px $bg-300;
+                            box-shadow: 0 0 8px vars.$bg-300;
                             border-radius: 20px;
                             overflow: hidden;
 
-                            @include mq(tab) {
+                            @include vars.mq(tab) {
                                 flex-direction: column;
                             }
 
@@ -265,7 +265,7 @@
                                 background: white;
                                 object-fit: cover;
 
-                                @include mq(tab) {
+                                @include vars.mq(tab) {
                                     height: 250px;
                                     width: 80vw;
                                 }
@@ -280,17 +280,17 @@
                                 height: 250px;
                                 width: 400px;
                                 padding: 0 20px;
-                                background: $primary-100;
+                                background: vars.$primary-100;
 
-                                @include mq(tab) {
+                                @include vars.mq(tab) {
                                     height: max-content;
                                     width: 80vw;
                                     padding: 30px;
                                 }
 
                                 >p {
-                                    @include font(1.2rem, white);
-                                    font-family: $for-logo;
+                                    @include vars.font(1.2rem, white);
+                                    font-family: vars.$for-logo;
                                 }
                             }
                         }
@@ -300,8 +300,8 @@
                             top: 0;
                             left: 0;
                             transform: translateY(-50%);
-                            @include font(5rem, $primary-100);
-                            font-family: $for-code;
+                            @include vars.font(5rem, vars.$primary-100);
+                            font-family: vars.$for-code;
                         }
                     }
                 }
@@ -314,8 +314,8 @@
                     margin: 100px 0;
 
                     >.start__txts {
-                        @include font(2rem, $te-100);
-                        font-family: $for-logo;
+                        @include vars.font(2rem, vars.$te-100);
+                        font-family: vars.$for-logo;
                     }
                 }
             }
@@ -324,7 +324,7 @@
 
     >.home__contact {
         padding: 100px 0;
-        background: $bg-100;
+        background: vars.$bg-100;
 
         >.contact__inner {
             max-width: 1080px;
@@ -344,10 +344,10 @@
                 >.desc__txts {
                     max-width: 600px;
                     text-align: center;
-                    @include font(1.5rem, $te-100);
-                    font-family: $for-logo;
+                    @include vars.font(1.5rem, vars.$te-100);
+                    font-family: vars.$for-logo;
 
-                    @include mq(sp) {
+                    @include vars.mq(sp) {
                         font-size: 1.2rem;
                     }
                 }
@@ -366,12 +366,12 @@
                         max-width: 600px;
                         width: 80vw;
                         padding: 50px;
-                        background: $bg-200;
+                        background: vars.$bg-200;
                         border-radius: 20px;
 
                         >.contacts__ttl {
-                            @include font(1.5rem, $te-100);
-                            font-family: $for-logo;
+                            @include vars.font(1.5rem, vars.$te-100);
+                            font-family: vars.$for-logo;
                         }
 
                         >.contacts__links {
@@ -379,7 +379,7 @@
                             align-items: center;
                             column-gap: 50px;
 
-                            @include mq(tab) {
+                            @include vars.mq(tab) {
                                 flex-direction: column;
                                 align-items: flex-start;
                                 row-gap: 20px;
@@ -394,8 +394,8 @@
                                 }
 
                                 >.link__txt {
-                                    @include font(1.2rem, $primary-100);
-                                    font-family: $for-code;
+                                    @include vars.font(1.2rem, vars.$primary-100);
+                                    font-family: vars.$for-code;
                                     padding-left: 10px;
                                 }
                             }

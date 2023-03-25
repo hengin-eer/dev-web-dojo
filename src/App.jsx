@@ -1,4 +1,4 @@
-import './styles/style.css'
+import './styles/style.scss'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { TailSpin } from 'react-loading-icons';
