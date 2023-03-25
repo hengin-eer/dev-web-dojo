@@ -1,10 +1,10 @@
-@import 'vars';
+@use 'vars';
 
 footer {
     position: sticky;
     bottom: -100px;
-    background: $liner-100;
-    font-family: $for-code;
+    background: vars.$liner-100;
+    font-family: vars.$for-code;
 
     .footer__inner {
         height: 100px;
@@ -17,14 +17,14 @@ footer {
         justify-content: center;
 
         >.copyright__By {
-            @include font(.8rem, white);
+            @include vars.font(.8rem, white);
             >.heart {
                 color: red;
             }
         }
 
         >.copyright__txt {
-            @include font(.8rem, white);
+            @include vars.font(.8rem, white);
         }
 
         .scroll__top {
@@ -36,12 +36,12 @@ footer {
             justify-content: center;
             height: 50px;
             width: 50px;
-            background: $primary-100;
+            background: vars.$primary-100;
             border-radius: 50%;
             z-index: 10;
 
             >.scroll__ico {
-                @include font(20px, $bg-100);
+                @include vars.font(20px, vars.$bg-100);
             }
         }
     }

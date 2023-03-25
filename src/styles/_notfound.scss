@@ -1,10 +1,10 @@
-@import 'vars';
+@use 'vars';
 
 .notfound {
     max-width: 1080px;
     padding: 30px 20px;
     margin: 0 auto;
-    // background: $bg-200;
+    // background: vars.$bg-200;
 
     >.notfound__nav {
         display: grid;
@@ -13,7 +13,7 @@
         grid-template-areas:
             "logo search__box";
 
-        @include mq(sp) {
+        @include vars.mq(sp) {
             grid-template-rows: max-content max-content;
             grid-template-columns: 1fr;
             grid-template-areas:
@@ -26,7 +26,7 @@
             height: 40px;
             padding: 5px;
 
-            @include mq(sp) {
+            @include vars.mq(sp) {
                 width: max-content;
                 margin: 20px auto;
             }
@@ -41,17 +41,17 @@
             grid-area: search__box;
             background: white;
             border-radius: 50px;
-            box-shadow: 0 2px 5px 1px $bg-200;
+            box-shadow: 0 2px 5px 1px vars.$bg-200;
 
             >.search__ico {
-                @include font(1rem, $te-200);
+                @include vars.font(1rem, vars.$te-200);
                 padding-right: 20px;
             }
 
             >.search__item {
                 position: relative;
                 width: max-content;
-                @include font(1rem, $te-100);
+                @include vars.font(1rem, vars.$te-100);
 
                 &::after {
                     content: '';
@@ -60,7 +60,7 @@
                     right: -5px;
                     height: 100%;
                     width: 1px;
-                    background: $te-200;
+                    background: vars.$te-200;
                     animation: blinkCursor .5s ease infinite alternate;
                 }
 
@@ -87,18 +87,18 @@
 
     >.searchs__txts {
         padding: 10px 30px;
-        @include font(.8rem, $te-200);
+        @include vars.font(.8rem, vars.$te-200);
     }
 
     >.maybe__txts {
         padding: 20px;
 
         >span {
-            @include font(1rem, red);
+            @include vars.font(1rem, red);
         }
 
         >a {
-            @include font(1.1rem, #00e);
+            @include vars.font(1.1rem, #00e);
             margin-left: 5px;
             font-weight: bold;
         }
@@ -113,7 +113,7 @@
             gap: 20px;
 
             >.desc__ttl {
-                @include font(3rem, $te-100);
+                @include vars.font(3rem, vars.$te-100);
                 margin-bottom: 30px;
             }
 
@@ -122,7 +122,7 @@
                 text-align: center;
 
                 >p {
-                    @include font(1.2rem, $te-100);
+                    @include vars.font(1.2rem, vars.$te-100);
                     padding: 10px;
                 }
             }

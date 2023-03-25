@@ -1,10 +1,10 @@
-@import 'vars';
+@use 'vars';
 
 
 .post__date {
     width: max-content;
     padding: 10px 0;
-    @include font(1.2rem, $te-100);
+    @include vars.font(1.2rem, vars.$te-100);
 
     &>.date__ico {
         margin-right: 10px;
@@ -13,15 +13,15 @@
 
 .post__ttl {
     padding: 10px 0;
-    @include font(2rem, $te-100);
+    @include vars.font(2rem, vars.$te-100);
     font-weight: bold;
 }
 
 .post__cat {
     width: max-content;
     padding: 2px 5px;
-    color: $te-100;
-    border: solid 2px $bg-200;
+    color: vars.$te-100;
+    border: solid 2px vars.$bg-200;
     border-radius: 5px;
     background: white;
 
@@ -42,9 +42,9 @@
         width: 320px;
         padding: 20px;
         background: white;
-        border-right: solid 1px $bg-200;
+        border-right: solid 1px vars.$bg-200;
 
-        @include mq(tab) {
+        @include vars.mq(tab) {
             position: fixed;
             top: 60px;
             width: 50%;
@@ -71,7 +71,7 @@
                 margin-bottom: 10px;
 
                 &>a {
-                    color: $te-100;
+                    color: vars.$te-100;
                 }
             }
 
@@ -91,24 +91,24 @@
         height: 50px;
         width: 50px;
         background: white;
-        border: solid 2px $primary-100;
+        border: solid 2px vars.$primary-100;
         border-radius: 50%;
         transition: all .3s;
         z-index: 20;
 
         >.toclists__ico {
-            @include font(20px, $primary-100);
+            @include vars.font(20px, vars.$primary-100);
         }
 
         &.active {
-            background: $primary-100;
+            background: vars.$primary-100;
 
             >.toclists__ico {
-                @include font(20px, $bg-100);
+                @include vars.font(20px, vars.$bg-100);
             }
         }
 
-        @include mq(tab) {
+        @include vars.mq(tab) {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -119,7 +119,7 @@
         width: calc(100% - 320px);
         padding: 20px;
 
-        @include mq(tab) {
+        @include vars.mq(tab) {
             width: 100%;
         }
 
@@ -128,18 +128,18 @@
             padding: 5px 15px;
             margin-bottom: 20px;
             background: white;
-            border: solid 2px $primary-100;
+            border: solid 2px vars.$primary-100;
             border-radius: 100px;
             transition: .3s;
 
             >a {
                 text-decoration: none;
-                @include font(1rem, $primary-100);
+                @include vars.font(1rem, vars.$primary-100);
                 transition: .3s;
             }
 
             &:hover {
-                background: $primary-100;
+                background: vars.$primary-100;
 
                 >a {
                     color: white;
@@ -163,7 +163,7 @@
             }
 
             .author__name {
-                @include font(20px, $te-100);
+                @include vars.font(20px, vars.$te-100);
             }
         }
 
@@ -184,15 +184,15 @@
                     background: #272822;
 
                     >.file__name {
-                        @include font(1rem, $te-200);
+                        @include vars.font(1rem, vars.$te-200);
                         font-weight: bold;
                     }
 
                     >.copy__codes {
                         padding: 2px 6px;
-                        @include font(1rem, $primary-200);
+                        @include vars.font(1rem, vars.$primary-200);
                         background: transparent;
-                        border: solid 1px $primary-200;
+                        border: solid 1px vars.$primary-200;
                         border-radius: 4px;
                         cursor: pointer;
                     }
@@ -202,15 +202,15 @@
             >h1,
             >h2,
             >h3 {
-                color: $te-100;
+                color: vars.$te-100;
                 padding: 75px 10px 10px 10px;
                 margin: -40px 0 25px 0;
-                border-bottom: solid 1px $bg-200;
+                border-bottom: solid 1px vars.$bg-200;
 
                 &::before {
                     padding-right: 10px;
-                    font-family: $for-code;
-                    background: $liner-100;
+                    font-family: vars.$for-code;
+                    background: vars.$liner-100;
                     background-clip: text;
                 }
             }
@@ -220,7 +220,7 @@
 
                 &::before {
                     content: '#';
-                    @include font(32px, transparent);
+                    @include vars.font(32px, transparent);
                 }
             }
 
@@ -229,7 +229,7 @@
 
                 &::before {
                     content: '##';
-                    @include font(28px, transparent);
+                    @include vars.font(28px, transparent);
                 }
             }
 
@@ -238,11 +238,11 @@
             }
 
             p {
-                color: $te-100;
+                color: vars.$te-100;
                 line-height: 2;
 
                 >strong {
-                    background: linear-gradient(to bottom, transparent 60%, $primary-200 60%);
+                    background: linear-gradient(to bottom, transparent 60%, vars.$primary-200 60%);
                 }
             }
 
@@ -256,8 +256,8 @@
             }
 
             :not(pre)>code {
-                @include font(.9rem, $primary-100);
-                background: $bg-200;
+                @include vars.font(.9rem, vars.$primary-100);
+                background: vars.$bg-200;
                 padding: 1px 4px;
                 margin: 0 2px;
                 border-radius: 2px;
@@ -269,7 +269,7 @@
             }
 
             >blockquote {
-                border-left: 4px solid $bg-200;
+                border-left: 4px solid vars.$bg-200;
                 padding: 15px 0 15px 20px;
                 margin: 1.5em 0;
             }

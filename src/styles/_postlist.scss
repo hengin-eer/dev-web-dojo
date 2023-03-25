@@ -1,4 +1,4 @@
-@import 'vars';
+@use 'vars';
 
 .postlist {
     >.postlist__topview {
@@ -13,22 +13,22 @@
             align-items: center;
 
             >.ttl__main {
-                @include font(3rem, black);
+                @include vars.font(3rem, black);
                 padding: 1rem;
-                font-family: $for-logo;
+                font-family: vars.$for-logo;
 
-                @include mq(tab) {
+                @include vars.mq(tab) {
                     font-size: 2rem
                 }
             }
 
             >.ttl__sub {
-                @include font(1.2rem, $te-100);
+                @include vars.font(1.2rem, vars.$te-100);
                 max-width: 80vw;
                 padding-bottom: 2rem;
                 line-height: 2;
 
-                @include mq(tab) {
+                @include vars.mq(tab) {
                     font-size: 1rem;
                 }
             }
@@ -47,9 +47,9 @@
             padding: 20px 50px;
             background: white;
             border-radius: 20px;
-            box-shadow: 2px 2px 8px $primary-100;
+            box-shadow: 2px 2px 8px vars.$primary-100;
 
-            @include mq(tab) {
+            @include vars.mq(tab) {
                 width: 90%;
             }
 
@@ -61,9 +61,9 @@
                 // row-gap: 15px;
 
                 .post__ttl a {
-                    @include font(2rem, $te-100);
+                    @include vars.font(2rem, vars.$te-100);
 
-                    @include mq(tab) {
+                    @include vars.mq(tab) {
                         font-size: 1.5rem;
                     }
                 }
@@ -74,7 +74,7 @@
             }
 
             >.post__more {
-                @include font(1rem, $primary-100);
+                @include vars.font(1rem, vars.$primary-100);
                 font-weight: bold;
                 display: block;
                 text-align: center;

@@ -1,4 +1,4 @@
-@import 'vars';
+@use 'vars';
 
 
 .share {
@@ -6,13 +6,13 @@
     width: 100%;
     padding: 10px;
     margin: 30px auto;
-    // border: 1px solid $bg-300;
-    background: $bg-100;
+    // border: 1px solid vars.$bg-300;
+    background: vars.$bg-100;
     border-radius: 20px;
 
     &__ttl {
-        @include font(2rem, $te-100);
-        font-family: $for-logo;
+        @include vars.font(2rem, vars.$te-100);
+        font-family: vars.$for-logo;
         text-align: center;
         padding-bottom: 20px;
     }

@@ -1,5 +1,4 @@
-// @use 'header';
-@use 'header2';
+@use 'header';
 @use 'homepage';
 @use 'about';
 @use 'cource';
@@ -8,7 +7,7 @@
 @use 'share';
 @use 'notfound';
 @use 'footer';
-@import 'vars';
+@use 'vars';
 
 body.active {
     overflow: hidden;
@@ -17,7 +16,7 @@ body.active {
 .App {
     min-height: 100vh;
     background: white;
-    font-family: $nofont;
+    font-family: vars.$nofont;
 }
 
 // settings
@@ -34,7 +33,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: $primary-100;
+    background: vars.$primary-100;
     border: solid 4px white;
     border-radius: 50px;
 }
@@ -51,9 +50,9 @@ img {
 
 .colorLinear {
     word-break: keep-all;
-    font-family: $for-logo;
+    font-family: vars.$for-logo;
     color: transparent;
-    background: $liner-100;
+    background: vars.$liner-100;
     background-clip: text;
 }
 
@@ -79,13 +78,13 @@ img {
     min-width: 200px;
     width: max-content;
     background: white;
-    border: solid 2px $primary-100;
+    border: solid 2px vars.$primary-100;
     border-radius: 50px;
     transition: all .3s ease;
 
     >.inner__txt {
-        @include font(20px, $primary-100);
-        font-family: $for-logo;
+        @include vars.font(20px, vars.$primary-100);
+        font-family: vars.$for-logo;
     }
 
     >.btn__arrow {
@@ -95,12 +94,12 @@ img {
         transition: all .3s ease;
 
         >path {
-            fill: $primary-100;
+            fill: vars.$primary-100;
         }
     }
 
     &:hover {
-        background: $primary-100;
+        background: vars.$primary-100;
 
         >.inner__txt {
             color: white;

@@ -1,4 +1,4 @@
-@import 'vars';
+@use 'vars';
 
 .course {
     >.course__topview {
@@ -12,20 +12,20 @@
             align-items: center;
 
             >.ttl__main {
-                @include font(3rem, black);
+                @include vars.font(3rem, black);
                 padding: 1rem;
-                font-family: $for-logo;
+                font-family: vars.$for-logo;
 
-                @include mq(tab) {
+                @include vars.mq(tab) {
                     font-size: 2rem
                 }
             }
 
             >.ttl__sub {
-                @include font(1.2rem, $te-100);
+                @include vars.font(1.2rem, vars.$te-100);
                 line-height: 2;
 
-                @include mq(tab) {
+                @include vars.mq(tab) {
                     font-size: 1rem;
                 }
             }
@@ -42,7 +42,7 @@
         justify-content: flex-start;
         gap: 50px 5%;
 
-        @include mq(tab) {
+        @include vars.mq(tab) {
             flex-wrap: nowrap;
             flex-direction: column;
             gap: 50px;
@@ -58,9 +58,9 @@
             align-items: center;
             background: white;
             border-radius: 20px;
-            box-shadow: 2px 2px 8px $primary-100;
+            box-shadow: 2px 2px 8px vars.$primary-100;
 
-            @include mq(tab) {
+            @include vars.mq(tab) {
                 height: max-content;
                 width: 90%;
             }
@@ -71,13 +71,13 @@
             }
 
             >.cat__ttl {
-                @include font(2rem, $te-100);
+                @include vars.font(2rem, vars.$te-100);
                 font-weight: bold;
                 margin-bottom: 10px;
             }
 
             >.cat__desc {
-                @include font(1rem, $te-100);
+                @include vars.font(1rem, vars.$te-100);
                 line-height: 2;
             }
         }
