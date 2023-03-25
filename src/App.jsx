@@ -2,6 +2,7 @@ import './styles/style.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { TailSpin } from 'react-loading-icons';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 // const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 // const CoursePage = lazy(() => sleep(500).then(() => import('./conponents/CoursePage')));
 const Header = lazy(() => import('./conponents/Header'));
@@ -53,27 +54,33 @@ function App() {
   }, [])
 
   return (
-    <Suspense fallback={<FallBack />}>
-      <Router basename={process.env.PUBLIC_URL}>
-        <div className='App'>
-          {<FallBack style={{ opacity: show ? 0 : 1, visibility: show ? "hidden" : "visible", }} />}
-          <Header active={active} setActive={setActive} />
-          <ScrollToTop />
+    <HelmetProvider>
+      <Suspense fallback={<FallBack />}>
+        <Router basename={process.env.PUBLIC_URL}>
+          <div className='App'>
+            <Helmet>
+              <meta charSet='utf-8' />
+              <title>Web道場 by NITACwpl</title>
+            </Helmet>
+            {<FallBack style={{ opacity: show ? 0 : 1, visibility: show ? "hidden" : "visible", }} />}
+            <Header active={active} setActive={setActive} />
+            <ScrollToTop />
 
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path='/courses/' element={<CoursePage />} />
-            <Route path='/about/' element={<AboutPage />} />
-            <Route path='/posts/:cat/' element={<Postlist />} />
-            <Route path='/posts/:cat/:id/' element={<Post />} />
-          </Routes>
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path="*" element={<NotFound />} />
+              <Route path='/courses/' element={<CoursePage />} />
+              <Route path='/about/' element={<AboutPage />} />
+              <Route path='/posts/:cat/' element={<Postlist />} />
+              <Route path='/posts/:cat/:id/' element={<Post />} />
+            </Routes>
 
-          <Footer />
+            <Footer />
 
-        </div>
-      </Router>
-    </Suspense>
+          </div>
+        </Router>
+      </Suspense>
+    </HelmetProvider>
   );
 }
 
