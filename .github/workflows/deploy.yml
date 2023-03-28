@@ -1,20 +1,29 @@
+name: Deploy
+
 on:
   push:
     branches:
       - master
-name: Deploy
+
 jobs:
   build:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@master
-      - name: FTP-Deploy-Action
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy to Xserver
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          LOCAL_DIR: ./
-          REMOTE_DIR: /デプロイ対象のサイト/public_html/
+          LOCAL_DIR: ./build/
+          REMOTE_DIR: /
