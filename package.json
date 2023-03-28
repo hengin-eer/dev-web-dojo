@@ -24,7 +24,7 @@
   "homepage": "https://web-dojo.nitacwpl.tech/",
   "scripts": {
     "start": "react-scripts start",
-    "build": "node public/main.js && react-scripts build",
+    "build": "react-scripts build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
