@@ -110,7 +110,7 @@ const Post = () => {
                 <div className="post__ttl">{fetchedPost.title}</div>
                 <Link to={`/posts/${fetchedPost.category}`} className="post__cat"><FontAwesomeIcon className='cat__ico' icon={faHashtag} />{fetchedPost.category}</Link>
                 <div className="post__author">
-                    <img className='author__ico' src={`${process.env.PUBLIC_URL}/media/${fetchedPost.author}.png`} alt="" />
+                    <img className='author__ico' src={`${process.env.PUBLIC_URL}/media/${fetchedPost.author}.webp`} alt="" />
                     <div className="author__name">{fetchedPost.author}</div>
                 </div>
                 <div className="post__contents">
