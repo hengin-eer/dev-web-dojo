@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { TailSpin } from 'react-loading-icons';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-// const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-// const CoursePage = lazy(() => sleep(500).then(() => import('./conponents/CoursePage')));
+import { NotFound } from './conponents/NotFound';
 const Header = lazy(() => import('./conponents/Header'));
 const HomePage = lazy(() => import('./conponents/HomePage'));
 const CoursePage = lazy(() => import('./conponents/CoursePage'));
@@ -12,7 +11,6 @@ const Postlist = lazy(() => import('./conponents/Postlist'));
 const Post = lazy(() => import('./conponents/Post'));
 const AboutPage = lazy(() => import('./conponents/AboutPage'));
 const ScrollToTop = lazy(() => import('./conponents/ScrollToTop'));
-const NotFound = lazy(() => import('./conponents/NotFound'));
 const Footer = lazy(() => import('./conponents/Footer'));
 
 const FallBack = (props) => {
